@@ -10,36 +10,36 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/prompt/template.rs
+# Standardized apps/meter/src/agent_eval/prompt/template.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/prompt/template.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/prompt/template.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `FewShotExample` | projects/meter/src/agent_eval/prompt/template.rs | struct | pub | 59 |  |
-| `PromptContext` | projects/meter/src/agent_eval/prompt/template.rs | struct | pub | 74 |  |
-| `PromptSection` | projects/meter/src/agent_eval/prompt/template.rs | struct | pub | 40 |  |
-| `PromptTemplate` | projects/meter/src/agent_eval/prompt/template.rs | struct | pub | 11 |  |
-| `PromptVariable` | projects/meter/src/agent_eval/prompt/template.rs | enum | pub | 114 |  |
-| `basic` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 128 | basic(name: impl Into<String>) -> Self |
-| `check_condition` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 99 | check_condition(&self, condition: &str) -> bool |
-| `get` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 94 | get(&self, key: &str) -> Option<&String> |
-| `new` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 81 | new() -> Self |
-| `new` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 168 | new(title: impl Into<String>, content: impl Into<String>) -> Self |
-| `new` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 193 | new(input: impl Into<String>, output: impl Into<String>) -> Self |
-| `optional` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 178 | optional(mut self) -> Self |
-| `set` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 88 | set(&mut self, key: impl Into<String>, value: impl Into<String>) -> &mut Self |
-| `with_condition` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 184 | with_condition(mut self, condition: impl Into<String>) -> Self |
-| `with_example` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 153 | with_example(mut self, example: FewShotExample) -> Self |
-| `with_explanation` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 202 | with_explanation(mut self, explanation: impl Into<String>) -> Self |
-| `with_metadata` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 159 | with_metadata(mut self, key: impl Into<String>, value: impl Into<String>) -> Self |
-| `with_section` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 147 | with_section(mut self, section: PromptSection) -> Self |
-| `with_system_role` | projects/meter/src/agent_eval/prompt/template.rs | function | pub | 141 | with_system_role(mut self, role: impl Into<String>) -> Self |
+| `FewShotExample` | apps/meter/src/agent_eval/prompt/template.rs | struct | pub | 59 |  |
+| `PromptContext` | apps/meter/src/agent_eval/prompt/template.rs | struct | pub | 74 |  |
+| `PromptSection` | apps/meter/src/agent_eval/prompt/template.rs | struct | pub | 40 |  |
+| `PromptTemplate` | apps/meter/src/agent_eval/prompt/template.rs | struct | pub | 11 |  |
+| `PromptVariable` | apps/meter/src/agent_eval/prompt/template.rs | enum | pub | 114 |  |
+| `basic` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 128 | basic(name: impl Into<String>) -> Self |
+| `check_condition` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 99 | check_condition(&self, condition: &str) -> bool |
+| `get` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 94 | get(&self, key: &str) -> Option<&String> |
+| `new` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 81 | new() -> Self |
+| `new` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 168 | new(title: impl Into<String>, content: impl Into<String>) -> Self |
+| `new` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 193 | new(input: impl Into<String>, output: impl Into<String>) -> Self |
+| `optional` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 178 | optional(mut self) -> Self |
+| `set` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 88 | set(&mut self, key: impl Into<String>, value: impl Into<String>) -> &mut Self |
+| `with_condition` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 184 | with_condition(mut self, condition: impl Into<String>) -> Self |
+| `with_example` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 153 | with_example(mut self, example: FewShotExample) -> Self |
+| `with_explanation` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 202 | with_explanation(mut self, explanation: impl Into<String>) -> Self |
+| `with_metadata` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 159 | with_metadata(mut self, key: impl Into<String>, value: impl Into<String>) -> Self |
+| `with_section` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 147 | with_section(mut self, section: PromptSection) -> Self |
+| `with_system_role` | apps/meter/src/agent_eval/prompt/template.rs | function | pub | 141 | with_system_role(mut self, role: impl Into<String>) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -51,7 +51,7 @@ use std::collections::HashMap;
 
 /// Prompt template with variables and sections
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 pub struct PromptTemplate {
     /// Template name/ID
     pub name: String,
@@ -80,7 +80,7 @@ pub struct PromptTemplate {
 
 /// A section in the prompt template
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 pub struct PromptSection {
     /// Section title (e.g., "Input", "Expected Output")
     pub title: String,
@@ -99,7 +99,7 @@ pub struct PromptSection {
 
 /// Few-shot example for demonstration
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 pub struct FewShotExample {
     /// Example input
     pub input: String,
@@ -114,12 +114,12 @@ pub struct FewShotExample {
 
 /// Context for rendering a template
 #[derive(Debug, Clone, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 pub struct PromptContext {
     variables: HashMap<String, String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 impl PromptContext {
     /// Create a new empty context
     pub fn new() -> Self {
@@ -154,7 +154,7 @@ impl PromptContext {
 /// Variable type hint
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 pub enum PromptVariable {
     /// String variable
     String,
@@ -166,7 +166,7 @@ pub enum PromptVariable {
     Optional,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 impl PromptTemplate {
     /// Create a basic template
     pub fn basic(name: impl Into<String>) -> Self {
@@ -206,7 +206,7 @@ impl PromptTemplate {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 impl PromptSection {
     /// Create a new section
     pub fn new(title: impl Into<String>, content: impl Into<String>) -> Self {
@@ -231,7 +231,7 @@ impl PromptSection {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-template-rs.md#source
 impl FewShotExample {
     /// Create a new example
     pub fn new(input: impl Into<String>, output: impl Into<String>) -> Self {
@@ -292,10 +292,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/prompt/template.rs
+  - path: apps/meter/src/agent_eval/prompt/template.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/prompt/template.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/prompt/template.rs` captured during meter full-codegen standardization.
 ```

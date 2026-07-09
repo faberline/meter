@@ -10,25 +10,25 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/mod.rs
+# Standardized apps/meter/src/agent_eval/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `cost` | projects/meter/src/agent_eval/mod.rs | module | pub | 47 |  |
-| `dataset` | projects/meter/src/agent_eval/mod.rs | module | pub | 48 |  |
-| `evaluator` | projects/meter/src/agent_eval/mod.rs | module | pub | 49 |  |
-| `llm_judge` | projects/meter/src/agent_eval/mod.rs | module | pub | 50 |  |
-| `prompt` | projects/meter/src/agent_eval/mod.rs | module | pub | 51 |  |
-| `regression` | projects/meter/src/agent_eval/mod.rs | module | pub | 52 |  |
-| `result` | projects/meter/src/agent_eval/mod.rs | module | pub | 53 |  |
-| `test_case` | projects/meter/src/agent_eval/mod.rs | module | pub | 54 |  |
+| `cost` | apps/meter/src/agent_eval/mod.rs | module | pub | 47 |  |
+| `dataset` | apps/meter/src/agent_eval/mod.rs | module | pub | 48 |  |
+| `evaluator` | apps/meter/src/agent_eval/mod.rs | module | pub | 49 |  |
+| `llm_judge` | apps/meter/src/agent_eval/mod.rs | module | pub | 50 |  |
+| `prompt` | apps/meter/src/agent_eval/mod.rs | module | pub | 51 |  |
+| `regression` | apps/meter/src/agent_eval/mod.rs | module | pub | 52 |  |
+| `result` | apps/meter/src/agent_eval/mod.rs | module | pub | 53 |  |
+| `test_case` | apps/meter/src/agent_eval/mod.rs | module | pub | 54 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -112,10 +112,10 @@ pub use test_case::{AgentTestCase, ExpectedToolCall, QualityCriterion};
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/mod.rs
+  - path: apps/meter/src/agent_eval/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/mod.rs` captured during meter full-codegen standardization.
 ```

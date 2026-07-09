@@ -10,20 +10,20 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/prompt/engine.rs
+# Standardized apps/meter/src/agent_eval/prompt/engine.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/prompt/engine.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/prompt/engine.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `PromptEngine` | projects/meter/src/agent_eval/prompt/engine.rs | struct | pub | 10 |  |
-| `render` | projects/meter/src/agent_eval/prompt/engine.rs | function | pub | 15 | render(template: &PromptTemplate, context: &PromptContext) -> Result<String, String> |
-| `render_with` | projects/meter/src/agent_eval/prompt/engine.rs | function | pub | 85 | render_with(template: &PromptTemplate, builder: F) -> Result<String, String> |
+| `PromptEngine` | apps/meter/src/agent_eval/prompt/engine.rs | struct | pub | 10 |  |
+| `render` | apps/meter/src/agent_eval/prompt/engine.rs | function | pub | 15 | render(template: &PromptTemplate, context: &PromptContext) -> Result<String, String> |
+| `render_with` | apps/meter/src/agent_eval/prompt/engine.rs | function | pub | 85 | render_with(template: &PromptTemplate, builder: F) -> Result<String, String> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -34,10 +34,10 @@ use super::template::{PromptContext, PromptTemplate};
 use regex::Regex;
 
 /// Prompt rendering engine
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-engine-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-engine-rs.md#source
 pub struct PromptEngine;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-engine-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-engine-rs.md#source
 impl PromptEngine {
     /// Render a template with context
     pub fn render(template: &PromptTemplate, context: &PromptContext) -> Result<String, String> {
@@ -236,10 +236,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/prompt/engine.rs
+  - path: apps/meter/src/agent_eval/prompt/engine.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/prompt/engine.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/prompt/engine.rs` captured during meter full-codegen standardization.
 ```

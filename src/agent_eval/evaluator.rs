@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 // CODEGEN-BEGIN
 //! Core agent evaluation logic
 
@@ -15,14 +15,14 @@ use std::collections::{HashMap, HashSet};
 use std::time::Instant;
 
 /// Agent evaluator for running test cases
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentEvaluator {
     test_cases: Vec<AgentTestCase>,
     cost_calculator: CostCalculator,
     llm_judge: Option<LLMJudge>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 impl AgentEvaluator {
     /// Create a new agent evaluator
     pub fn new(test_cases: Vec<AgentTestCase>) -> Self {
@@ -419,7 +419,7 @@ impl AgentEvaluator {
 
 /// Agent response data structure
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentResponseData {
     /// Response content/text
     pub content: String,
@@ -439,7 +439,7 @@ pub struct AgentResponseData {
 
 /// Token usage (simplified version)
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct TokenUsage {
     pub prompt_tokens: u32,
     pub completion_tokens: u32,
@@ -448,7 +448,7 @@ pub struct TokenUsage {
 
 /// Suite evaluation result containing all test results and aggregated metrics
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentEvalSuiteResult {
     pub results: Vec<AgentEvalResult>,
     pub metrics: AgentEvalMetrics,

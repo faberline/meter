@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
-# SPEC-MANAGED: projects/meter/tech-design/semantic/meter-install-script.md#text-source-unit
+# SPEC-MANAGED: apps/meter/tech-design/semantic/meter-install-script.md#text-source-unit
 # CODEGEN-BEGIN
 # meter installer — downloads the right prebuilt binary from GitHub
 # Releases and drops it on your PATH.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/chrischeng-c4/axiom/main/projects/meter/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/chrischeng-c4/axiom/main/apps/meter/install.sh | sh
 #
 # Env overrides:
 #   METER_VERSION   tag to install (default: latest meter@* release, e.g. meter@1.0)

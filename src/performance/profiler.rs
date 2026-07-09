@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 // CODEGEN-BEGIN
 //! Profiling infrastructure for cclab operations
 //!
@@ -19,7 +19,7 @@ use std::time::{Duration, Instant};
 
 /// Timing phases for a cclab operation
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub enum ProfilePhase {
     /// Python object extraction (GIL held)
     PythonExtract,
@@ -33,7 +33,7 @@ pub enum ProfilePhase {
     Total,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl std::fmt::Display for ProfilePhase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -48,7 +48,7 @@ impl std::fmt::Display for ProfilePhase {
 
 /// Timing data for a single phase
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct PhaseTiming {
     /// Total time spent in this phase (nanoseconds)
     pub total_ns: u64,
@@ -60,7 +60,7 @@ pub struct PhaseTiming {
     pub max_ns: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl PhaseTiming {
     /// Create a new empty phase timing
     pub fn new() -> Self {
@@ -102,7 +102,7 @@ impl PhaseTiming {
 
 /// Complete phase breakdown for a profiling session
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct PhaseBreakdown {
     /// Timing for each phase
     pub phases: HashMap<String, PhaseTiming>,
@@ -112,7 +112,7 @@ pub struct PhaseBreakdown {
     pub total_duration_ns: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl PhaseBreakdown {
     /// Create a new phase breakdown
     pub fn new() -> Self {
@@ -216,7 +216,7 @@ impl PhaseBreakdown {
 
 /// Configuration for GIL contention testing
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct GilTestConfig {
     /// Number of concurrent threads/tasks
     pub concurrent_workers: usize,
@@ -228,7 +228,7 @@ pub struct GilTestConfig {
     pub warmup_iterations: u32,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl Default for GilTestConfig {
     fn default() -> Self {
         Self {
@@ -240,7 +240,7 @@ impl Default for GilTestConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl GilTestConfig {
     /// Create a new config with specified workers
     pub fn with_workers(workers: usize) -> Self {
@@ -253,7 +253,7 @@ impl GilTestConfig {
 
 /// Results from GIL contention analysis
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct GilContentionResult {
     /// Config used for the test
     pub config: GilTestConfig,
@@ -275,7 +275,7 @@ pub struct GilContentionResult {
     pub efficiency_percent: f64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl GilContentionResult {
     /// Create from measurement data
     pub fn from_measurements(
@@ -351,7 +351,7 @@ impl GilContentionResult {
 
 /// Memory snapshot at a point in time
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct MemorySnapshot {
     /// Resident set size (RSS) in bytes
     pub rss_bytes: u64,
@@ -359,7 +359,7 @@ pub struct MemorySnapshot {
     pub peak_rss_bytes: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl MemorySnapshot {
     /// Create a new snapshot with current memory usage
     pub fn capture() -> Self {
@@ -383,7 +383,7 @@ impl MemorySnapshot {
 
 /// Memory profile results
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct MemoryProfile {
     /// Snapshot before operation
     pub before: MemorySnapshot,
@@ -397,7 +397,7 @@ pub struct MemoryProfile {
     pub iterations: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl MemoryProfile {
     /// Create from before/after snapshots
     pub fn from_snapshots(
@@ -452,7 +452,7 @@ impl MemoryProfile {
 
 /// Flamegraph data for SVG generation
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct FlamegraphData {
     /// Folded stack format (for inferno)
     pub folded_stacks: Vec<String>,
@@ -460,7 +460,7 @@ pub struct FlamegraphData {
     pub sample_count: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl FlamegraphData {
     /// Create new flamegraph data
     pub fn new() -> Self {
@@ -488,7 +488,7 @@ impl FlamegraphData {
 
 /// Complete profiling result combining all dimensions
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct ProfileResult {
     /// Name of the profiled operation
     pub name: String,
@@ -512,7 +512,7 @@ pub struct ProfileResult {
     pub error: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl ProfileResult {
     /// Create a new successful result
     pub fn new(name: String) -> Self {
@@ -629,7 +629,7 @@ impl ProfileResult {
 
 /// What to profile
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct ProfileConfig {
     /// Enable phase breakdown timing
     pub enable_phase_breakdown: bool,
@@ -649,7 +649,7 @@ pub struct ProfileConfig {
     pub output_dir: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl ProfileConfig {
     /// Create config with all profiling enabled
     pub fn full() -> Self {
@@ -719,7 +719,7 @@ impl ProfileConfig {
 // ============================================================================
 
 /// Profiler for collecting timing and memory data
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct Profiler {
     config: ProfileConfig,
     start_time: Option<Instant>,
@@ -729,7 +729,7 @@ pub struct Profiler {
     flamegraph_data: FlamegraphData,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl Profiler {
     /// Create a new profiler with configuration
     pub fn new(config: ProfileConfig) -> Self {
@@ -827,7 +827,7 @@ impl Profiler {
 // ============================================================================
 
 /// Generate SVG flamegraph from folded stacks
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub fn generate_flamegraph_svg(
     folded_stacks: &[String],
     title: &str,
@@ -871,7 +871,7 @@ pub fn generate_flamegraph_svg(
 // ============================================================================
 
 /// Get RSS bytes (macOS and Linux compatible)
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub fn get_rss_bytes() -> Option<u64> {
     #[cfg(target_os = "macos")]
     {

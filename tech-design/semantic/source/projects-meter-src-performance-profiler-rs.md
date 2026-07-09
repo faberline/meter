@@ -10,76 +10,76 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/performance/profiler.rs
+# Standardized apps/meter/src/performance/profiler.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/performance/profiler.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/performance/profiler.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `FlamegraphData` | projects/meter/src/performance/profiler.rs | struct | pub | 456 |  |
-| `GilContentionResult` | projects/meter/src/performance/profiler.rs | struct | pub | 257 |  |
-| `GilTestConfig` | projects/meter/src/performance/profiler.rs | struct | pub | 220 |  |
-| `MemoryProfile` | projects/meter/src/performance/profiler.rs | struct | pub | 387 |  |
-| `MemorySnapshot` | projects/meter/src/performance/profiler.rs | struct | pub | 355 |  |
-| `PhaseBreakdown` | projects/meter/src/performance/profiler.rs | struct | pub | 106 |  |
-| `PhaseTiming` | projects/meter/src/performance/profiler.rs | struct | pub | 52 |  |
-| `ProfileConfig` | projects/meter/src/performance/profiler.rs | struct | pub | 633 |  |
-| `ProfilePhase` | projects/meter/src/performance/profiler.rs | enum | pub | 23 |  |
-| `ProfileResult` | projects/meter/src/performance/profiler.rs | struct | pub | 492 |  |
-| `Profiler` | projects/meter/src/performance/profiler.rs | struct | pub | 723 |  |
-| `add_stack` | projects/meter/src/performance/profiler.rs | function | pub | 474 | add_stack(&mut self, stack: String) |
-| `add_stack` | projects/meter/src/performance/profiler.rs | function | pub | 782 | add_stack(&mut self, stack: String) |
-| `avg_ms` | projects/meter/src/performance/profiler.rs | function | pub | 98 | avg_ms(&self) -> f64 |
-| `avg_ns` | projects/meter/src/performance/profiler.rs | function | pub | 84 | avg_ns(&self) -> f64 |
-| `capture` | projects/meter/src/performance/profiler.rs | function | pub | 365 | capture() -> Self |
-| `config` | projects/meter/src/performance/profiler.rs | function | pub | 747 | config(&self) -> &ProfileConfig |
-| `custom` | projects/meter/src/performance/profiler.rs | function | pub | 683 | custom(         enable_phase_breakdown: bool,         enable_gil_analysis: bool,         enable_memory_profile: bool,         enable_flamegraph: bool,         iterations: u32,         warmup: u32,     ) -> Self |
-| `delta_mb` | projects/meter/src/performance/profiler.rs | function | pub | 420 | delta_mb(&self) -> f64 |
-| `failed` | projects/meter/src/performance/profiler.rs | function | pub | 534 | failed(name: String, error: String) -> Self |
-| `finalize` | projects/meter/src/performance/profiler.rs | function | pub | 574 | finalize(mut self, duration: Duration) -> Self |
-| `finalize` | projects/meter/src/performance/profiler.rs | function | pub | 789 | finalize(self, name: String, operation_count: u64) -> ProfileResult |
-| `format` | projects/meter/src/performance/profiler.rs | function | pub | 178 | format(&self) -> String |
-| `format` | projects/meter/src/performance/profiler.rs | function | pub | 319 | format(&self) -> String |
-| `format` | projects/meter/src/performance/profiler.rs | function | pub | 430 | format(&self) -> String |
-| `format` | projects/meter/src/performance/profiler.rs | function | pub | 581 | format(&self) -> String |
-| `from_measurements` | projects/meter/src/performance/profiler.rs | function | pub | 281 | from_measurements(         config: GilTestConfig,         sequential_ms: f64,         concurrent_ms: f64,         worker_times: Vec<f64>,     ) -> Self |
-| `from_snapshots` | projects/meter/src/performance/profiler.rs | function | pub | 403 | from_snapshots(         before: MemorySnapshot,         after: MemorySnapshot,         peak: MemorySnapshot,         iterations: u64,     ) -> Self |
-| `from_times` | projects/meter/src/performance/profiler.rs | function | pub | 127 | from_times(         phase_times: HashMap<String, Vec<u64>>,         operation_count: u64,         total_duration_ns: u64,     ) -> Self |
-| `full` | projects/meter/src/performance/profiler.rs | function | pub | 655 | full() -> Self |
-| `generate_flamegraph_svg` | projects/meter/src/performance/profiler.rs | function | pub | 831 | generate_flamegraph_svg(     folded_stacks: &[String],     title: &str,     output_path: &str, ) -> Result<(), String> |
-| `get_phase` | projects/meter/src/performance/profiler.rs | function | pub | 150 | get_phase(&self, phase_name: &str) -> Option<&PhaseTiming> |
-| `get_rss_bytes` | projects/meter/src/performance/profiler.rs | function | pub | 875 | get_rss_bytes() -> Option<u64> |
-| `has_data` | projects/meter/src/performance/profiler.rs | function | pub | 480 | has_data(&self) -> bool |
-| `new` | projects/meter/src/performance/profiler.rs | function | pub | 66 | new() -> Self |
-| `new` | projects/meter/src/performance/profiler.rs | function | pub | 118 | new() -> Self |
-| `new` | projects/meter/src/performance/profiler.rs | function | pub | 466 | new() -> Self |
-| `new` | projects/meter/src/performance/profiler.rs | function | pub | 518 | new(name: String) -> Self |
-| `new` | projects/meter/src/performance/profiler.rs | function | pub | 735 | new(config: ProfileConfig) -> Self |
-| `peak_rss_mb` | projects/meter/src/performance/profiler.rs | function | pub | 379 | peak_rss_mb(&self) -> f64 |
-| `peak_rss_mb` | projects/meter/src/performance/profiler.rs | function | pub | 425 | peak_rss_mb(&self) -> f64 |
-| `percentage_breakdown` | projects/meter/src/performance/profiler.rs | function | pub | 160 | percentage_breakdown(&self) -> HashMap<String, f64> |
-| `phase_names` | projects/meter/src/performance/profiler.rs | function | pub | 155 | phase_names(&self) -> Vec<String> |
-| `quick` | projects/meter/src/performance/profiler.rs | function | pub | 669 | quick() -> Self |
-| `record` | projects/meter/src/performance/profiler.rs | function | pub | 76 | record(&mut self, duration_ns: u64) |
-| `record_phase` | projects/meter/src/performance/profiler.rs | function | pub | 761 | record_phase(&mut self, phase: &str, duration_ns: u64) |
-| `rss_mb` | projects/meter/src/performance/profiler.rs | function | pub | 374 | rss_mb(&self) -> f64 |
-| `start` | projects/meter/src/performance/profiler.rs | function | pub | 752 | start(&mut self) |
-| `to_json` | projects/meter/src/performance/profiler.rs | function | pub | 621 | to_json(&self) -> Result<String, serde_json::Error> |
-| `total_duration_ms` | projects/meter/src/performance/profiler.rs | function | pub | 173 | total_duration_ms(&self) -> f64 |
-| `total_ms` | projects/meter/src/performance/profiler.rs | function | pub | 93 | total_ms(&self) -> f64 |
-| `update_peak_memory` | projects/meter/src/performance/profiler.rs | function | pub | 769 | update_peak_memory(&mut self) |
-| `with_flamegraph` | projects/meter/src/performance/profiler.rs | function | pub | 568 | with_flamegraph(mut self, data: FlamegraphData) -> Self |
-| `with_gil_analysis` | projects/meter/src/performance/profiler.rs | function | pub | 556 | with_gil_analysis(mut self, analysis: GilContentionResult) -> Self |
-| `with_gil_config` | projects/meter/src/performance/profiler.rs | function | pub | 704 | with_gil_config(mut self, config: GilTestConfig) -> Self |
-| `with_memory_profile` | projects/meter/src/performance/profiler.rs | function | pub | 562 | with_memory_profile(mut self, profile: MemoryProfile) -> Self |
-| `with_output_dir` | projects/meter/src/performance/profiler.rs | function | pub | 711 | with_output_dir(mut self, dir: String) -> Self |
-| `with_phase_breakdown` | projects/meter/src/performance/profiler.rs | function | pub | 550 | with_phase_breakdown(mut self, breakdown: PhaseBreakdown) -> Self |
-| `with_workers` | projects/meter/src/performance/profiler.rs | function | pub | 246 | with_workers(workers: usize) -> Self |
+| `FlamegraphData` | apps/meter/src/performance/profiler.rs | struct | pub | 456 |  |
+| `GilContentionResult` | apps/meter/src/performance/profiler.rs | struct | pub | 257 |  |
+| `GilTestConfig` | apps/meter/src/performance/profiler.rs | struct | pub | 220 |  |
+| `MemoryProfile` | apps/meter/src/performance/profiler.rs | struct | pub | 387 |  |
+| `MemorySnapshot` | apps/meter/src/performance/profiler.rs | struct | pub | 355 |  |
+| `PhaseBreakdown` | apps/meter/src/performance/profiler.rs | struct | pub | 106 |  |
+| `PhaseTiming` | apps/meter/src/performance/profiler.rs | struct | pub | 52 |  |
+| `ProfileConfig` | apps/meter/src/performance/profiler.rs | struct | pub | 633 |  |
+| `ProfilePhase` | apps/meter/src/performance/profiler.rs | enum | pub | 23 |  |
+| `ProfileResult` | apps/meter/src/performance/profiler.rs | struct | pub | 492 |  |
+| `Profiler` | apps/meter/src/performance/profiler.rs | struct | pub | 723 |  |
+| `add_stack` | apps/meter/src/performance/profiler.rs | function | pub | 474 | add_stack(&mut self, stack: String) |
+| `add_stack` | apps/meter/src/performance/profiler.rs | function | pub | 782 | add_stack(&mut self, stack: String) |
+| `avg_ms` | apps/meter/src/performance/profiler.rs | function | pub | 98 | avg_ms(&self) -> f64 |
+| `avg_ns` | apps/meter/src/performance/profiler.rs | function | pub | 84 | avg_ns(&self) -> f64 |
+| `capture` | apps/meter/src/performance/profiler.rs | function | pub | 365 | capture() -> Self |
+| `config` | apps/meter/src/performance/profiler.rs | function | pub | 747 | config(&self) -> &ProfileConfig |
+| `custom` | apps/meter/src/performance/profiler.rs | function | pub | 683 | custom(         enable_phase_breakdown: bool,         enable_gil_analysis: bool,         enable_memory_profile: bool,         enable_flamegraph: bool,         iterations: u32,         warmup: u32,     ) -> Self |
+| `delta_mb` | apps/meter/src/performance/profiler.rs | function | pub | 420 | delta_mb(&self) -> f64 |
+| `failed` | apps/meter/src/performance/profiler.rs | function | pub | 534 | failed(name: String, error: String) -> Self |
+| `finalize` | apps/meter/src/performance/profiler.rs | function | pub | 574 | finalize(mut self, duration: Duration) -> Self |
+| `finalize` | apps/meter/src/performance/profiler.rs | function | pub | 789 | finalize(self, name: String, operation_count: u64) -> ProfileResult |
+| `format` | apps/meter/src/performance/profiler.rs | function | pub | 178 | format(&self) -> String |
+| `format` | apps/meter/src/performance/profiler.rs | function | pub | 319 | format(&self) -> String |
+| `format` | apps/meter/src/performance/profiler.rs | function | pub | 430 | format(&self) -> String |
+| `format` | apps/meter/src/performance/profiler.rs | function | pub | 581 | format(&self) -> String |
+| `from_measurements` | apps/meter/src/performance/profiler.rs | function | pub | 281 | from_measurements(         config: GilTestConfig,         sequential_ms: f64,         concurrent_ms: f64,         worker_times: Vec<f64>,     ) -> Self |
+| `from_snapshots` | apps/meter/src/performance/profiler.rs | function | pub | 403 | from_snapshots(         before: MemorySnapshot,         after: MemorySnapshot,         peak: MemorySnapshot,         iterations: u64,     ) -> Self |
+| `from_times` | apps/meter/src/performance/profiler.rs | function | pub | 127 | from_times(         phase_times: HashMap<String, Vec<u64>>,         operation_count: u64,         total_duration_ns: u64,     ) -> Self |
+| `full` | apps/meter/src/performance/profiler.rs | function | pub | 655 | full() -> Self |
+| `generate_flamegraph_svg` | apps/meter/src/performance/profiler.rs | function | pub | 831 | generate_flamegraph_svg(     folded_stacks: &[String],     title: &str,     output_path: &str, ) -> Result<(), String> |
+| `get_phase` | apps/meter/src/performance/profiler.rs | function | pub | 150 | get_phase(&self, phase_name: &str) -> Option<&PhaseTiming> |
+| `get_rss_bytes` | apps/meter/src/performance/profiler.rs | function | pub | 875 | get_rss_bytes() -> Option<u64> |
+| `has_data` | apps/meter/src/performance/profiler.rs | function | pub | 480 | has_data(&self) -> bool |
+| `new` | apps/meter/src/performance/profiler.rs | function | pub | 66 | new() -> Self |
+| `new` | apps/meter/src/performance/profiler.rs | function | pub | 118 | new() -> Self |
+| `new` | apps/meter/src/performance/profiler.rs | function | pub | 466 | new() -> Self |
+| `new` | apps/meter/src/performance/profiler.rs | function | pub | 518 | new(name: String) -> Self |
+| `new` | apps/meter/src/performance/profiler.rs | function | pub | 735 | new(config: ProfileConfig) -> Self |
+| `peak_rss_mb` | apps/meter/src/performance/profiler.rs | function | pub | 379 | peak_rss_mb(&self) -> f64 |
+| `peak_rss_mb` | apps/meter/src/performance/profiler.rs | function | pub | 425 | peak_rss_mb(&self) -> f64 |
+| `percentage_breakdown` | apps/meter/src/performance/profiler.rs | function | pub | 160 | percentage_breakdown(&self) -> HashMap<String, f64> |
+| `phase_names` | apps/meter/src/performance/profiler.rs | function | pub | 155 | phase_names(&self) -> Vec<String> |
+| `quick` | apps/meter/src/performance/profiler.rs | function | pub | 669 | quick() -> Self |
+| `record` | apps/meter/src/performance/profiler.rs | function | pub | 76 | record(&mut self, duration_ns: u64) |
+| `record_phase` | apps/meter/src/performance/profiler.rs | function | pub | 761 | record_phase(&mut self, phase: &str, duration_ns: u64) |
+| `rss_mb` | apps/meter/src/performance/profiler.rs | function | pub | 374 | rss_mb(&self) -> f64 |
+| `start` | apps/meter/src/performance/profiler.rs | function | pub | 752 | start(&mut self) |
+| `to_json` | apps/meter/src/performance/profiler.rs | function | pub | 621 | to_json(&self) -> Result<String, serde_json::Error> |
+| `total_duration_ms` | apps/meter/src/performance/profiler.rs | function | pub | 173 | total_duration_ms(&self) -> f64 |
+| `total_ms` | apps/meter/src/performance/profiler.rs | function | pub | 93 | total_ms(&self) -> f64 |
+| `update_peak_memory` | apps/meter/src/performance/profiler.rs | function | pub | 769 | update_peak_memory(&mut self) |
+| `with_flamegraph` | apps/meter/src/performance/profiler.rs | function | pub | 568 | with_flamegraph(mut self, data: FlamegraphData) -> Self |
+| `with_gil_analysis` | apps/meter/src/performance/profiler.rs | function | pub | 556 | with_gil_analysis(mut self, analysis: GilContentionResult) -> Self |
+| `with_gil_config` | apps/meter/src/performance/profiler.rs | function | pub | 704 | with_gil_config(mut self, config: GilTestConfig) -> Self |
+| `with_memory_profile` | apps/meter/src/performance/profiler.rs | function | pub | 562 | with_memory_profile(mut self, profile: MemoryProfile) -> Self |
+| `with_output_dir` | apps/meter/src/performance/profiler.rs | function | pub | 711 | with_output_dir(mut self, dir: String) -> Self |
+| `with_phase_breakdown` | apps/meter/src/performance/profiler.rs | function | pub | 550 | with_phase_breakdown(mut self, breakdown: PhaseBreakdown) -> Self |
+| `with_workers` | apps/meter/src/performance/profiler.rs | function | pub | 246 | with_workers(workers: usize) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -103,7 +103,7 @@ use std::time::{Duration, Instant};
 
 /// Timing phases for a cclab operation
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub enum ProfilePhase {
     /// Python object extraction (GIL held)
     PythonExtract,
@@ -117,7 +117,7 @@ pub enum ProfilePhase {
     Total,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl std::fmt::Display for ProfilePhase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -132,7 +132,7 @@ impl std::fmt::Display for ProfilePhase {
 
 /// Timing data for a single phase
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct PhaseTiming {
     /// Total time spent in this phase (nanoseconds)
     pub total_ns: u64,
@@ -144,7 +144,7 @@ pub struct PhaseTiming {
     pub max_ns: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl PhaseTiming {
     /// Create a new empty phase timing
     pub fn new() -> Self {
@@ -186,7 +186,7 @@ impl PhaseTiming {
 
 /// Complete phase breakdown for a profiling session
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct PhaseBreakdown {
     /// Timing for each phase
     pub phases: HashMap<String, PhaseTiming>,
@@ -196,7 +196,7 @@ pub struct PhaseBreakdown {
     pub total_duration_ns: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl PhaseBreakdown {
     /// Create a new phase breakdown
     pub fn new() -> Self {
@@ -300,7 +300,7 @@ impl PhaseBreakdown {
 
 /// Configuration for GIL contention testing
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct GilTestConfig {
     /// Number of concurrent threads/tasks
     pub concurrent_workers: usize,
@@ -312,7 +312,7 @@ pub struct GilTestConfig {
     pub warmup_iterations: u32,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl Default for GilTestConfig {
     fn default() -> Self {
         Self {
@@ -324,7 +324,7 @@ impl Default for GilTestConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl GilTestConfig {
     /// Create a new config with specified workers
     pub fn with_workers(workers: usize) -> Self {
@@ -337,7 +337,7 @@ impl GilTestConfig {
 
 /// Results from GIL contention analysis
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct GilContentionResult {
     /// Config used for the test
     pub config: GilTestConfig,
@@ -359,7 +359,7 @@ pub struct GilContentionResult {
     pub efficiency_percent: f64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl GilContentionResult {
     /// Create from measurement data
     pub fn from_measurements(
@@ -435,7 +435,7 @@ impl GilContentionResult {
 
 /// Memory snapshot at a point in time
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct MemorySnapshot {
     /// Resident set size (RSS) in bytes
     pub rss_bytes: u64,
@@ -443,7 +443,7 @@ pub struct MemorySnapshot {
     pub peak_rss_bytes: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl MemorySnapshot {
     /// Create a new snapshot with current memory usage
     pub fn capture() -> Self {
@@ -467,7 +467,7 @@ impl MemorySnapshot {
 
 /// Memory profile results
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct MemoryProfile {
     /// Snapshot before operation
     pub before: MemorySnapshot,
@@ -481,7 +481,7 @@ pub struct MemoryProfile {
     pub iterations: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl MemoryProfile {
     /// Create from before/after snapshots
     pub fn from_snapshots(
@@ -536,7 +536,7 @@ impl MemoryProfile {
 
 /// Flamegraph data for SVG generation
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct FlamegraphData {
     /// Folded stack format (for inferno)
     pub folded_stacks: Vec<String>,
@@ -544,7 +544,7 @@ pub struct FlamegraphData {
     pub sample_count: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl FlamegraphData {
     /// Create new flamegraph data
     pub fn new() -> Self {
@@ -572,7 +572,7 @@ impl FlamegraphData {
 
 /// Complete profiling result combining all dimensions
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct ProfileResult {
     /// Name of the profiled operation
     pub name: String,
@@ -596,7 +596,7 @@ pub struct ProfileResult {
     pub error: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl ProfileResult {
     /// Create a new successful result
     pub fn new(name: String) -> Self {
@@ -713,7 +713,7 @@ impl ProfileResult {
 
 /// What to profile
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct ProfileConfig {
     /// Enable phase breakdown timing
     pub enable_phase_breakdown: bool,
@@ -733,7 +733,7 @@ pub struct ProfileConfig {
     pub output_dir: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl ProfileConfig {
     /// Create config with all profiling enabled
     pub fn full() -> Self {
@@ -803,7 +803,7 @@ impl ProfileConfig {
 // ============================================================================
 
 /// Profiler for collecting timing and memory data
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub struct Profiler {
     config: ProfileConfig,
     start_time: Option<Instant>,
@@ -813,7 +813,7 @@ pub struct Profiler {
     flamegraph_data: FlamegraphData,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 impl Profiler {
     /// Create a new profiler with configuration
     pub fn new(config: ProfileConfig) -> Self {
@@ -911,7 +911,7 @@ impl Profiler {
 // ============================================================================
 
 /// Generate SVG flamegraph from folded stacks
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub fn generate_flamegraph_svg(
     folded_stacks: &[String],
     title: &str,
@@ -955,7 +955,7 @@ pub fn generate_flamegraph_svg(
 // ============================================================================
 
 /// Get RSS bytes (macOS and Linux compatible)
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-profiler-rs.md#source
 pub fn get_rss_bytes() -> Option<u64> {
     #[cfg(target_os = "macos")]
     {
@@ -1081,10 +1081,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/performance/profiler.rs
+  - path: apps/meter/src/performance/profiler.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/performance/profiler.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/performance/profiler.rs` captured during meter full-codegen standardization.
 ```

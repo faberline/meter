@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 // CODEGEN-BEGIN
 //! Assertion engine - expect-style assertions
 
@@ -9,13 +9,13 @@ use std::fmt;
 use thiserror::Error;
 
 /// Result type for assertions
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 pub type AssertionResult = Result<(), AssertionError>;
 
 /// Assertion error with context
 #[derive(Debug, Clone, Error, Serialize, Deserialize)]
 #[error("{message}")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 pub struct AssertionError {
     /// Error message
     pub message: String,
@@ -27,7 +27,7 @@ pub struct AssertionError {
     pub assertion_type: String,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 impl AssertionError {
     /// Create a new assertion error
     pub fn new(message: impl Into<String>, assertion_type: impl Into<String>) -> Self {
@@ -54,7 +54,7 @@ impl AssertionError {
 
 /// Expectation builder for fluent assertions
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 pub struct Expectation<T> {
     value: T,
     negated: bool,
@@ -131,7 +131,7 @@ impl<T: PartialEq + fmt::Debug> Expectation<T> {
 // Boolean Assertions
 // =====================
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 impl Expectation<bool> {
     /// Assert value is true
     pub fn to_be_true(&self) -> AssertionResult {
@@ -313,7 +313,7 @@ impl<T: PartialOrd + fmt::Debug + Copy> Expectation<T> {
 // String Assertions
 // =====================
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 impl Expectation<String> {
     /// Assert string contains substring
     pub fn to_contain(&self, substring: &str) -> AssertionResult {
@@ -423,7 +423,7 @@ impl Expectation<String> {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 impl Expectation<&str> {
     /// Assert &str contains substring
     pub fn to_contain(&self, substring: &str) -> AssertionResult {
@@ -519,7 +519,7 @@ impl<T: PartialEq + fmt::Debug> Expectation<Vec<T>> {
 // JSON Assertions
 // =====================
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 impl Expectation<JsonValue> {
     /// Assert JSON has key
     pub fn to_have_key(&self, key: &str) -> AssertionResult {
@@ -591,7 +591,7 @@ fn json_path<'a>(value: &'a JsonValue, path: &str) -> Option<&'a JsonValue> {
 // =====================
 
 /// Create an expectation (entry point)
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-assertions-rs.md#source
 pub fn expect<T>(value: T) -> Expectation<T> {
     Expectation::new(value)
 }

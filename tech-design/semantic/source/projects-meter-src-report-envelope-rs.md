@@ -10,26 +10,26 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/envelope.rs
+# Standardized apps/meter/src/report/envelope.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/envelope.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/envelope.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `Completion` | projects/meter/src/report/envelope.rs | struct | pub | 112 |  |
-| `EnvBlock` | projects/meter/src/report/envelope.rs | struct | pub | 141 |  |
-| `FindingsSummary` | projects/meter/src/report/envelope.rs | struct | pub | 93 |  |
-| `MeterReport` | projects/meter/src/report/envelope.rs | struct | pub | 21 |  |
-| `OverallStatus` | projects/meter/src/report/envelope.rs | enum | pub | 60 |  |
-| `RunnerRecord` | projects/meter/src/report/envelope.rs | struct | pub | 121 |  |
-| `SCHEMA_VERSION` | projects/meter/src/report/envelope.rs | constant | pub | 16 |  |
-| `exit_code` | projects/meter/src/report/envelope.rs | function | pub | 74 | exit_code(&self) -> i32 |
-| `is_clean` | projects/meter/src/report/envelope.rs | function | pub | 85 | is_clean(&self) -> bool |
+| `Completion` | apps/meter/src/report/envelope.rs | struct | pub | 112 |  |
+| `EnvBlock` | apps/meter/src/report/envelope.rs | struct | pub | 141 |  |
+| `FindingsSummary` | apps/meter/src/report/envelope.rs | struct | pub | 93 |  |
+| `MeterReport` | apps/meter/src/report/envelope.rs | struct | pub | 21 |  |
+| `OverallStatus` | apps/meter/src/report/envelope.rs | enum | pub | 60 |  |
+| `RunnerRecord` | apps/meter/src/report/envelope.rs | struct | pub | 121 |  |
+| `SCHEMA_VERSION` | apps/meter/src/report/envelope.rs | constant | pub | 16 |  |
+| `exit_code` | apps/meter/src/report/envelope.rs | function | pub | 74 | exit_code(&self) -> i32 |
+| `is_clean` | apps/meter/src/report/envelope.rs | function | pub | 85 | is_clean(&self) -> bool |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -51,7 +51,7 @@ pub const SCHEMA_VERSION: &str = "meter.report/1";
 
 /// The one self-describing document every verb prints to stdout.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub struct MeterReport {
     /// `= SCHEMA_VERSION`.
     pub schema_version: String,
@@ -90,7 +90,7 @@ pub struct MeterReport {
 /// SOLE source of the process exit code, clean flag, and terminal flag.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(tag = "state", rename_all = "snake_case")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub enum OverallStatus {
     /// exit 0, terminal.
     Clean,
@@ -102,7 +102,7 @@ pub enum OverallStatus {
     ToolError { code: i32, message: String },
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 impl OverallStatus {
     /// The process exit code this status maps to.
     pub fn exit_code(&self) -> i32 {
@@ -123,7 +123,7 @@ impl OverallStatus {
 
 /// Tally of findings by severity plus a bounded sample.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub struct FindingsSummary {
     pub critical: usize,
     pub high: usize,
@@ -142,7 +142,7 @@ pub struct FindingsSummary {
 
 /// Completion contract: whether the verb's success criteria are met.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub struct Completion {
     pub clean: bool,
     pub criteria: Vec<String>,
@@ -151,7 +151,7 @@ pub struct Completion {
 
 /// Record of a delegated child runner (cargo test / nextest / sampler).
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub struct RunnerRecord {
     /// argv exactly as invoked.
     pub command: Vec<String>,
@@ -171,7 +171,7 @@ pub struct RunnerRecord {
 
 /// Side-effect-free environment block, surfaced in EVERY report.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-envelope-rs.md#source
 pub struct EnvBlock {
     pub os: String,
     pub arch: String,
@@ -239,10 +239,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/envelope.rs
+  - path: apps/meter/src/report/envelope.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/envelope.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/envelope.rs` captured during meter full-codegen standardization.
 ```

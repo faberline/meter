@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/examples/profile_target.rs
+# Standardized apps/meter/examples/profile_target.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/examples/profile_target.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/examples/profile_target.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -75,10 +75,10 @@ fn main() {
 
 ```yaml
 changes:
-  - path: projects/meter/examples/profile_target.rs
+  - path: apps/meter/examples/profile_target.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/examples/profile_target.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/examples/profile_target.rs` captured during meter full-codegen standardization.
 ```

@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 // CODEGEN-BEGIN
 //! Payload database for security testing
 //!
@@ -7,7 +7,7 @@
 
 /// Category of security payloads
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 pub enum PayloadCategory {
     /// SQL injection attacks
     SqlInjection,
@@ -31,7 +31,7 @@ pub enum PayloadCategory {
 
 /// Database of security test payloads
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 pub struct PayloadDatabase {
     sql_injection_payloads: Vec<String>,
     identifier_injection_payloads: Vec<String>,
@@ -44,7 +44,7 @@ pub struct PayloadDatabase {
     template_injection_payloads: Vec<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 impl PayloadDatabase {
     /// Create a new payload database with all payloads
     pub fn new() -> Self {
@@ -568,7 +568,7 @@ impl PayloadDatabase {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 impl Default for PayloadDatabase {
     fn default() -> Self {
         Self::new()

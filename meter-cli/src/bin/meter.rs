@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-bin-meter-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-bin-meter-rs.md#source
 // CODEGEN-BEGIN
 //! Standalone `meter` binary.
 //!

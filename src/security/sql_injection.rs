@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 // CODEGEN-BEGIN
 //! SQL injection testing utilities
 //!
@@ -8,7 +8,7 @@ use super::payloads::PayloadDatabase;
 
 /// Result of an injection test
 #[derive(Debug, Clone, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub enum InjectionResult {
     /// Input was blocked (validator returned error)
     Blocked,
@@ -22,7 +22,7 @@ pub enum InjectionResult {
 
 /// A single injection test case
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub struct InjectionTest {
     /// Name/description of the test
     pub name: String,
@@ -34,7 +34,7 @@ pub struct InjectionTest {
     pub actual: Option<InjectionResult>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl InjectionTest {
     /// Create a new injection test
     pub fn new(
@@ -57,12 +57,12 @@ impl InjectionTest {
 }
 
 /// SQL injection tester
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub struct SqlInjectionTester {
     payload_db: PayloadDatabase,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl SqlInjectionTester {
     /// Create a new SQL injection tester
     pub fn new() -> Self {
@@ -193,7 +193,7 @@ impl SqlInjectionTester {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl Default for SqlInjectionTester {
     fn default() -> Self {
         Self::new()

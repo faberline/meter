@@ -10,19 +10,19 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/capture/delegate.rs
+# Standardized apps/meter/src/capture/delegate.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/delegate.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/delegate.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `DelegateOutcome` | projects/meter/src/capture/delegate.rs | struct | pub | 24 |  |
-| `delegate_test` | projects/meter/src/capture/delegate.rs | function | pub | 42 | delegate_test(     passthrough: &[String],     nextest_present: bool, ) -> std::io::Result<DelegateOutcome> |
+| `DelegateOutcome` | apps/meter/src/capture/delegate.rs | struct | pub | 24 |  |
+| `delegate_test` | apps/meter/src/capture/delegate.rs | function | pub | 42 | delegate_test(     passthrough: &[String],     nextest_present: bool, ) -> std::io::Result<DelegateOutcome> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -47,7 +47,7 @@ use crate::report::finding::Finding;
 use crate::report::producer::generic_test_failure;
 
 /// Outcome of a delegated test run.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
 pub struct DelegateOutcome {
     /// The recorded child invocation (argv, timing, forwarded exit).
     pub record: RunnerRecord,
@@ -65,7 +65,7 @@ pub struct DelegateOutcome {
 /// Stderr is inherited (live output); stdout is captured for parsing. Returns a
 /// [`DelegateOutcome`] whose `record.delegated == true` and whose
 /// `record.exit_code == Some(child_exit_code)`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
 pub fn delegate_test(
     passthrough: &[String],
     nextest_present: bool,
@@ -191,10 +191,10 @@ test result: ok. 1 passed; 0 failed
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/delegate.rs
+  - path: apps/meter/src/capture/delegate.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/delegate.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/delegate.rs` captured during meter full-codegen standardization.
 ```

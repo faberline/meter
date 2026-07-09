@@ -10,31 +10,31 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/capture/sampler.rs
+# Standardized apps/meter/src/capture/sampler.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/sampler.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/sampler.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `FoldedStack` | projects/meter/src/capture/sampler.rs | struct | pub | 35 |  |
-| `SampleError` | projects/meter/src/capture/sampler.rs | enum | pub | 79 |  |
-| `SampleRun` | projects/meter/src/capture/sampler.rs | struct | pub | 64 |  |
-| `Target` | projects/meter/src/capture/sampler.rs | enum | pub | 105 |  |
-| `label` | projects/meter/src/capture/sampler.rs | function | pub | 120 | label(&self) -> String |
-| `leaf` | projects/meter/src/capture/sampler.rs | function | pub | 50 | leaf(&self) -> Option<&str> |
-| `new` | projects/meter/src/capture/sampler.rs | function | pub | 45 | new(frames: Vec<String>, count: u64) -> Self |
-| `parse_perf_script` | projects/meter/src/capture/sampler.rs | function | pub | 649 | parse_perf_script(text: &str) -> Vec<FoldedStack> |
-| `parse_perf_script` | projects/meter/src/capture/sampler.rs | function | pub | 687 | parse_perf_script(_text: &str) -> Vec<FoldedStack> |
-| `parse_sample_report` | projects/meter/src/capture/sampler.rs | function | pub | 461 | parse_sample_report(report: &str) -> Vec<FoldedStack> |
-| `resolve_target_exec` | projects/meter/src/capture/sampler.rs | function | pub | 363 | resolve_target_exec(target: &Target) -> Result<PathBuf, SampleError> |
-| `sample_target` | projects/meter/src/capture/sampler.rs | function | pub | 138 | sample_target(     target: &Target,     extra_args: &[String],     duration_secs: u64,     hz: Option<u64>, ) -> Result<SampleRun, SampleError> |
-| `spawn_exec` | projects/meter/src/capture/sampler.rs | function | pub | 433 | spawn_exec(     exec: &std::path::Path,     extra_args: &[String], ) -> Result<Child, SampleError> |
-| `to_folded_line` | projects/meter/src/capture/sampler.rs | function | pub | 55 | to_folded_line(&self) -> String |
+| `FoldedStack` | apps/meter/src/capture/sampler.rs | struct | pub | 35 |  |
+| `SampleError` | apps/meter/src/capture/sampler.rs | enum | pub | 79 |  |
+| `SampleRun` | apps/meter/src/capture/sampler.rs | struct | pub | 64 |  |
+| `Target` | apps/meter/src/capture/sampler.rs | enum | pub | 105 |  |
+| `label` | apps/meter/src/capture/sampler.rs | function | pub | 120 | label(&self) -> String |
+| `leaf` | apps/meter/src/capture/sampler.rs | function | pub | 50 | leaf(&self) -> Option<&str> |
+| `new` | apps/meter/src/capture/sampler.rs | function | pub | 45 | new(frames: Vec<String>, count: u64) -> Self |
+| `parse_perf_script` | apps/meter/src/capture/sampler.rs | function | pub | 649 | parse_perf_script(text: &str) -> Vec<FoldedStack> |
+| `parse_perf_script` | apps/meter/src/capture/sampler.rs | function | pub | 687 | parse_perf_script(_text: &str) -> Vec<FoldedStack> |
+| `parse_sample_report` | apps/meter/src/capture/sampler.rs | function | pub | 461 | parse_sample_report(report: &str) -> Vec<FoldedStack> |
+| `resolve_target_exec` | apps/meter/src/capture/sampler.rs | function | pub | 363 | resolve_target_exec(target: &Target) -> Result<PathBuf, SampleError> |
+| `sample_target` | apps/meter/src/capture/sampler.rs | function | pub | 138 | sample_target(     target: &Target,     extra_args: &[String],     duration_secs: u64,     hz: Option<u64>, ) -> Result<SampleRun, SampleError> |
+| `spawn_exec` | apps/meter/src/capture/sampler.rs | function | pub | 433 | spawn_exec(     exec: &std::path::Path,     extra_args: &[String], ) -> Result<Child, SampleError> |
+| `to_folded_line` | apps/meter/src/capture/sampler.rs | function | pub | 55 | to_folded_line(&self) -> String |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -70,7 +70,7 @@ use std::process::{Child, Command, Stdio};
 /// terminated at this leaf (self samples), which is exactly the folded-stacks /
 /// inferno convention.
 #[derive(Debug, Clone, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub struct FoldedStack {
     /// Root-first frame symbols (last = leaf).
     pub frames: Vec<String>,
@@ -78,7 +78,7 @@ pub struct FoldedStack {
     pub count: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 impl FoldedStack {
     /// Construct a folded stack from root-first `frames` and a self `count`.
     pub fn new(frames: Vec<String>, count: u64) -> Self {
@@ -99,7 +99,7 @@ impl FoldedStack {
 /// The result of a sampling run: the folded stacks plus the backend used and the
 /// effective sampling rate (Hz) so the fold step can convert samples -> ns.
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub struct SampleRun {
     /// Folded root->leaf stacks with leaf (self) counts.
     pub stacks: Vec<FoldedStack>,
@@ -114,7 +114,7 @@ pub struct SampleRun {
 
 /// Errors a sampling run can surface.
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub enum SampleError {
     /// No stack sampler is available on this platform (maps to `ToolError(4)`).
     NoBackend(String),
@@ -124,7 +124,7 @@ pub enum SampleError {
     Sampler(String),
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 impl std::fmt::Display for SampleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -135,12 +135,12 @@ impl std::fmt::Display for SampleError {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 impl std::error::Error for SampleError {}
 
 /// How to launch the workload to be sampled.
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub enum Target {
     /// `cargo run --bin <name> [-- <args>]`.
     Bin(String),
@@ -153,7 +153,7 @@ pub enum Target {
     Exec(PathBuf),
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 impl Target {
     /// A short human label for the target (used as `MeterReport.target`).
     pub fn label(&self) -> String {
@@ -173,7 +173,7 @@ impl Target {
 /// macOS: builds the target first (so `cargo run` build output does not eat the
 /// sampling window), spawns the child, samples its PID with `/usr/bin/sample`,
 /// waits for the child, then parses the report. No backend => `NoBackend`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub fn sample_target(
     target: &Target,
     extra_args: &[String],
@@ -398,7 +398,7 @@ fn sample_linux(
 ///
 /// Uses `cargo build --message-format=json` and reads the last
 /// `compiler-artifact` message that carries an `executable` path for the target.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub(crate) fn resolve_target_exec(target: &Target) -> Result<PathBuf, SampleError> {
     let mut build = Command::new("cargo");
     match target {
@@ -468,7 +468,7 @@ fn last_executable_artifact(json_stream: &str) -> Option<String> {
 
 /// Spawn the workload executable directly (stdout/stderr discarded) so the
 /// sampled PID is the workload.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub(crate) fn spawn_exec(
     exec: &std::path::Path,
     extra_args: &[String],
@@ -496,7 +496,7 @@ pub(crate) fn spawn_exec(
 /// `inclusive_count - sum(child inclusive_counts)`; any node with a positive
 /// self count contributes a folded stack (root->that node) carrying that self
 /// count. This yields exactly the leaf-sample folding inferno expects.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 pub fn parse_sample_report(report: &str) -> Vec<FoldedStack> {
     // Collect raw (depth, count, symbol) nodes from the Call graph section.
     let mut nodes: Vec<Node> = Vec::new();
@@ -683,7 +683,7 @@ fn self_counts(norm: &[(usize, u64, &str)]) -> Vec<u64> {
 /// (`comm pid ... cycles:`) followed by indented frame lines (`<addr> sym (mod)`),
 /// innermost-first; a blank line separates samples. We reverse to root-first and
 /// count one self sample per leaf stack.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 #[cfg(target_os = "linux")]
 pub(crate) fn parse_perf_script(text: &str) -> Vec<FoldedStack> {
     use std::collections::HashMap;
@@ -720,7 +720,7 @@ pub(crate) fn parse_perf_script(text: &str) -> Vec<FoldedStack> {
         .collect()
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-sampler-rs.md#source
 #[cfg(not(target_os = "linux"))]
 #[allow(dead_code)]
 pub(crate) fn parse_perf_script(_text: &str) -> Vec<FoldedStack> {
@@ -907,10 +907,10 @@ fn process_output_preview(bytes: &[u8]) -> String {
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/sampler.rs
+  - path: apps/meter/src/capture/sampler.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/sampler.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/sampler.rs` captured during meter full-codegen standardization.
 ```

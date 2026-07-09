@@ -321,14 +321,14 @@ requirementDiagram
 ```yaml
 coverage_kind: implementation
 changes:
-  - path: "projects/meter/src/capture/vitals.rs"
+  - path: "apps/meter/src/capture/vitals.rs"
     action: modify
     section: logic
     impl_mode: codegen
     description: |
       Implements the vitals capture flow: child lifecycle, getrusage-derived
       CPU/RSS/wall findings, gate breach folding, and sampler handoff.
-  - path: "projects/meter/src/capture/run.rs"
+  - path: "apps/meter/src/capture/run.rs"
     action: modify
     section: cli
     impl_mode: codegen
@@ -336,14 +336,14 @@ changes:
       Implements the profile/run CLI semantics for level precedence,
       until-exit measurement windows, duration caps, and opaque --drive
       composition.
-  - path: "projects/meter/src/capture/mod.rs"
+  - path: "apps/meter/src/capture/mod.rs"
     action: modify
     section: config
     impl_mode: codegen
     description: |
       Implements the single-knob meter.toml level and optional gate contract
       consumed by capture mode.
-  - path: "projects/meter/tests/capture_vitals.rs"
+  - path: "apps/meter/tests/capture_vitals.rs"
     action: modify
     section: unit-test
     impl_mode: codegen

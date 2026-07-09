@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/logic/external-contracts.md#meter-delegated-runner-exit-code-contract
+// SPEC-MANAGED: apps/meter/tech-design/logic/external-contracts.md#meter-delegated-runner-exit-code-contract
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec meter-delegated-runner-exit-code-contract

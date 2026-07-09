@@ -10,24 +10,24 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/capture/mod.rs
+# Standardized apps/meter/src/capture/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `audit` | projects/meter/src/capture/mod.rs | module | pub | 19 |  |
-| `bench` | projects/meter/src/capture/mod.rs | module | pub | 20 |  |
-| `delegate` | projects/meter/src/capture/mod.rs | module | pub | 21 |  |
-| `fold` | projects/meter/src/capture/mod.rs | module | pub | 22 |  |
-| `run` | projects/meter/src/capture/mod.rs | module | pub | 23 |  |
-| `sampler` | projects/meter/src/capture/mod.rs | module | pub | 24 |  |
-| `vitals` | projects/meter/src/capture/mod.rs | module | pub | 25 |  |
+| `audit` | apps/meter/src/capture/mod.rs | module | pub | 19 |  |
+| `bench` | apps/meter/src/capture/mod.rs | module | pub | 20 |  |
+| `delegate` | apps/meter/src/capture/mod.rs | module | pub | 21 |  |
+| `fold` | apps/meter/src/capture/mod.rs | module | pub | 22 |  |
+| `run` | apps/meter/src/capture/mod.rs | module | pub | 23 |  |
+| `sampler` | apps/meter/src/capture/mod.rs | module | pub | 24 |  |
+| `vitals` | apps/meter/src/capture/mod.rs | module | pub | 25 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 ````rust
@@ -61,10 +61,10 @@ pub mod vitals;
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/mod.rs
+  - path: apps/meter/src/capture/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/mod.rs` captured during meter full-codegen standardization.
 ```

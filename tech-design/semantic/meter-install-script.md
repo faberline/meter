@@ -22,7 +22,7 @@ fill_sections: [text-source-unit, changes]
 # Releases and drops it on your PATH.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/chrischeng-c4/axiom/main/projects/meter/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/chrischeng-c4/axiom/main/apps/meter/install.sh | sh
 #
 # Env overrides:
 #   METER_VERSION   tag to install (default: latest meter@* release, e.g. meter@1.0)
@@ -185,7 +185,7 @@ fi
 ```yaml
 coverage_kind: semantic
 changes:
-  - path: "projects/meter/install.sh"
+  - path: "apps/meter/install.sh"
     action: modify
     section: text-source-unit
     description: "Regenerate the meter installer script from a TD-owned text source unit."

@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
 // CODEGEN-BEGIN
 //! [`ReportBuilder`] — the SINGLE assembly point for a [`MeterReport`].
 //!
@@ -16,7 +16,7 @@ const DEFAULT_SAMPLE_N: usize = 20;
 
 /// Incrementally assemble a [`MeterReport`]; `finalize()` derives all
 /// status-dependent fields.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
 pub struct ReportBuilder {
     verb: String,
     target: String,
@@ -45,7 +45,7 @@ pub struct ReportBuilder {
     requires_hitl: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
 impl ReportBuilder {
     /// Start a builder for `verb` against `target`.
     pub fn new(verb: impl Into<String>, target: impl Into<String>) -> Self {

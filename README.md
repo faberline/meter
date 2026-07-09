@@ -114,11 +114,11 @@ Required Verification: smoke
 Promise:
 meter emits ranked runtime/resource findings so an agent can identify where time goes and catch benchmark regressions outside ordinary unit tests.
 Gate Inventory:
-- `cargo run -p meter-cli --bin meter -- measure --exec /bin/ls --compact`; `cargo run -p meter-cli --bin meter -- profile --phases projects/meter/tests/fixtures/profile_phase_breakdown.json`; `cargo test -p meter performance::profiler`; `cargo test -p meter benchmark::`
+- `cargo run -p meter-cli --bin meter -- measure --exec /bin/ls --compact`; `cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json`; `cargo test -p meter performance::profiler`; `cargo test -p meter benchmark::`
 
 | Work Root | Kind | WI | Impl | Verification | Maturity | Gate / Evidence |
 |---|---|---:|---|---|---|---|
-| Profile phase boundary-cost report | epic | - | implemented | verified | smoke | `cargo run -p meter-cli --bin meter -- profile --phases projects/meter/tests/fixtures/profile_phase_breakdown.json` |
+| Profile phase boundary-cost report | epic | - | implemented | verified | smoke | `cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json` |
 | Embedded profiler API | epic | - | implemented | verified | smoke | `cargo test -p meter performance::profiler` |
 | Benchmark regression API | epic | - | implemented | verified | smoke | `cargo test -p meter benchmark::` |
 | Capture vitals and measurement contract | change | #3 | implemented | verified | smoke | `cargo test -p meter capture::vitals` |
@@ -214,7 +214,7 @@ All public verbs ship through the `meter-cli` crate.
 cargo run -p meter-cli --bin meter -- llm guide
 cargo run -p meter-cli --bin meter -- run --target .
 cargo run -p meter-cli --bin meter -- measure --example profile_target --duration 3
-cargo run -p meter-cli --bin meter -- profile --phases projects/meter/tests/fixtures/profile_phase_breakdown.json
+cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json
 cargo run -p meter-cli --bin meter -- bench --target . --baseline baseline.json
 cargo run -p meter-cli --bin meter -- test -- -p meter --lib
 cargo run -p meter-cli --bin meter -- report

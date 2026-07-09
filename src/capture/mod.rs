@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-capture-mod-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-capture-mod-rs.md#source
 // CODEGEN-BEGIN
 //! Capture-mode populators (擷取) — observe a workload from the outside.
 //!

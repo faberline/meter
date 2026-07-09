@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-examples-junit-reporter-example-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-examples-junit-reporter-example-rs.md#source
 // CODEGEN-BEGIN
 //! JUnit XML Reporter Example
 //!

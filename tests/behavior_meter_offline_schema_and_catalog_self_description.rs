@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/logic/external-contracts.md#meter-offline-schema-and-catalog-self-description
+// SPEC-MANAGED: apps/meter/tech-design/logic/external-contracts.md#meter-offline-schema-and-catalog-self-description
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec meter-offline-schema-and-catalog-self-description

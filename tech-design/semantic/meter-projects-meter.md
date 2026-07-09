@@ -1,6 +1,6 @@
 ---
 id: semantic-meter-projects-meter
-summary: Semantic coverage for "projects/meter"
+summary: Semantic coverage for "apps/meter"
 fill_sections: [schema, changes]
 capability_refs:
   - id: agent-use-first-cli
@@ -11,19 +11,19 @@ capability_refs:
     rationale: "Project-root build, install, and LLM context artifacts keep meter's agent-use-first CLI contract discoverable and runnable."
 ---
 
-# Semantic TD: meter/projects/meter
+# Semantic TD: meter/apps/meter
 
 ## Schema
 <!-- type: schema lang: yaml -->
 
 ```yaml
 semantic_domain:
-  key: "meter/projects/meter"
-  source_group: "projects/meter"
+  key: "meter/apps/meter"
+  source_group: "apps/meter"
   coverage_kind: semantic
   evidence:
     source_units:
-      - path: "projects/meter/build.sh"
+      - path: "apps/meter/build.sh"
         language: "shell"
         ownership_state: "codegen"
         generator_primitives: ["source_unit"]
@@ -32,8 +32,8 @@ semantic_domain:
           ecosystem: "shell"
           role: "source"
           section_type: "schema"
-          domain: "projects/meter"
-      - path: "projects/meter/install.sh"
+          domain: "apps/meter"
+      - path: "apps/meter/install.sh"
         language: "shell"
         ownership_state: "codegen"
         generator_primitives: ["source_unit"]
@@ -42,8 +42,8 @@ semantic_domain:
           ecosystem: "shell"
           role: "source"
           section_type: "schema"
-          domain: "projects/meter"
-      - path: "projects/meter/llms.txt"
+          domain: "apps/meter"
+      - path: "apps/meter/llms.txt"
         language: "llms"
         ownership_state: "codegen"
         generator_primitives: ["project_root_llms"]
@@ -52,7 +52,7 @@ semantic_domain:
           ecosystem: "llms"
           role: "source"
           section_type: "schema"
-          domain: "projects/meter"
+          domain: "apps/meter"
 ```
 
 ## Changes
@@ -61,7 +61,7 @@ semantic_domain:
 ```yaml
 coverage_kind: semantic
 changes:
-  - path: "projects/meter/build.sh"
+  - path: "apps/meter/build.sh"
     action: modify
     section: schema
     description: |
@@ -69,7 +69,7 @@ changes:
     impl_mode: codegen
     replaces:
       - "<handwrite-tracker:#4158>"
-  - path: "projects/meter/install.sh"
+  - path: "apps/meter/install.sh"
     action: modify
     section: schema
     description: |
@@ -77,7 +77,7 @@ changes:
     impl_mode: codegen
     replaces:
       - "<handwrite-tracker:#4158>"
-  - path: "projects/meter/llms.txt"
+  - path: "apps/meter/llms.txt"
     action: modify
     section: schema
     description: |

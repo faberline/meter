@@ -10,33 +10,33 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/test_case.rs
+# Standardized apps/meter/src/agent_eval/test_case.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/test_case.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/test_case.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AgentTestCase` | projects/meter/src/agent_eval/test_case.rs | struct | pub | 11 |  |
-| `ExpectedToolCall` | projects/meter/src/agent_eval/test_case.rs | struct | pub | 131 |  |
-| `QualityCriterion` | projects/meter/src/agent_eval/test_case.rs | struct | pub | 171 |  |
-| `new` | projects/meter/src/agent_eval/test_case.rs | function | pub | 76 | new(id: impl Into<String>, name: impl Into<String>, input: impl Into<String>) -> Self |
-| `new` | projects/meter/src/agent_eval/test_case.rs | function | pub | 147 | new(name: impl Into<String>) -> Self |
-| `new` | projects/meter/src/agent_eval/test_case.rs | function | pub | 190 | new(name: impl Into<String>, description: impl Into<String>) -> Self |
-| `optional` | projects/meter/src/agent_eval/test_case.rs | function | pub | 162 | optional(mut self) -> Self |
-| `with_arguments` | projects/meter/src/agent_eval/test_case.rs | function | pub | 156 | with_arguments(mut self, args: HashMap<String, serde_json::Value>) -> Self |
-| `with_category` | projects/meter/src/agent_eval/test_case.rs | function | pub | 122 | with_category(mut self, category: impl Into<String>) -> Self |
-| `with_expected_output` | projects/meter/src/agent_eval/test_case.rs | function | pub | 86 | with_expected_output(mut self, output: impl Into<String>) -> Self |
-| `with_expected_output_regex` | projects/meter/src/agent_eval/test_case.rs | function | pub | 92 | with_expected_output_regex(mut self, regex: impl Into<String>) -> Self |
-| `with_expected_tool` | projects/meter/src/agent_eval/test_case.rs | function | pub | 98 | with_expected_tool(mut self, tool: ExpectedToolCall) -> Self |
-| `with_max_cost_usd` | projects/meter/src/agent_eval/test_case.rs | function | pub | 110 | with_max_cost_usd(mut self, max_usd: f64) -> Self |
-| `with_max_latency_ms` | projects/meter/src/agent_eval/test_case.rs | function | pub | 104 | with_max_latency_ms(mut self, max_ms: f64) -> Self |
-| `with_quality_criterion` | projects/meter/src/agent_eval/test_case.rs | function | pub | 116 | with_quality_criterion(mut self, criterion: QualityCriterion) -> Self |
-| `with_weight` | projects/meter/src/agent_eval/test_case.rs | function | pub | 199 | with_weight(mut self, weight: f64) -> Self |
+| `AgentTestCase` | apps/meter/src/agent_eval/test_case.rs | struct | pub | 11 |  |
+| `ExpectedToolCall` | apps/meter/src/agent_eval/test_case.rs | struct | pub | 131 |  |
+| `QualityCriterion` | apps/meter/src/agent_eval/test_case.rs | struct | pub | 171 |  |
+| `new` | apps/meter/src/agent_eval/test_case.rs | function | pub | 76 | new(id: impl Into<String>, name: impl Into<String>, input: impl Into<String>) -> Self |
+| `new` | apps/meter/src/agent_eval/test_case.rs | function | pub | 147 | new(name: impl Into<String>) -> Self |
+| `new` | apps/meter/src/agent_eval/test_case.rs | function | pub | 190 | new(name: impl Into<String>, description: impl Into<String>) -> Self |
+| `optional` | apps/meter/src/agent_eval/test_case.rs | function | pub | 162 | optional(mut self) -> Self |
+| `with_arguments` | apps/meter/src/agent_eval/test_case.rs | function | pub | 156 | with_arguments(mut self, args: HashMap<String, serde_json::Value>) -> Self |
+| `with_category` | apps/meter/src/agent_eval/test_case.rs | function | pub | 122 | with_category(mut self, category: impl Into<String>) -> Self |
+| `with_expected_output` | apps/meter/src/agent_eval/test_case.rs | function | pub | 86 | with_expected_output(mut self, output: impl Into<String>) -> Self |
+| `with_expected_output_regex` | apps/meter/src/agent_eval/test_case.rs | function | pub | 92 | with_expected_output_regex(mut self, regex: impl Into<String>) -> Self |
+| `with_expected_tool` | apps/meter/src/agent_eval/test_case.rs | function | pub | 98 | with_expected_tool(mut self, tool: ExpectedToolCall) -> Self |
+| `with_max_cost_usd` | apps/meter/src/agent_eval/test_case.rs | function | pub | 110 | with_max_cost_usd(mut self, max_usd: f64) -> Self |
+| `with_max_latency_ms` | apps/meter/src/agent_eval/test_case.rs | function | pub | 104 | with_max_latency_ms(mut self, max_ms: f64) -> Self |
+| `with_quality_criterion` | apps/meter/src/agent_eval/test_case.rs | function | pub | 116 | with_quality_criterion(mut self, criterion: QualityCriterion) -> Self |
+| `with_weight` | apps/meter/src/agent_eval/test_case.rs | function | pub | 199 | with_weight(mut self, weight: f64) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -48,7 +48,7 @@ use std::collections::HashMap;
 
 /// An agent test case with input, expected outputs, and constraints
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 pub struct AgentTestCase {
     /// Unique test case identifier
     pub id: String,
@@ -92,7 +92,7 @@ pub struct AgentTestCase {
     pub metadata: HashMap<String, serde_json::Value>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 impl Default for AgentTestCase {
     fn default() -> Self {
         Self {
@@ -111,7 +111,7 @@ impl Default for AgentTestCase {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 impl AgentTestCase {
     /// Create a new test case with id, name, and input
     pub fn new(id: impl Into<String>, name: impl Into<String>, input: impl Into<String>) -> Self {
@@ -168,7 +168,7 @@ impl AgentTestCase {
 
 /// Expected tool call specification
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 pub struct ExpectedToolCall {
     /// Tool name (e.g., "calculate", "search_web")
     pub name: String,
@@ -182,7 +182,7 @@ pub struct ExpectedToolCall {
     pub optional: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 impl ExpectedToolCall {
     /// Create a new expected tool call
     pub fn new(name: impl Into<String>) -> Self {
@@ -208,7 +208,7 @@ impl ExpectedToolCall {
 
 /// Quality criterion for LLM-as-judge evaluation
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 pub struct QualityCriterion {
     /// Criterion name (e.g., "relevance", "clarity", "accuracy")
     pub name: String,
@@ -225,7 +225,7 @@ fn default_weight() -> f64 {
     1.0
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-test-case-rs.md#source
 impl QualityCriterion {
     /// Create a new quality criterion
     pub fn new(name: impl Into<String>, description: impl Into<String>) -> Self {
@@ -308,10 +308,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/test_case.rs
+  - path: apps/meter/src/agent_eval/test_case.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/test_case.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/test_case.rs` captured during meter full-codegen standardization.
 ```

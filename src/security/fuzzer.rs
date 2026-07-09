@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 // CODEGEN-BEGIN
 //! Fuzzing framework for security testing
 //!
@@ -11,7 +11,7 @@ use std::time::{Duration, Instant};
 
 /// Configuration for fuzzing
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzConfig {
     /// Initial corpus of inputs to mutate
     pub corpus: Vec<String>,
@@ -25,7 +25,7 @@ pub struct FuzzConfig {
     pub timeout_ms: Option<u64>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl Default for FuzzConfig {
     fn default() -> Self {
         Self {
@@ -44,7 +44,7 @@ impl Default for FuzzConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl FuzzConfig {
     /// Create a new fuzzing configuration
     pub fn new() -> Self {
@@ -84,7 +84,7 @@ impl FuzzConfig {
 
 /// Mutation strategies for fuzzing
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub enum MutationStrategy {
     /// Flip random bits in bytes
     BitFlip,
@@ -100,7 +100,7 @@ pub enum MutationStrategy {
     Combine,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl MutationStrategy {
     /// Get all mutation strategies
     pub fn all() -> &'static [MutationStrategy] {
@@ -117,7 +117,7 @@ impl MutationStrategy {
 
 /// A crash discovered during fuzzing
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzCrash {
     /// Input that caused the crash
     pub input: String,
@@ -129,7 +129,7 @@ pub struct FuzzCrash {
 
 /// Result of a fuzzing session
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzResult {
     /// Total iterations performed
     pub iterations: u32,
@@ -140,13 +140,13 @@ pub struct FuzzResult {
 }
 
 /// Mutation-based fuzzer
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct Fuzzer {
     config: FuzzConfig,
     rng: StdRng,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl Fuzzer {
     /// Create a new fuzzer with configuration
     pub fn new(config: FuzzConfig) -> Self {

@@ -10,31 +10,31 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/security/payloads.rs
+# Standardized apps/meter/src/security/payloads.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/security/payloads.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/security/payloads.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `PayloadCategory` | projects/meter/src/security/payloads.rs | enum | pub | 11 |  |
-| `PayloadDatabase` | projects/meter/src/security/payloads.rs | struct | pub | 35 |  |
-| `all` | projects/meter/src/security/payloads.rs | function | pub | 125 | all(&self) -> Vec<&String> |
-| `by_category` | projects/meter/src/security/payloads.rs | function | pub | 110 | by_category(&self, category: PayloadCategory) -> &[String] |
-| `command_injection` | projects/meter/src/security/payloads.rs | function | pub | 95 | command_injection(&self) -> &[String] |
-| `identifier_injection` | projects/meter/src/security/payloads.rs | function | pub | 70 | identifier_injection(&self) -> &[String] |
-| `ldap_injection` | projects/meter/src/security/payloads.rs | function | pub | 100 | ldap_injection(&self) -> &[String] |
-| `new` | projects/meter/src/security/payloads.rs | function | pub | 50 | new() -> Self |
-| `nosql_injection` | projects/meter/src/security/payloads.rs | function | pub | 85 | nosql_injection(&self) -> &[String] |
-| `overflow` | projects/meter/src/security/payloads.rs | function | pub | 80 | overflow(&self) -> &[String] |
-| `path_traversal` | projects/meter/src/security/payloads.rs | function | pub | 90 | path_traversal(&self) -> &[String] |
-| `sql_injection` | projects/meter/src/security/payloads.rs | function | pub | 65 | sql_injection(&self) -> &[String] |
-| `template_injection` | projects/meter/src/security/payloads.rs | function | pub | 105 | template_injection(&self) -> &[String] |
-| `unicode_tricks` | projects/meter/src/security/payloads.rs | function | pub | 75 | unicode_tricks(&self) -> &[String] |
+| `PayloadCategory` | apps/meter/src/security/payloads.rs | enum | pub | 11 |  |
+| `PayloadDatabase` | apps/meter/src/security/payloads.rs | struct | pub | 35 |  |
+| `all` | apps/meter/src/security/payloads.rs | function | pub | 125 | all(&self) -> Vec<&String> |
+| `by_category` | apps/meter/src/security/payloads.rs | function | pub | 110 | by_category(&self, category: PayloadCategory) -> &[String] |
+| `command_injection` | apps/meter/src/security/payloads.rs | function | pub | 95 | command_injection(&self) -> &[String] |
+| `identifier_injection` | apps/meter/src/security/payloads.rs | function | pub | 70 | identifier_injection(&self) -> &[String] |
+| `ldap_injection` | apps/meter/src/security/payloads.rs | function | pub | 100 | ldap_injection(&self) -> &[String] |
+| `new` | apps/meter/src/security/payloads.rs | function | pub | 50 | new() -> Self |
+| `nosql_injection` | apps/meter/src/security/payloads.rs | function | pub | 85 | nosql_injection(&self) -> &[String] |
+| `overflow` | apps/meter/src/security/payloads.rs | function | pub | 80 | overflow(&self) -> &[String] |
+| `path_traversal` | apps/meter/src/security/payloads.rs | function | pub | 90 | path_traversal(&self) -> &[String] |
+| `sql_injection` | apps/meter/src/security/payloads.rs | function | pub | 65 | sql_injection(&self) -> &[String] |
+| `template_injection` | apps/meter/src/security/payloads.rs | function | pub | 105 | template_injection(&self) -> &[String] |
+| `unicode_tricks` | apps/meter/src/security/payloads.rs | function | pub | 75 | unicode_tricks(&self) -> &[String] |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -46,7 +46,7 @@ Public API manifest for `projects/meter/src/security/payloads.rs` generated from
 
 /// Category of security payloads
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 pub enum PayloadCategory {
     /// SQL injection attacks
     SqlInjection,
@@ -70,7 +70,7 @@ pub enum PayloadCategory {
 
 /// Database of security test payloads
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 pub struct PayloadDatabase {
     sql_injection_payloads: Vec<String>,
     identifier_injection_payloads: Vec<String>,
@@ -83,7 +83,7 @@ pub struct PayloadDatabase {
     template_injection_payloads: Vec<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 impl PayloadDatabase {
     /// Create a new payload database with all payloads
     pub fn new() -> Self {
@@ -607,7 +607,7 @@ impl PayloadDatabase {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-payloads-rs.md#source
 impl Default for PayloadDatabase {
     fn default() -> Self {
         Self::new()
@@ -899,10 +899,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/security/payloads.rs
+  - path: apps/meter/src/security/payloads.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/security/payloads.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/security/payloads.rs` captured during meter full-codegen standardization.
 ```

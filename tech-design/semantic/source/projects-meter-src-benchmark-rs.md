@@ -10,65 +10,65 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/benchmark.rs
+# Standardized apps/meter/src/benchmark.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/benchmark.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/benchmark.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AdaptiveBenchmarkConfig` | projects/meter/src/benchmark.rs | struct | pub | 531 |  |
-| `BenchmarkConfig` | projects/meter/src/benchmark.rs | struct | pub | 635 |  |
-| `BenchmarkEnvironment` | projects/meter/src/benchmark.rs | struct | pub | 1060 |  |
-| `BenchmarkReport` | projects/meter/src/benchmark.rs | struct | pub | 1025 |  |
-| `BenchmarkReportGroup` | projects/meter/src/benchmark.rs | struct | pub | 1043 |  |
-| `BenchmarkResult` | projects/meter/src/benchmark.rs | struct | pub | 435 |  |
-| `BenchmarkStats` | projects/meter/src/benchmark.rs | struct | pub | 40 |  |
-| `Benchmarker` | projects/meter/src/benchmark.rs | struct | pub | 841 |  |
-| `HistogramBucket` | projects/meter/src/benchmark.rs | struct | pub | 21 |  |
-| `add_group` | projects/meter/src/benchmark.rs | function | pub | 1089 | add_group(&mut self, group: BenchmarkReportGroup) |
-| `add_result` | projects/meter/src/benchmark.rs | function | pub | 1517 | add_result(&mut self, result: BenchmarkResult) |
-| `calibrated` | projects/meter/src/benchmark.rs | function | pub | 695 | calibrated(sample_time_ms: f64, target_time_ms: f64) -> Self |
-| `compare_results` | projects/meter/src/benchmark.rs | function | pub | 719 | compare_results(results: &[BenchmarkResult], baseline_name: Option<&str>) -> String |
-| `config` | projects/meter/src/benchmark.rs | function | pub | 892 | config(&self) -> &BenchmarkConfig |
-| `default_config` | projects/meter/src/benchmark.rs | function | pub | 853 | default_config() -> Self |
-| `failure` | projects/meter/src/benchmark.rs | function | pub | 459 | failure(name: impl Into<String>, error: impl Into<String>) -> Self |
-| `format` | projects/meter/src/benchmark.rs | function | pub | 360 | format(&self) -> String |
-| `format` | projects/meter/src/benchmark.rs | function | pub | 469 | format(&self) -> String |
-| `format_short` | projects/meter/src/benchmark.rs | function | pub | 414 | format_short(&self) -> String |
-| `from_times` | projects/meter/src/benchmark.rs | function | pub | 259 | from_times(times: Vec<f64>, iterations: u32, rounds: u32, warmup: u32) -> Self |
-| `new` | projects/meter/src/benchmark.rs | function | pub | 569 | new() -> Self |
-| `new` | projects/meter/src/benchmark.rs | function | pub | 658 | new(iterations: u32, rounds: u32, warmup: u32) -> Self |
-| `new` | projects/meter/src/benchmark.rs | function | pub | 848 | new(config: BenchmarkConfig) -> Self |
-| `new` | projects/meter/src/benchmark.rs | function | pub | 1071 | new(title: impl Into<String>) -> Self |
-| `new` | projects/meter/src/benchmark.rs | function | pub | 1502 | new(name: impl Into<String>) -> Self |
-| `ops_per_second` | projects/meter/src/benchmark.rs | function | pub | 351 | ops_per_second(&self) -> f64 |
-| `print_comparison_table` | projects/meter/src/benchmark.rs | function | pub | 784 | print_comparison_table(results: &[BenchmarkResult], baseline_name: Option<&str>) |
-| `print_detailed` | projects/meter/src/benchmark.rs | function | pub | 494 | print_detailed(&self) |
-| `quick` | projects/meter/src/benchmark.rs | function | pub | 604 | quick() -> Self |
-| `quick` | projects/meter/src/benchmark.rs | function | pub | 667 | quick() -> Self |
-| `run` | projects/meter/src/benchmark.rs | function | pub | 858 | run(&self, name: impl Into<String>, mut func: F) -> BenchmarkResult |
-| `run_adaptive` | projects/meter/src/benchmark.rs | function | pub | 909 | run_adaptive(         &self,         name: impl Into<String>,         func: F,         config: AdaptiveBenchmarkConfig,     ) -> BenchmarkResult |
-| `set_environment` | projects/meter/src/benchmark.rs | function | pub | 1095 | set_environment(&mut self, env: BenchmarkEnvironment) |
-| `success` | projects/meter/src/benchmark.rs | function | pub | 449 | success(name: impl Into<String>, stats: BenchmarkStats) -> Self |
-| `thorough` | projects/meter/src/benchmark.rs | function | pub | 618 | thorough() -> Self |
-| `thorough` | projects/meter/src/benchmark.rs | function | pub | 676 | thorough() -> Self |
-| `to_console` | projects/meter/src/benchmark.rs | function | pub | 1397 | to_console(&self) -> String |
-| `to_html` | projects/meter/src/benchmark.rs | function | pub | 1105 | to_html(&self) -> String |
-| `to_json` | projects/meter/src/benchmark.rs | function | pub | 1100 | to_json(&self) -> String |
-| `to_markdown` | projects/meter/src/benchmark.rs | function | pub | 1316 | to_markdown(&self) -> String |
-| `to_yaml` | projects/meter/src/benchmark.rs | function | pub | 1392 | to_yaml(&self) -> String |
-| `with_baseline` | projects/meter/src/benchmark.rs | function | pub | 1511 | with_baseline(mut self, baseline: impl Into<String>) -> Self |
-| `with_description` | projects/meter/src/benchmark.rs | function | pub | 1083 | with_description(mut self, desc: impl Into<String>) -> Self |
-| `with_max_iterations` | projects/meter/src/benchmark.rs | function | pub | 592 | with_max_iterations(mut self, max: u32) -> Self |
-| `with_min_iterations` | projects/meter/src/benchmark.rs | function | pub | 586 | with_min_iterations(mut self, min: u32) -> Self |
-| `with_target_ci_width` | projects/meter/src/benchmark.rs | function | pub | 580 | with_target_ci_width(mut self, ci_width_percent: f64) -> Self |
-| `with_target_cv` | projects/meter/src/benchmark.rs | function | pub | 574 | with_target_cv(mut self, cv_percent: f64) -> Self |
-| `with_timeout_ms` | projects/meter/src/benchmark.rs | function | pub | 598 | with_timeout_ms(mut self, timeout: f64) -> Self |
+| `AdaptiveBenchmarkConfig` | apps/meter/src/benchmark.rs | struct | pub | 531 |  |
+| `BenchmarkConfig` | apps/meter/src/benchmark.rs | struct | pub | 635 |  |
+| `BenchmarkEnvironment` | apps/meter/src/benchmark.rs | struct | pub | 1060 |  |
+| `BenchmarkReport` | apps/meter/src/benchmark.rs | struct | pub | 1025 |  |
+| `BenchmarkReportGroup` | apps/meter/src/benchmark.rs | struct | pub | 1043 |  |
+| `BenchmarkResult` | apps/meter/src/benchmark.rs | struct | pub | 435 |  |
+| `BenchmarkStats` | apps/meter/src/benchmark.rs | struct | pub | 40 |  |
+| `Benchmarker` | apps/meter/src/benchmark.rs | struct | pub | 841 |  |
+| `HistogramBucket` | apps/meter/src/benchmark.rs | struct | pub | 21 |  |
+| `add_group` | apps/meter/src/benchmark.rs | function | pub | 1089 | add_group(&mut self, group: BenchmarkReportGroup) |
+| `add_result` | apps/meter/src/benchmark.rs | function | pub | 1517 | add_result(&mut self, result: BenchmarkResult) |
+| `calibrated` | apps/meter/src/benchmark.rs | function | pub | 695 | calibrated(sample_time_ms: f64, target_time_ms: f64) -> Self |
+| `compare_results` | apps/meter/src/benchmark.rs | function | pub | 719 | compare_results(results: &[BenchmarkResult], baseline_name: Option<&str>) -> String |
+| `config` | apps/meter/src/benchmark.rs | function | pub | 892 | config(&self) -> &BenchmarkConfig |
+| `default_config` | apps/meter/src/benchmark.rs | function | pub | 853 | default_config() -> Self |
+| `failure` | apps/meter/src/benchmark.rs | function | pub | 459 | failure(name: impl Into<String>, error: impl Into<String>) -> Self |
+| `format` | apps/meter/src/benchmark.rs | function | pub | 360 | format(&self) -> String |
+| `format` | apps/meter/src/benchmark.rs | function | pub | 469 | format(&self) -> String |
+| `format_short` | apps/meter/src/benchmark.rs | function | pub | 414 | format_short(&self) -> String |
+| `from_times` | apps/meter/src/benchmark.rs | function | pub | 259 | from_times(times: Vec<f64>, iterations: u32, rounds: u32, warmup: u32) -> Self |
+| `new` | apps/meter/src/benchmark.rs | function | pub | 569 | new() -> Self |
+| `new` | apps/meter/src/benchmark.rs | function | pub | 658 | new(iterations: u32, rounds: u32, warmup: u32) -> Self |
+| `new` | apps/meter/src/benchmark.rs | function | pub | 848 | new(config: BenchmarkConfig) -> Self |
+| `new` | apps/meter/src/benchmark.rs | function | pub | 1071 | new(title: impl Into<String>) -> Self |
+| `new` | apps/meter/src/benchmark.rs | function | pub | 1502 | new(name: impl Into<String>) -> Self |
+| `ops_per_second` | apps/meter/src/benchmark.rs | function | pub | 351 | ops_per_second(&self) -> f64 |
+| `print_comparison_table` | apps/meter/src/benchmark.rs | function | pub | 784 | print_comparison_table(results: &[BenchmarkResult], baseline_name: Option<&str>) |
+| `print_detailed` | apps/meter/src/benchmark.rs | function | pub | 494 | print_detailed(&self) |
+| `quick` | apps/meter/src/benchmark.rs | function | pub | 604 | quick() -> Self |
+| `quick` | apps/meter/src/benchmark.rs | function | pub | 667 | quick() -> Self |
+| `run` | apps/meter/src/benchmark.rs | function | pub | 858 | run(&self, name: impl Into<String>, mut func: F) -> BenchmarkResult |
+| `run_adaptive` | apps/meter/src/benchmark.rs | function | pub | 909 | run_adaptive(         &self,         name: impl Into<String>,         func: F,         config: AdaptiveBenchmarkConfig,     ) -> BenchmarkResult |
+| `set_environment` | apps/meter/src/benchmark.rs | function | pub | 1095 | set_environment(&mut self, env: BenchmarkEnvironment) |
+| `success` | apps/meter/src/benchmark.rs | function | pub | 449 | success(name: impl Into<String>, stats: BenchmarkStats) -> Self |
+| `thorough` | apps/meter/src/benchmark.rs | function | pub | 618 | thorough() -> Self |
+| `thorough` | apps/meter/src/benchmark.rs | function | pub | 676 | thorough() -> Self |
+| `to_console` | apps/meter/src/benchmark.rs | function | pub | 1397 | to_console(&self) -> String |
+| `to_html` | apps/meter/src/benchmark.rs | function | pub | 1105 | to_html(&self) -> String |
+| `to_json` | apps/meter/src/benchmark.rs | function | pub | 1100 | to_json(&self) -> String |
+| `to_markdown` | apps/meter/src/benchmark.rs | function | pub | 1316 | to_markdown(&self) -> String |
+| `to_yaml` | apps/meter/src/benchmark.rs | function | pub | 1392 | to_yaml(&self) -> String |
+| `with_baseline` | apps/meter/src/benchmark.rs | function | pub | 1511 | with_baseline(mut self, baseline: impl Into<String>) -> Self |
+| `with_description` | apps/meter/src/benchmark.rs | function | pub | 1083 | with_description(mut self, desc: impl Into<String>) -> Self |
+| `with_max_iterations` | apps/meter/src/benchmark.rs | function | pub | 592 | with_max_iterations(mut self, max: u32) -> Self |
+| `with_min_iterations` | apps/meter/src/benchmark.rs | function | pub | 586 | with_min_iterations(mut self, min: u32) -> Self |
+| `with_target_ci_width` | apps/meter/src/benchmark.rs | function | pub | 580 | with_target_ci_width(mut self, ci_width_percent: f64) -> Self |
+| `with_target_cv` | apps/meter/src/benchmark.rs | function | pub | 574 | with_target_cv(mut self, cv_percent: f64) -> Self |
+| `with_timeout_ms` | apps/meter/src/benchmark.rs | function | pub | 598 | with_timeout_ms(mut self, timeout: f64) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -90,7 +90,7 @@ use std::time::{Duration, Instant};
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct HistogramBucket {
     /// Minimum latency in bucket (ms)
     pub min_ms: f64,
@@ -109,7 +109,7 @@ pub struct HistogramBucket {
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkStats {
     /// Number of iterations per round
     pub iterations: u32,
@@ -326,7 +326,7 @@ fn confidence_interval(mean: f64, stddev: f64, n: usize) -> (f64, f64) {
     (mean - margin, mean + margin)
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl BenchmarkStats {
     /// Create new stats from timing data
     pub fn from_times(times: Vec<f64>, iterations: u32, rounds: u32, warmup: u32) -> Self {
@@ -504,7 +504,7 @@ impl BenchmarkStats {
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkResult {
     /// Name of this benchmark
     pub name: String,
@@ -516,7 +516,7 @@ pub struct BenchmarkResult {
     pub error: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl BenchmarkResult {
     /// Create a successful benchmark result
     pub fn success(name: impl Into<String>, stats: BenchmarkStats) -> Self {
@@ -600,7 +600,7 @@ impl BenchmarkResult {
 
 /// Configuration for adaptive benchmark runs with early stopping
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct AdaptiveBenchmarkConfig {
     /// Enable adaptive sampling (if false, falls back to fixed iterations)
     pub enable_adaptive: bool,
@@ -620,7 +620,7 @@ pub struct AdaptiveBenchmarkConfig {
     pub timeout_ms: Option<f64>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl Default for AdaptiveBenchmarkConfig {
     fn default() -> Self {
         Self {
@@ -636,7 +636,7 @@ impl Default for AdaptiveBenchmarkConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl AdaptiveBenchmarkConfig {
     /// Create a new adaptive benchmark configuration
     pub fn new() -> Self {
@@ -704,7 +704,7 @@ impl AdaptiveBenchmarkConfig {
 
 /// Configuration for benchmark runs
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkConfig {
     /// Number of iterations per round
     pub iterations: u32,
@@ -714,7 +714,7 @@ pub struct BenchmarkConfig {
     pub warmup: u32,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl Default for BenchmarkConfig {
     fn default() -> Self {
         Self {
@@ -725,7 +725,7 @@ impl Default for BenchmarkConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl BenchmarkConfig {
     /// Create a new benchmark configuration
     pub fn new(iterations: u32, rounds: u32, warmup: u32) -> Self {
@@ -788,7 +788,7 @@ impl BenchmarkConfig {
 }
 
 /// Compare multiple benchmark results
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub fn compare_results(results: &[BenchmarkResult], baseline_name: Option<&str>) -> String {
     if results.is_empty() {
         return "No results to compare".to_string();
@@ -853,7 +853,7 @@ pub fn compare_results(results: &[BenchmarkResult], baseline_name: Option<&str>)
 /// cclab    1.234ms   1.200ms   1.500ms   1.800ms          2   (baseline)
 /// httpx          2.345ms   2.300ms   2.800ms   3.100ms          1   1.90x slower
 /// ```
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub fn print_comparison_table(results: &[BenchmarkResult], baseline_name: Option<&str>) {
     if results.is_empty() {
         println!("No results to compare");
@@ -910,12 +910,12 @@ pub fn print_comparison_table(results: &[BenchmarkResult], baseline_name: Option
 ///
 /// Note: For async operations, use the Python-side async benchmark function
 /// which wraps this for timing collection.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct Benchmarker {
     config: BenchmarkConfig,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl Benchmarker {
     /// Create a new benchmarker with the given configuration
     pub fn new(config: BenchmarkConfig) -> Self {
@@ -1094,7 +1094,7 @@ impl Benchmarker {
 
 /// Benchmark report for generating HTML/JSON output
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkReport {
     /// Report title
     pub title: String,
@@ -1112,7 +1112,7 @@ pub struct BenchmarkReport {
 
 /// A group of related benchmarks
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkReportGroup {
     /// Group name
     pub name: String,
@@ -1129,7 +1129,7 @@ pub struct BenchmarkReportGroup {
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 pub struct BenchmarkEnvironment {
     pub python_version: Option<String>,
     pub rust_version: Option<String>,
@@ -1138,7 +1138,7 @@ pub struct BenchmarkEnvironment {
     pub hostname: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl BenchmarkReport {
     /// Create a new benchmark report
     pub fn new(title: impl Into<String>) -> Self {
@@ -1569,7 +1569,7 @@ impl BenchmarkReport {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-benchmark-rs.md#source
 impl BenchmarkReportGroup {
     /// Create a new benchmark group
     pub fn new(name: impl Into<String>) -> Self {
@@ -2046,10 +2046,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/benchmark.rs
+  - path: apps/meter/src/benchmark.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/benchmark.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/benchmark.rs` captured during meter full-codegen standardization.
 ```

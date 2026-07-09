@@ -10,32 +10,32 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/llm_judge.rs
+# Standardized apps/meter/src/agent_eval/llm_judge.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/llm_judge.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/llm_judge.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `LLMJudge` | projects/meter/src/agent_eval/llm_judge.rs | struct | pub | 118 |  |
-| `LLMJudgeConfig` | projects/meter/src/agent_eval/llm_judge.rs | struct | pub | 15 |  |
-| `LLMJudgeResponse` | projects/meter/src/agent_eval/llm_judge.rs | struct | pub | 107 |  |
-| `config` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 402 | config(&self) -> &LLMJudgeConfig |
-| `default_config` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 149 | default_config() -> Self |
-| `evaluate` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 183 | evaluate(         &self,         input: &str,         expected: Option<&str>,         actual: &str,     ) -> Result<QualityScores, String> |
-| `new` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 60 | new(model: impl Into<String>, provider: impl Into<String>) -> Self |
-| `new` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 130 | new(config: LLMJudgeConfig) -> Self |
-| `with_criteria` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 75 | with_criteria(mut self, criteria: Vec<QualityCriterion>) -> Self |
-| `with_structured_output` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 81 | with_structured_output(mut self, enabled: bool) -> Self |
-| `with_temperature` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 69 | with_temperature(mut self, temperature: f32) -> Self |
-| `with_template` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 87 | with_template(mut self, template_name: impl Into<String>) -> Self |
-| `with_template_dir` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 154 | with_template_dir(         config: LLMJudgeConfig,         template_dir: impl AsRef<Path>,     ) -> Result<Self, String> |
-| `with_template_version` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 93 | with_template_version(         mut self,         template_name: impl Into<String>,         version: impl Into<String>,     ) -> Self |
-| `without_templates` | projects/meter/src/agent_eval/llm_judge.rs | function | pub | 167 | without_templates(config: LLMJudgeConfig) -> Self |
+| `LLMJudge` | apps/meter/src/agent_eval/llm_judge.rs | struct | pub | 118 |  |
+| `LLMJudgeConfig` | apps/meter/src/agent_eval/llm_judge.rs | struct | pub | 15 |  |
+| `LLMJudgeResponse` | apps/meter/src/agent_eval/llm_judge.rs | struct | pub | 107 |  |
+| `config` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 402 | config(&self) -> &LLMJudgeConfig |
+| `default_config` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 149 | default_config() -> Self |
+| `evaluate` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 183 | evaluate(         &self,         input: &str,         expected: Option<&str>,         actual: &str,     ) -> Result<QualityScores, String> |
+| `new` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 60 | new(model: impl Into<String>, provider: impl Into<String>) -> Self |
+| `new` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 130 | new(config: LLMJudgeConfig) -> Self |
+| `with_criteria` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 75 | with_criteria(mut self, criteria: Vec<QualityCriterion>) -> Self |
+| `with_structured_output` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 81 | with_structured_output(mut self, enabled: bool) -> Self |
+| `with_temperature` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 69 | with_temperature(mut self, temperature: f32) -> Self |
+| `with_template` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 87 | with_template(mut self, template_name: impl Into<String>) -> Self |
+| `with_template_dir` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 154 | with_template_dir(         config: LLMJudgeConfig,         template_dir: impl AsRef<Path>,     ) -> Result<Self, String> |
+| `with_template_version` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 93 | with_template_version(         mut self,         template_name: impl Into<String>,         version: impl Into<String>,     ) -> Self |
+| `without_templates` | apps/meter/src/agent_eval/llm_judge.rs | function | pub | 167 | without_templates(config: LLMJudgeConfig) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -51,7 +51,7 @@ use std::path::Path;
 
 /// LLM-as-judge configuration
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudgeConfig {
     /// Model to use for judging (e.g., "gpt-4o-mini", "claude-3-haiku")
     pub model: String,
@@ -75,7 +75,7 @@ pub struct LLMJudgeConfig {
     pub template_version: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl Default for LLMJudgeConfig {
     fn default() -> Self {
         Self {
@@ -94,7 +94,7 @@ impl Default for LLMJudgeConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl LLMJudgeConfig {
     /// Create a new LLM judge configuration
     pub fn new(model: impl Into<String>, provider: impl Into<String>) -> Self {
@@ -143,7 +143,7 @@ impl LLMJudgeConfig {
 
 /// LLM judge response structure (for JSON parsing)
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudgeResponse {
     /// Individual criterion scores (0.0-1.0)
     pub scores: HashMap<String, f64>,
@@ -154,13 +154,13 @@ pub struct LLMJudgeResponse {
 }
 
 /// LLM-as-judge evaluator
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudge {
     config: LLMJudgeConfig,
     registry: PromptRegistry,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl LLMJudge {
     /// Create a new LLM judge with the given configuration
     ///
@@ -684,10 +684,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/llm_judge.rs
+  - path: apps/meter/src/agent_eval/llm_judge.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/llm_judge.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/llm_judge.rs` captured during meter full-codegen standardization.
 ```

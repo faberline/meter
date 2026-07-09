@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-tests-async-fuzzing-test-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-tests-async-fuzzing-test-rs.md#source
 // CODEGEN-BEGIN
 use meter::{AsyncFuzzConfig, AsyncFuzzer};
 use tokio::time::Duration;

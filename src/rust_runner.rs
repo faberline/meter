@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 // CODEGEN-BEGIN
 //! Rust runner integration - integrates with cargo test/bench/fuzz
 //!
@@ -16,7 +16,7 @@ use std::process::{Command, Stdio};
 /// Rust test event from cargo test --message-format=json
 #[derive(Debug, Clone, Deserialize)]
 #[serde(tag = "type")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub enum CargoTestEvent {
     /// Test suite started
     #[serde(rename = "suite")]
@@ -31,7 +31,7 @@ pub enum CargoTestEvent {
 
 /// Suite-level event
 #[derive(Debug, Clone, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct SuiteEvent {
     pub event: String, // "started", "ok", "failed"
     #[serde(default)]
@@ -46,7 +46,7 @@ pub struct SuiteEvent {
 
 /// Individual test event
 #[derive(Debug, Clone, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct TestEvent {
     pub event: String, // "started", "ok", "failed", "ignored"
     pub name: String,
@@ -60,7 +60,7 @@ pub struct TestEvent {
 
 /// Benchmark event
 #[derive(Debug, Clone, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct BenchEvent {
     pub name: String,
     pub median: u64,
@@ -69,7 +69,7 @@ pub struct BenchEvent {
 
 /// Cargo test runner configuration
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct RustRunnerConfig {
     /// Path to Cargo.toml or project directory
     pub project_path: PathBuf,
@@ -85,7 +85,7 @@ pub struct RustRunnerConfig {
     pub env: Vec<(String, String)>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 impl Default for RustRunnerConfig {
     fn default() -> Self {
         Self {
@@ -101,7 +101,7 @@ impl Default for RustRunnerConfig {
 
 /// Rust runner result
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct RustRunnerResult {
     /// Individual test results
     pub results: Vec<TestResult>,
@@ -120,12 +120,12 @@ pub struct RustRunnerResult {
 }
 
 /// Rust test runner
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct RustRunner {
     config: RustRunnerConfig,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 impl RustRunner {
     /// Create a new Rust runner
     pub fn new(config: RustRunnerConfig) -> Self {
@@ -497,7 +497,7 @@ impl<'de> Deserialize<'de> for WarningsField {
 /// `Deserialize` reads that shape while ALSO accepting a flat shape (id/title/
 /// etc. at the top level), so the public field set below is unchanged.
 #[derive(Debug, Clone, Serialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct Vulnerability {
     /// Advisory ID (e.g., RUSTSEC-2021-0001)
     pub id: String,
@@ -580,7 +580,7 @@ impl<'de> Deserialize<'de> for Vulnerability {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct Package {
     pub name: String,
     pub version: String,
@@ -588,7 +588,7 @@ pub struct Package {
 
 /// Audit warning
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct AuditWarning {
     pub kind: String,
     pub package: Option<Package>,
@@ -597,13 +597,13 @@ pub struct AuditWarning {
 
 /// Result of cargo-audit scan
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub struct AuditResult {
     pub vulnerabilities: Vec<Vulnerability>,
     pub warnings: Vec<AuditWarning>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 impl AuditResult {
     /// Check if there are any critical vulnerabilities
     pub fn has_critical(&self) -> bool {
@@ -627,13 +627,13 @@ impl AuditResult {
 }
 
 /// Detect if a directory is a Rust project
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub fn is_rust_project(path: &Path) -> bool {
     path.join("Cargo.toml").exists()
 }
 
 /// Get Rust toolchain version info
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub fn get_rust_version() -> Option<String> {
     let output = Command::new("rustc").arg("--version").output().ok()?;
 
@@ -645,7 +645,7 @@ pub fn get_rust_version() -> Option<String> {
 }
 
 /// Get cargo version
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-rust-runner-rs.md#source
 pub fn get_cargo_version() -> Option<String> {
     let output = Command::new("cargo").arg("--version").output().ok()?;
 

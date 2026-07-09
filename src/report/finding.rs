@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 // CODEGEN-BEGIN
 //! Finding schema — the per-issue unit inside a [`MeterReport`](super::MeterReport).
 //!
@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 
 /// A single machine-actionable issue surfaced by a `meter` verb.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Finding {
     /// STABLE/DETERMINISTIC `"{kind}:{slug}"` identifier. Examples:
     /// `"rust_vuln:RUSTSEC-2021-0001"`, `"hotspot:mb_release"`,
@@ -45,7 +45,7 @@ pub struct Finding {
 
 /// A literally-runnable next step the agent can execute verbatim.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Invoke {
     /// The command to run (e.g. `"cargo test -p meter mod::name"`).
     pub command: String,
@@ -54,7 +54,7 @@ pub struct Invoke {
     pub args: serde_json::Value,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Invoke {
     /// Construct a command-only invoke with a null args payload.
     pub fn command(command: impl Into<String>) -> Self {
@@ -67,7 +67,7 @@ impl Invoke {
 
 /// Optional source location for a finding.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Location {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub file: Option<String>,
@@ -80,7 +80,7 @@ pub struct Location {
 /// Severity bucket. Sorted critical -> info when ordering findings.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub enum Severity {
     Critical,
     High,
@@ -89,7 +89,7 @@ pub enum Severity {
     Info,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Severity {
     /// Descending rank: higher number = more severe (for sort-desc).
     pub fn rank(&self) -> u8 {
@@ -129,7 +129,7 @@ impl Severity {
 /// `evidence` JSON shape it carries.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub enum Kind {
     /// `meter measure --level sample` — `{symbol,self_ns,total_ns,pct,samples,rank}` (C1 contract).
     Hotspot,
@@ -152,7 +152,7 @@ pub enum Kind {
     Vital,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Kind {
     /// Lowercase snake_case label, matching the serde representation.
     pub fn as_str(&self) -> &'static str {
@@ -200,7 +200,7 @@ impl Kind {
 
 /// Build a deterministic finding id as `"{prefix}:{slug}"`. The slug is taken
 /// verbatim (callers are responsible for stable slugs).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub fn finding_id(kind: Kind, slug: impl AsRef<str>) -> String {
     format!("{}:{}", kind.id_prefix(), slug.as_ref())
 }

@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 // CODEGEN-BEGIN
 // Discovery module for dbtest CLI
 //
@@ -13,7 +13,7 @@ use std::time::Instant;
 
 /// File type classification
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub enum FileType {
     Test,
     Benchmark,
@@ -21,7 +21,7 @@ pub enum FileType {
 
 /// Configuration for file discovery
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct DiscoveryConfig {
     /// Root path to start discovery
     pub root_path: PathBuf,
@@ -35,7 +35,7 @@ pub struct DiscoveryConfig {
     pub num_threads: usize,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for DiscoveryConfig {
     fn default() -> Self {
         Self {
@@ -52,7 +52,7 @@ impl Default for DiscoveryConfig {
 
 /// File information discovered by walkdir
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct FileInfo {
     /// Absolute path to the file
     pub path: PathBuf,
@@ -64,7 +64,7 @@ pub struct FileInfo {
     pub language: Language,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl FileInfo {
     /// Detect language from file extension
     fn detect_language(path: &Path) -> Language {
@@ -153,7 +153,7 @@ impl FileInfo {
 
 /// Statistics from discovery process
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct DiscoveryStats {
     pub files_found: usize,
     pub filtered_count: usize,
@@ -166,12 +166,12 @@ pub struct DiscoveryStats {
 
 /// Registry for test files
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct TestRegistry {
     files: Vec<FileInfo>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl TestRegistry {
     pub fn new() -> Self {
         Self { files: Vec::new() }
@@ -201,7 +201,7 @@ impl TestRegistry {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for TestRegistry {
     fn default() -> Self {
         Self::new()
@@ -210,12 +210,12 @@ impl Default for TestRegistry {
 
 /// Registry for benchmark files
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct BenchmarkRegistry {
     files: Vec<FileInfo>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl BenchmarkRegistry {
     pub fn new() -> Self {
         Self { files: Vec::new() }
@@ -245,7 +245,7 @@ impl BenchmarkRegistry {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for BenchmarkRegistry {
     fn default() -> Self {
         Self::new()
@@ -253,7 +253,7 @@ impl Default for BenchmarkRegistry {
 }
 
 /// Walk file system and discover test/benchmark files using parallel traversal
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub fn walk_files(config: &DiscoveryConfig) -> Result<Vec<FileInfo>, String> {
     let start = Instant::now();
     let mut files = Vec::new();
@@ -343,7 +343,7 @@ fn pattern_matches(text: &str, pattern: &str) -> bool {
 }
 
 /// Filter files by pattern
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub fn filter_files(files: Vec<FileInfo>, pattern: &str) -> Vec<FileInfo> {
     files
         .into_iter()

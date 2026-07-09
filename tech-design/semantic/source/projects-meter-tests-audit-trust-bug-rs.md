@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/tests/audit_trust_bug.rs
+# Standardized apps/meter/tests/audit_trust_bug.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/tests/audit_trust_bug.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/tests/audit_trust_bug.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -96,10 +96,10 @@ fn run_audit_surfaces_known_advisory() {
 
 ```yaml
 changes:
-  - path: projects/meter/tests/audit_trust_bug.rs
+  - path: apps/meter/tests/audit_trust_bug.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/tests/audit_trust_bug.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/tests/audit_trust_bug.rs` captured during meter full-codegen standardization.
 ```

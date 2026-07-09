@@ -65,7 +65,7 @@ e2e_tests:
     claim_id: profile-phase-boundary-cost-report
     contract_id: profile-phase-boundary-cost-report
     category: performance
-    command: "cargo run -p meter-cli --bin meter -- profile --phases projects/meter/tests/fixtures/profile_phase_breakdown.json"
+    command: "cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json"
     assertions:
       - "meter profile emits ranked boundary-cost findings from a serialized PhaseBreakdown"
       - "the deterministic profile path remains agent-readable JSON without requiring sampler privileges"

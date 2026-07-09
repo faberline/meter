@@ -1,4 +1,4 @@
-<!-- SPEC-MANAGED: projects/meter/tech-design/semantic/meter-projects-meter.md#schema -->
+<!-- SPEC-MANAGED: apps/meter/tech-design/semantic/meter-projects-meter.md#schema -->
 <!-- CODEGEN-BEGIN -->
 # meter Agent Context
 
@@ -7,7 +7,7 @@
 ## Tech Design
 
 - [Tech Design](tech-design): implementation source of truth.
-- Validate: `aw td check projects/meter/tech-design`.
+- Validate: `aw td check apps/meter/tech-design`.
 
 ## Capability Map
 

@@ -10,40 +10,40 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/discovery.rs
+# Standardized apps/meter/src/discovery.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/discovery.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/discovery.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `BenchmarkRegistry` | projects/meter/src/discovery.rs | struct | pub | 214 |  |
-| `DiscoveryConfig` | projects/meter/src/discovery.rs | struct | pub | 25 |  |
-| `DiscoveryStats` | projects/meter/src/discovery.rs | struct | pub | 157 |  |
-| `FileInfo` | projects/meter/src/discovery.rs | struct | pub | 56 |  |
-| `FileType` | projects/meter/src/discovery.rs | enum | pub | 17 |  |
-| `TestRegistry` | projects/meter/src/discovery.rs | struct | pub | 170 |  |
-| `clear` | projects/meter/src/discovery.rs | function | pub | 199 | clear(&mut self) |
-| `clear` | projects/meter/src/discovery.rs | function | pub | 243 | clear(&mut self) |
-| `count` | projects/meter/src/discovery.rs | function | pub | 195 | count(&self) -> usize |
-| `count` | projects/meter/src/discovery.rs | function | pub | 239 | count(&self) -> usize |
-| `filter_by_pattern` | projects/meter/src/discovery.rs | function | pub | 190 | filter_by_pattern(&mut self, pattern: &str) -> &mut Self |
-| `filter_by_pattern` | projects/meter/src/discovery.rs | function | pub | 234 | filter_by_pattern(&mut self, pattern: &str) -> &mut Self |
-| `filter_files` | projects/meter/src/discovery.rs | function | pub | 347 | filter_files(files: Vec<FileInfo>, pattern: &str) -> Vec<FileInfo> |
-| `from_path` | projects/meter/src/discovery.rs | function | pub | 82 | from_path(path: &Path, root: &Path) -> Result<Self, String> |
-| `from_path_with_language` | projects/meter/src/discovery.rs | function | pub | 87 | from_path_with_language(         path: &Path,         root: &Path,         language: Option<Language>,     ) -> Result<Self, String> |
-| `get_all` | projects/meter/src/discovery.rs | function | pub | 186 | get_all(&self) -> &[FileInfo] |
-| `get_all` | projects/meter/src/discovery.rs | function | pub | 230 | get_all(&self) -> &[FileInfo] |
-| `matches_pattern` | projects/meter/src/discovery.rs | function | pub | 140 | matches_pattern(&self, pattern: &str) -> bool |
-| `new` | projects/meter/src/discovery.rs | function | pub | 176 | new() -> Self |
-| `new` | projects/meter/src/discovery.rs | function | pub | 220 | new() -> Self |
-| `register` | projects/meter/src/discovery.rs | function | pub | 180 | register(&mut self, file: FileInfo) |
-| `register` | projects/meter/src/discovery.rs | function | pub | 224 | register(&mut self, file: FileInfo) |
-| `walk_files` | projects/meter/src/discovery.rs | function | pub | 257 | walk_files(config: &DiscoveryConfig) -> Result<Vec<FileInfo>, String> |
+| `BenchmarkRegistry` | apps/meter/src/discovery.rs | struct | pub | 214 |  |
+| `DiscoveryConfig` | apps/meter/src/discovery.rs | struct | pub | 25 |  |
+| `DiscoveryStats` | apps/meter/src/discovery.rs | struct | pub | 157 |  |
+| `FileInfo` | apps/meter/src/discovery.rs | struct | pub | 56 |  |
+| `FileType` | apps/meter/src/discovery.rs | enum | pub | 17 |  |
+| `TestRegistry` | apps/meter/src/discovery.rs | struct | pub | 170 |  |
+| `clear` | apps/meter/src/discovery.rs | function | pub | 199 | clear(&mut self) |
+| `clear` | apps/meter/src/discovery.rs | function | pub | 243 | clear(&mut self) |
+| `count` | apps/meter/src/discovery.rs | function | pub | 195 | count(&self) -> usize |
+| `count` | apps/meter/src/discovery.rs | function | pub | 239 | count(&self) -> usize |
+| `filter_by_pattern` | apps/meter/src/discovery.rs | function | pub | 190 | filter_by_pattern(&mut self, pattern: &str) -> &mut Self |
+| `filter_by_pattern` | apps/meter/src/discovery.rs | function | pub | 234 | filter_by_pattern(&mut self, pattern: &str) -> &mut Self |
+| `filter_files` | apps/meter/src/discovery.rs | function | pub | 347 | filter_files(files: Vec<FileInfo>, pattern: &str) -> Vec<FileInfo> |
+| `from_path` | apps/meter/src/discovery.rs | function | pub | 82 | from_path(path: &Path, root: &Path) -> Result<Self, String> |
+| `from_path_with_language` | apps/meter/src/discovery.rs | function | pub | 87 | from_path_with_language(         path: &Path,         root: &Path,         language: Option<Language>,     ) -> Result<Self, String> |
+| `get_all` | apps/meter/src/discovery.rs | function | pub | 186 | get_all(&self) -> &[FileInfo] |
+| `get_all` | apps/meter/src/discovery.rs | function | pub | 230 | get_all(&self) -> &[FileInfo] |
+| `matches_pattern` | apps/meter/src/discovery.rs | function | pub | 140 | matches_pattern(&self, pattern: &str) -> bool |
+| `new` | apps/meter/src/discovery.rs | function | pub | 176 | new() -> Self |
+| `new` | apps/meter/src/discovery.rs | function | pub | 220 | new() -> Self |
+| `register` | apps/meter/src/discovery.rs | function | pub | 180 | register(&mut self, file: FileInfo) |
+| `register` | apps/meter/src/discovery.rs | function | pub | 224 | register(&mut self, file: FileInfo) |
+| `walk_files` | apps/meter/src/discovery.rs | function | pub | 257 | walk_files(config: &DiscoveryConfig) -> Result<Vec<FileInfo>, String> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -61,7 +61,7 @@ use std::time::Instant;
 
 /// File type classification
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub enum FileType {
     Test,
     Benchmark,
@@ -69,7 +69,7 @@ pub enum FileType {
 
 /// Configuration for file discovery
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct DiscoveryConfig {
     /// Root path to start discovery
     pub root_path: PathBuf,
@@ -83,7 +83,7 @@ pub struct DiscoveryConfig {
     pub num_threads: usize,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for DiscoveryConfig {
     fn default() -> Self {
         Self {
@@ -100,7 +100,7 @@ impl Default for DiscoveryConfig {
 
 /// File information discovered by walkdir
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct FileInfo {
     /// Absolute path to the file
     pub path: PathBuf,
@@ -112,7 +112,7 @@ pub struct FileInfo {
     pub language: Language,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl FileInfo {
     /// Detect language from file extension
     fn detect_language(path: &Path) -> Language {
@@ -201,7 +201,7 @@ impl FileInfo {
 
 /// Statistics from discovery process
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct DiscoveryStats {
     pub files_found: usize,
     pub filtered_count: usize,
@@ -214,12 +214,12 @@ pub struct DiscoveryStats {
 
 /// Registry for test files
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct TestRegistry {
     files: Vec<FileInfo>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl TestRegistry {
     pub fn new() -> Self {
         Self { files: Vec::new() }
@@ -249,7 +249,7 @@ impl TestRegistry {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for TestRegistry {
     fn default() -> Self {
         Self::new()
@@ -258,12 +258,12 @@ impl Default for TestRegistry {
 
 /// Registry for benchmark files
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub struct BenchmarkRegistry {
     files: Vec<FileInfo>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl BenchmarkRegistry {
     pub fn new() -> Self {
         Self { files: Vec::new() }
@@ -293,7 +293,7 @@ impl BenchmarkRegistry {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 impl Default for BenchmarkRegistry {
     fn default() -> Self {
         Self::new()
@@ -301,7 +301,7 @@ impl Default for BenchmarkRegistry {
 }
 
 /// Walk file system and discover test/benchmark files using parallel traversal
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub fn walk_files(config: &DiscoveryConfig) -> Result<Vec<FileInfo>, String> {
     let start = Instant::now();
     let mut files = Vec::new();
@@ -391,7 +391,7 @@ fn pattern_matches(text: &str, pattern: &str) -> bool {
 }
 
 /// Filter files by pattern
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-discovery-rs.md#source
 pub fn filter_files(files: Vec<FileInfo>, pattern: &str) -> Vec<FileInfo> {
     files
         .into_iter()
@@ -529,10 +529,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/discovery.rs
+  - path: apps/meter/src/discovery.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/discovery.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/discovery.rs` captured during meter full-codegen standardization.
 ```

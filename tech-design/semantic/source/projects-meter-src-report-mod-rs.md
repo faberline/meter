@@ -10,25 +10,25 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/mod.rs
+# Standardized apps/meter/src/report/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `builder` | projects/meter/src/report/mod.rs | module | pub | 15 |  |
-| `emit` | projects/meter/src/report/mod.rs | module | pub | 16 |  |
-| `env` | projects/meter/src/report/mod.rs | module | pub | 17 |  |
-| `envelope` | projects/meter/src/report/mod.rs | module | pub | 18 |  |
-| `finding` | projects/meter/src/report/mod.rs | module | pub | 19 |  |
-| `persist` | projects/meter/src/report/mod.rs | module | pub | 20 |  |
-| `producer` | projects/meter/src/report/mod.rs | module | pub | 21 |  |
-| `schema` | projects/meter/src/report/mod.rs | module | pub | 22 |  |
+| `builder` | apps/meter/src/report/mod.rs | module | pub | 15 |  |
+| `emit` | apps/meter/src/report/mod.rs | module | pub | 16 |  |
+| `env` | apps/meter/src/report/mod.rs | module | pub | 17 |  |
+| `envelope` | apps/meter/src/report/mod.rs | module | pub | 18 |  |
+| `finding` | apps/meter/src/report/mod.rs | module | pub | 19 |  |
+| `persist` | apps/meter/src/report/mod.rs | module | pub | 20 |  |
+| `producer` | apps/meter/src/report/mod.rs | module | pub | 21 |  |
+| `schema` | apps/meter/src/report/mod.rs | module | pub | 22 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -71,10 +71,10 @@ pub use schema::{catalog, json_schema};
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/mod.rs
+  - path: apps/meter/src/report/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/mod.rs` captured during meter full-codegen standardization.
 ```

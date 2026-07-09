@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# SPEC-MANAGED: projects/meter/tech-design/semantic/meter-build-script.md#text-source-unit
+# SPEC-MANAGED: apps/meter/tech-design/semantic/meter-build-script.md#text-source-unit
 # CODEGEN-BEGIN
 set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: projects/meter/build.sh <debug|release>
+Usage: apps/meter/build.sh <debug|release>
 
 debug    Build meter-cli and install target/debug/meter to ~/.cargo/bin/meter.
 release  Build/install meter, create a release commit, and print the tag to push after git:land.
@@ -16,7 +16,7 @@ fail_hint() {
   local mode="$1"
   echo ""
   echo "Build failed."
-  echo "Retry with: projects/meter/build.sh ${mode}"
+  echo "Retry with: apps/meter/build.sh ${mode}"
   echo "Verify with: ~/.cargo/bin/meter --version"
 }
 
@@ -57,8 +57,8 @@ install_meter() {
 }
 
 if [[ "$MODE" == "debug" ]]; then
-  VERSION_FILES=(projects/meter/Cargo.toml projects/meter/meter-cli/Cargo.toml)
-  CURRENT_VERSION="$(project_build_read_version projects/meter/meter-cli/Cargo.toml)"
+  VERSION_FILES=(apps/meter/Cargo.toml apps/meter/meter-cli/Cargo.toml)
+  CURRENT_VERSION="$(project_build_read_version apps/meter/meter-cli/Cargo.toml)"
   project_build_prepare_debug_version meter "$CURRENT_VERSION" "${VERSION_FILES[@]}"
   cargo build -p meter-cli
   install_meter debug
@@ -68,8 +68,8 @@ if [[ "$MODE" == "debug" ]]; then
   exit 0
 fi
 
-VERSION_FILES=(projects/meter/Cargo.toml projects/meter/meter-cli/Cargo.toml)
-CURRENT_VERSION="$(project_build_read_version projects/meter/meter-cli/Cargo.toml)"
+VERSION_FILES=(apps/meter/Cargo.toml apps/meter/meter-cli/Cargo.toml)
+CURRENT_VERSION="$(project_build_read_version apps/meter/meter-cli/Cargo.toml)"
 export PROJECT_BUILD_REQUIRE_REMOTE_TAG_CHECK=1
 project_build_prepare_release_version meter "$CURRENT_VERSION" "${VERSION_FILES[@]}"
 
@@ -78,7 +78,7 @@ cargo build --release -p meter-cli
 install_meter release
 
 TAG="${PROJECT_BUILD_RELEASE_TAG}"
-git add Cargo.lock projects/meter
+git add Cargo.lock apps/meter
 git commit --allow-empty -m "release(meter): ${TAG}"
 
 project_build_print_release_next_steps meter "$TAG"

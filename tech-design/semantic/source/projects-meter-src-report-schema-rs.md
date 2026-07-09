@@ -10,19 +10,19 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/schema.rs
+# Standardized apps/meter/src/report/schema.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/schema.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/schema.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `catalog` | projects/meter/src/report/schema.rs | function | pub | 151 | catalog() -> Value |
-| `json_schema` | projects/meter/src/report/schema.rs | function | pub | 20 | json_schema() -> Value |
+| `catalog` | apps/meter/src/report/schema.rs | function | pub | 151 | catalog() -> Value |
+| `json_schema` | apps/meter/src/report/schema.rs | function | pub | 20 | json_schema() -> Value |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -43,7 +43,7 @@ use super::finding::{Kind, Severity};
 ///
 /// Deterministic by construction: built from object literals in a fixed order,
 /// so repeated `--compact` emissions are byte-identical.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
 pub fn json_schema() -> Value {
     json!({
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -174,7 +174,7 @@ pub fn json_schema() -> Value {
 }
 
 /// A discovery catalog: closed severity/kind sets and per-kind evidence shapes.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
 pub fn catalog() -> Value {
     json!({
         "schema_version": SCHEMA_VERSION,
@@ -250,10 +250,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/schema.rs
+  - path: apps/meter/src/report/schema.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/schema.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/schema.rs` captured during meter full-codegen standardization.
 ```

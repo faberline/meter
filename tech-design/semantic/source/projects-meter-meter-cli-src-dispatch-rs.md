@@ -10,28 +10,28 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/meter-cli/src/dispatch.rs
+# Standardized apps/meter/meter-cli/src/dispatch.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/meter-cli/src/dispatch.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/meter-cli/src/dispatch.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `BenchArgs` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 104 |  |
-| `Dispatched` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 215 |  |
-| `LlmArgs` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 92 |  |
-| `MeterCommand` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 28 |  |
-| `OutputOpts` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 40 |  |
-| `ProfileArgs` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 124 |  |
-| `RunArgs` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 177 |  |
-| `SpecArgs` | projects/meter/meter-cli/src/dispatch.rs | struct | pub | 80 |  |
-| `Verb` | projects/meter/meter-cli/src/dispatch.rs | enum | pub | 53 |  |
-| `dispatch` | projects/meter/meter-cli/src/dispatch.rs | function | pub | 232 | dispatch(cmd: MeterCommand, out: &OutputOpts) -> Dispatched |
-| `print_report` | projects/meter/meter-cli/src/dispatch.rs | function | pub | 807 | print_report(report: &MeterReport, out: &OutputOpts) |
+| `BenchArgs` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 104 |  |
+| `Dispatched` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 215 |  |
+| `LlmArgs` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 92 |  |
+| `MeterCommand` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 28 |  |
+| `OutputOpts` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 40 |  |
+| `ProfileArgs` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 124 |  |
+| `RunArgs` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 177 |  |
+| `SpecArgs` | apps/meter/meter-cli/src/dispatch.rs | struct | pub | 80 |  |
+| `Verb` | apps/meter/meter-cli/src/dispatch.rs | enum | pub | 53 |  |
+| `dispatch` | apps/meter/meter-cli/src/dispatch.rs | function | pub | 232 | dispatch(cmd: MeterCommand, out: &OutputOpts) -> Dispatched |
+| `print_report` | apps/meter/meter-cli/src/dispatch.rs | function | pub | 807 | print_report(report: &MeterReport, out: &OutputOpts) |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -60,7 +60,7 @@ use meter::report::{persist, schema};
     about = "meter — local runtime resource measurement for agents (JSON on stdout by default)",
     disable_help_subcommand = true
 )]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct MeterCommand {
     #[command(subcommand)]
     pub verb: Verb,
@@ -72,7 +72,7 @@ pub struct MeterCommand {
 /// Output-format opt-ins shared by every verb. JSON-on-stdout is the default;
 /// these only switch the rendering, never the channel.
 #[derive(Args, Debug, Clone, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct OutputOpts {
     /// Render a human-readable summary to stderr in addition to the JSON report.
     #[arg(long, global = true)]
@@ -85,7 +85,7 @@ pub struct OutputOpts {
 /// The verb set. Every public verb does real work: `test`/`report`/`state`/
 /// `spec`/`llm`/`profile`/`bench` plus the composite `run` sweep.
 #[derive(Subcommand, Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub enum Verb {
     /// Delegate to cargo nextest/test and FORWARD the child exit code.
     Test {
@@ -112,7 +112,7 @@ pub enum Verb {
 
 /// `meter spec` flags.
 #[derive(Args, Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct SpecArgs {
     /// Emit the MeterReport JSON-Schema (this is the default).
     #[arg(long)]
@@ -124,7 +124,7 @@ pub struct SpecArgs {
 
 /// `meter llm` flags.
 #[derive(Args, Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct LlmArgs {
     /// Topic: `guide` (markdown playbook) or `recipes` (machine recipes).
     #[arg(default_value = "guide")]
@@ -136,7 +136,7 @@ pub struct LlmArgs {
 
 /// `meter bench` flags.
 #[derive(Args, Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct BenchArgs {
     /// Crate path (or `Cargo.toml`) to benchmark via `cargo bench` (default `.`).
     #[arg(long, default_value = ".")]
@@ -156,7 +156,7 @@ pub struct BenchArgs {
 /// path: it reads a serialized `PhaseBreakdown` and emits `BoundaryCost`
 /// findings without spawning anything.
 #[derive(Args, Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct ProfileArgs {
     /// Sample `cargo run --bin <name>`.
     #[arg(long, group = "profile_target")]
@@ -209,7 +209,7 @@ pub struct ProfileArgs {
 /// sub-finding (`ToolError > Regression > Findings > Clean`); a delegated test
 /// failure NEVER overrides a meter-native regression.
 #[derive(Args, Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct RunArgs {
     /// The crate path the delegated/resource sub-verbs operate on.
     #[arg(long, default_value = ".")]
@@ -247,7 +247,7 @@ pub struct RunArgs {
 }
 
 /// Outcome of dispatching a verb.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub struct Dispatched {
     /// The report carrying the process exit code (and, for non-offline verbs,
     /// the document printed to stdout).
@@ -264,7 +264,7 @@ pub struct Dispatched {
 /// emit; offline verbs (`spec`, `llm`) print their own raw payload and set
 /// `stdout_written = true` so stdout stays exactly one JSON/markdown document.
 /// The returned report's `exit_code` is the process exit code the caller yields.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub fn dispatch(cmd: MeterCommand, out: &OutputOpts) -> Dispatched {
     let (report, stdout_written) = match cmd.verb {
         Verb::Test { args } => (run_test(args), false),
@@ -839,7 +839,7 @@ fn persist_quietly(report: &MeterReport) {
 
 /// Emit the report as the single stdout JSON document, plus an optional
 /// human-readable stderr summary.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-dispatch-rs.md#source
 pub fn print_report(report: &MeterReport, out: &OutputOpts) {
     emit(report, out.compact);
     if out.human {
@@ -1429,10 +1429,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/meter-cli/src/dispatch.rs
+  - path: apps/meter/meter-cli/src/dispatch.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/meter-cli/src/dispatch.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/meter-cli/src/dispatch.rs` captured during meter full-codegen standardization.
 ```

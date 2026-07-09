@@ -10,18 +10,18 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/env.rs
+# Standardized apps/meter/src/report/env.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/env.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/env.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `detect` | projects/meter/src/report/env.rs | function | pub | 18 | detect() -> EnvBlock |
+| `detect` | apps/meter/src/report/env.rs | function | pub | 18 | detect() -> EnvBlock |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -37,7 +37,7 @@ use std::process::Command;
 
 use super::envelope::EnvBlock;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
 impl EnvBlock {
     /// Detect the current environment. Read-only: probes tool presence via
     /// `--version` invocations and compile-time `cfg!` for the sampler backend.
@@ -121,10 +121,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/env.rs
+  - path: apps/meter/src/report/env.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/env.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/env.rs` captured during meter full-codegen standardization.
 ```

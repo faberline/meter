@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-benches-discovery-benchmark-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-benches-discovery-benchmark-rs.md#source
 // CODEGEN-BEGIN
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
 use meter::discovery::{walk_files, DiscoveryConfig};

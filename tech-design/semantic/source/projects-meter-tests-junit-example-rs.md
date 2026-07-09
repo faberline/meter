@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/tests/junit_example.rs
+# Standardized apps/meter/tests/junit_example.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/tests/junit_example.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/tests/junit_example.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -74,10 +74,10 @@ fn show_enhanced_junit_xml() {
 
 ```yaml
 changes:
-  - path: projects/meter/tests/junit_example.rs
+  - path: apps/meter/tests/junit_example.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/tests/junit_example.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/tests/junit_example.rs` captured during meter full-codegen standardization.
 ```

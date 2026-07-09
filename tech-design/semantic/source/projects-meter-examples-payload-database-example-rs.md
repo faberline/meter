@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/examples/payload_database_example.rs
+# Standardized apps/meter/examples/payload_database_example.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/examples/payload_database_example.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/examples/payload_database_example.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -101,10 +101,10 @@ fn main() {
 
 ```yaml
 changes:
-  - path: projects/meter/examples/payload_database_example.rs
+  - path: apps/meter/examples/payload_database_example.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/examples/payload_database_example.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/examples/payload_database_example.rs` captured during meter full-codegen standardization.
 ```

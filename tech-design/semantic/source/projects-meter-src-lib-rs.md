@@ -10,35 +10,35 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/lib.rs
+# Standardized apps/meter/src/lib.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/lib.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/lib.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `agent_eval` | projects/meter/src/lib.rs | module | pub | 25 |  |
-| `assertions` | projects/meter/src/lib.rs | module | pub | 26 |  |
-| `baseline` | projects/meter/src/lib.rs | module | pub | 27 |  |
-| `benchmark` | projects/meter/src/lib.rs | module | pub | 28 |  |
-| `capture` | projects/meter/src/lib.rs | module | pub | 51 |  |
-| `discovery` | projects/meter/src/lib.rs | module | pub | 29 |  |
-| `fixtures` | projects/meter/src/lib.rs | module | pub | 30 |  |
-| `hooks` | projects/meter/src/lib.rs | module | pub | 31 |  |
-| `http_server` | projects/meter/src/lib.rs | module | pub | 32 |  |
-| `parametrize` | projects/meter/src/lib.rs | module | pub | 33 |  |
-| `performance` | projects/meter/src/lib.rs | module | pub | 34 |  |
-| `plugin` | projects/meter/src/lib.rs | module | pub | 35 |  |
-| `report` | projects/meter/src/lib.rs | module | pub | 45 |  |
-| `reporter` | projects/meter/src/lib.rs | module | pub | 36 |  |
-| `runner` | projects/meter/src/lib.rs | module | pub | 37 |  |
-| `rust_runner` | projects/meter/src/lib.rs | module | pub | 38 |  |
-| `security` | projects/meter/src/lib.rs | module | pub | 39 |  |
-| `ts_runner` | projects/meter/src/lib.rs | module | pub | 40 |  |
+| `agent_eval` | apps/meter/src/lib.rs | module | pub | 25 |  |
+| `assertions` | apps/meter/src/lib.rs | module | pub | 26 |  |
+| `baseline` | apps/meter/src/lib.rs | module | pub | 27 |  |
+| `benchmark` | apps/meter/src/lib.rs | module | pub | 28 |  |
+| `capture` | apps/meter/src/lib.rs | module | pub | 51 |  |
+| `discovery` | apps/meter/src/lib.rs | module | pub | 29 |  |
+| `fixtures` | apps/meter/src/lib.rs | module | pub | 30 |  |
+| `hooks` | apps/meter/src/lib.rs | module | pub | 31 |  |
+| `http_server` | apps/meter/src/lib.rs | module | pub | 32 |  |
+| `parametrize` | apps/meter/src/lib.rs | module | pub | 33 |  |
+| `performance` | apps/meter/src/lib.rs | module | pub | 34 |  |
+| `plugin` | apps/meter/src/lib.rs | module | pub | 35 |  |
+| `report` | apps/meter/src/lib.rs | module | pub | 45 |  |
+| `reporter` | apps/meter/src/lib.rs | module | pub | 36 |  |
+| `runner` | apps/meter/src/lib.rs | module | pub | 37 |  |
+| `rust_runner` | apps/meter/src/lib.rs | module | pub | 38 |  |
+| `security` | apps/meter/src/lib.rs | module | pub | 39 |  |
+| `ts_runner` | apps/meter/src/lib.rs | module | pub | 40 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -169,10 +169,10 @@ pub use report::{
 
 ```yaml
 changes:
-  - path: projects/meter/src/lib.rs
+  - path: apps/meter/src/lib.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Lossless rust-source-unit for `projects/meter/src/lib.rs` captured during meter full-codegen standardization.
+      Lossless rust-source-unit for `apps/meter/src/lib.rs` captured during meter full-codegen standardization.
 ```

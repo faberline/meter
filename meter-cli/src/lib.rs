@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
 // CODEGEN-BEGIN
 //! Agent-first CLI surface for `meter`, registered as a [`CliModule`].
 //!
@@ -30,10 +30,10 @@ use clap::{ArgMatches, CommandFactory, FromArgMatches};
 use linkme::distributed_slice;
 
 /// The `meter` CLI module: name, clap command tree, and execute hook.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
 pub struct MeterCli;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
 impl CliModule for MeterCli {
     fn name(&self) -> &'static str {
         "meter"

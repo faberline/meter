@@ -10,52 +10,52 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/plugin.rs
+# Standardized apps/meter/src/plugin.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/plugin.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/plugin.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AsyncHookFuture` | projects/meter/src/plugin.rs | type | pub | 47 |  |
-| `FilterPlugin` | projects/meter/src/plugin.rs | struct | pub | 481 |  |
-| `HookError` | projects/meter/src/plugin.rs | enum | pub | 52 |  |
-| `HookResult` | projects/meter/src/plugin.rs | type | pub | 43 |  |
-| `HookSpec` | projects/meter/src/plugin.rs | enum | pub | 81 |  |
-| `LoggingPlugin` | projects/meter/src/plugin.rs | struct | pub | 382 |  |
-| `PluginConfig` | projects/meter/src/plugin.rs | struct | pub | 184 |  |
-| `PluginManager` | projects/meter/src/plugin.rs | struct | pub | 228 |  |
-| `TimeoutPlugin` | projects/meter/src/plugin.rs | struct | pub | 443 |  |
-| `exclude` | projects/meter/src/plugin.rs | function | pub | 497 | exclude(mut self, tag: impl Into<String>) -> Self |
-| `get` | projects/meter/src/plugin.rs | function | pub | 216 | get(&self, key: &str) -> Option<&str> |
-| `get` | projects/meter/src/plugin.rs | function | pub | 269 | get(&self, name: &str) -> Option<&Arc<dyn Plugin>> |
-| `has` | projects/meter/src/plugin.rs | function | pub | 279 | has(&self, name: &str) -> bool |
-| `hook_collection_finish` | projects/meter/src/plugin.rs | function | pub | 317 | hook_collection_finish(&self, items: &[TestMeta]) |
-| `hook_collection_start` | projects/meter/src/plugin.rs | function | pub | 310 | hook_collection_start(&self) |
-| `hook_configure` | projects/meter/src/plugin.rs | function | pub | 303 | hook_configure(&self, config: &mut PluginConfig) |
-| `hook_error` | projects/meter/src/plugin.rs | function | pub | 359 | hook_error(&self, error: &str) |
-| `hook_modify_items` | projects/meter/src/plugin.rs | function | pub | 366 | hook_modify_items(&self, items: Vec<TestMeta>) -> Vec<TestMeta> |
-| `hook_session_finish` | projects/meter/src/plugin.rs | function | pub | 331 | hook_session_finish(&self, summary: &TestSummary) |
-| `hook_session_start` | projects/meter/src/plugin.rs | function | pub | 324 | hook_session_start(&self) |
-| `hook_test_finish` | projects/meter/src/plugin.rs | function | pub | 345 | hook_test_finish(&self, test: &TestMeta, result: &TestResult) |
-| `hook_test_skipped` | projects/meter/src/plugin.rs | function | pub | 352 | hook_test_skipped(&self, test: &TestMeta, reason: &str) |
-| `hook_test_start` | projects/meter/src/plugin.rs | function | pub | 338 | hook_test_start(&self, test: &TestMeta) |
-| `include` | projects/meter/src/plugin.rs | function | pub | 492 | include(mut self, tag: impl Into<String>) -> Self |
-| `is_empty` | projects/meter/src/plugin.rs | function | pub | 289 | is_empty(&self) -> bool |
-| `len` | projects/meter/src/plugin.rs | function | pub | 284 | len(&self) -> usize |
-| `names` | projects/meter/src/plugin.rs | function | pub | 274 | names(&self) -> Vec<&'static str> |
-| `new` | projects/meter/src/plugin.rs | function | pub | 200 | new() -> Self |
-| `new` | projects/meter/src/plugin.rs | function | pub | 235 | new() -> Self |
-| `new` | projects/meter/src/plugin.rs | function | pub | 388 | new(verbose: bool) -> Self |
-| `new` | projects/meter/src/plugin.rs | function | pub | 449 | new(default_timeout: f64) -> Self |
-| `new` | projects/meter/src/plugin.rs | function | pub | 488 | new() -> Self |
-| `register` | projects/meter/src/plugin.rs | function | pub | 242 | register(&mut self, plugin: Arc<dyn Plugin>) -> HookResult<()> |
-| `set` | projects/meter/src/plugin.rs | function | pub | 211 | set(&mut self, key: impl Into<String>, value: impl Into<String>) |
-| `unregister` | projects/meter/src/plugin.rs | function | pub | 258 | unregister(&mut self, name: &str) -> HookResult<()> |
+| `AsyncHookFuture` | apps/meter/src/plugin.rs | type | pub | 47 |  |
+| `FilterPlugin` | apps/meter/src/plugin.rs | struct | pub | 481 |  |
+| `HookError` | apps/meter/src/plugin.rs | enum | pub | 52 |  |
+| `HookResult` | apps/meter/src/plugin.rs | type | pub | 43 |  |
+| `HookSpec` | apps/meter/src/plugin.rs | enum | pub | 81 |  |
+| `LoggingPlugin` | apps/meter/src/plugin.rs | struct | pub | 382 |  |
+| `PluginConfig` | apps/meter/src/plugin.rs | struct | pub | 184 |  |
+| `PluginManager` | apps/meter/src/plugin.rs | struct | pub | 228 |  |
+| `TimeoutPlugin` | apps/meter/src/plugin.rs | struct | pub | 443 |  |
+| `exclude` | apps/meter/src/plugin.rs | function | pub | 497 | exclude(mut self, tag: impl Into<String>) -> Self |
+| `get` | apps/meter/src/plugin.rs | function | pub | 216 | get(&self, key: &str) -> Option<&str> |
+| `get` | apps/meter/src/plugin.rs | function | pub | 269 | get(&self, name: &str) -> Option<&Arc<dyn Plugin>> |
+| `has` | apps/meter/src/plugin.rs | function | pub | 279 | has(&self, name: &str) -> bool |
+| `hook_collection_finish` | apps/meter/src/plugin.rs | function | pub | 317 | hook_collection_finish(&self, items: &[TestMeta]) |
+| `hook_collection_start` | apps/meter/src/plugin.rs | function | pub | 310 | hook_collection_start(&self) |
+| `hook_configure` | apps/meter/src/plugin.rs | function | pub | 303 | hook_configure(&self, config: &mut PluginConfig) |
+| `hook_error` | apps/meter/src/plugin.rs | function | pub | 359 | hook_error(&self, error: &str) |
+| `hook_modify_items` | apps/meter/src/plugin.rs | function | pub | 366 | hook_modify_items(&self, items: Vec<TestMeta>) -> Vec<TestMeta> |
+| `hook_session_finish` | apps/meter/src/plugin.rs | function | pub | 331 | hook_session_finish(&self, summary: &TestSummary) |
+| `hook_session_start` | apps/meter/src/plugin.rs | function | pub | 324 | hook_session_start(&self) |
+| `hook_test_finish` | apps/meter/src/plugin.rs | function | pub | 345 | hook_test_finish(&self, test: &TestMeta, result: &TestResult) |
+| `hook_test_skipped` | apps/meter/src/plugin.rs | function | pub | 352 | hook_test_skipped(&self, test: &TestMeta, reason: &str) |
+| `hook_test_start` | apps/meter/src/plugin.rs | function | pub | 338 | hook_test_start(&self, test: &TestMeta) |
+| `include` | apps/meter/src/plugin.rs | function | pub | 492 | include(mut self, tag: impl Into<String>) -> Self |
+| `is_empty` | apps/meter/src/plugin.rs | function | pub | 289 | is_empty(&self) -> bool |
+| `len` | apps/meter/src/plugin.rs | function | pub | 284 | len(&self) -> usize |
+| `names` | apps/meter/src/plugin.rs | function | pub | 274 | names(&self) -> Vec<&'static str> |
+| `new` | apps/meter/src/plugin.rs | function | pub | 200 | new() -> Self |
+| `new` | apps/meter/src/plugin.rs | function | pub | 235 | new() -> Self |
+| `new` | apps/meter/src/plugin.rs | function | pub | 388 | new(verbose: bool) -> Self |
+| `new` | apps/meter/src/plugin.rs | function | pub | 449 | new(default_timeout: f64) -> Self |
+| `new` | apps/meter/src/plugin.rs | function | pub | 488 | new() -> Self |
+| `register` | apps/meter/src/plugin.rs | function | pub | 242 | register(&mut self, plugin: Arc<dyn Plugin>) -> HookResult<()> |
+| `set` | apps/meter/src/plugin.rs | function | pub | 211 | set(&mut self, key: impl Into<String>, value: impl Into<String>) |
+| `unregister` | apps/meter/src/plugin.rs | function | pub | 258 | unregister(&mut self, name: &str) -> HookResult<()> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -99,16 +99,16 @@ use crate::runner::{TestMeta, TestResult, TestSummary};
 // ============================================================================
 
 /// Result type for hook execution
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub type HookResult<T> = Result<T, HookError>;
 
 /// Future type for async hooks
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub type AsyncHookFuture<'a, T> = Pin<Box<dyn Future<Output = HookResult<T>> + Send + 'a>>;
 
 /// Errors that can occur during hook execution
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub enum HookError {
     /// Hook execution failed
     ExecutionFailed(String),
@@ -120,7 +120,7 @@ pub enum HookError {
     InvalidArguments(String),
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl std::fmt::Display for HookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -132,12 +132,12 @@ impl std::fmt::Display for HookError {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl std::error::Error for HookError {}
 
 /// Hook specification types for the plugin system
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub enum HookSpec {
     /// Called when the runner is being configured
     Configure,
@@ -161,7 +161,7 @@ pub enum HookSpec {
     ModifyItems,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl std::fmt::Display for HookSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -188,7 +188,7 @@ impl std::fmt::Display for HookSpec {
 /// Plugins can implement any subset of hook methods. Default implementations
 /// are provided that do nothing, allowing plugins to only implement the hooks
 /// they care about.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub trait Plugin: Send + Sync {
     /// Get the plugin name (must be unique)
     fn name(&self) -> &'static str;
@@ -240,7 +240,7 @@ pub trait Plugin: Send + Sync {
 
 /// Configuration passed to plugins during the configure hook
 #[derive(Debug, Clone, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub struct PluginConfig {
     /// Whether to run tests in parallel
     pub parallel: bool,
@@ -254,7 +254,7 @@ pub struct PluginConfig {
     pub extra: HashMap<String, String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl PluginConfig {
     /// Create a new plugin config with defaults
     pub fn new() -> Self {
@@ -284,12 +284,12 @@ impl PluginConfig {
 
 /// Manages plugin registration and hook execution
 #[derive(Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub struct PluginManager {
     plugins: Vec<Arc<dyn Plugin>>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl PluginManager {
     /// Create a new plugin manager
     pub fn new() -> Self {
@@ -438,19 +438,19 @@ impl PluginManager {
 
 /// Logging plugin that logs test lifecycle events
 #[derive(Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub struct LoggingPlugin {
     verbose: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl LoggingPlugin {
     pub fn new(verbose: bool) -> Self {
         Self { verbose }
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl Plugin for LoggingPlugin {
     fn name(&self) -> &'static str {
         "logging"
@@ -499,26 +499,26 @@ impl Plugin for LoggingPlugin {
 
 /// Timeout plugin that enforces test timeouts
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub struct TimeoutPlugin {
     default_timeout: f64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl TimeoutPlugin {
     pub fn new(default_timeout: f64) -> Self {
         Self { default_timeout }
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl Default for TimeoutPlugin {
     fn default() -> Self {
         Self::new(30.0) // 30 seconds default
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl Plugin for TimeoutPlugin {
     fn name(&self) -> &'static str {
         "timeout"
@@ -537,13 +537,13 @@ impl Plugin for TimeoutPlugin {
 
 /// Filter plugin that filters tests by markers/tags
 #[derive(Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 pub struct FilterPlugin {
     include_tags: Vec<String>,
     exclude_tags: Vec<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl FilterPlugin {
     pub fn new() -> Self {
         Self::default()
@@ -560,7 +560,7 @@ impl FilterPlugin {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-plugin-rs.md#source
 impl Plugin for FilterPlugin {
     fn name(&self) -> &'static str {
         "filter"
@@ -788,10 +788,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/plugin.rs
+  - path: apps/meter/src/plugin.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/plugin.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/plugin.rs` captured during meter full-codegen standardization.
 ```

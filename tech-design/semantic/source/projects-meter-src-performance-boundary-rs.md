@@ -10,49 +10,49 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/performance/boundary.rs
+# Standardized apps/meter/src/performance/boundary.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/performance/boundary.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/performance/boundary.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `BoundaryMetrics` | projects/meter/src/performance/boundary.rs | struct | pub | 268 |  |
-| `BoundaryTiming` | projects/meter/src/performance/boundary.rs | struct | pub | 65 |  |
-| `BoundaryTracer` | projects/meter/src/performance/boundary.rs | struct | pub | 143 |  |
-| `avg_convert_us` | projects/meter/src/performance/boundary.rs | function | pub | 381 | avg_convert_us(&self) -> f64 |
-| `avg_extract_us` | projects/meter/src/performance/boundary.rs | function | pub | 371 | avg_extract_us(&self) -> f64 |
-| `avg_materialize_us` | projects/meter/src/performance/boundary.rs | function | pub | 401 | avg_materialize_us(&self) -> f64 |
-| `avg_network_us` | projects/meter/src/performance/boundary.rs | function | pub | 391 | avg_network_us(&self) -> f64 |
-| `doc_count` | projects/meter/src/performance/boundary.rs | function | pub | 361 | doc_count(&self) -> u64 |
-| `end_convert` | projects/meter/src/performance/boundary.rs | function | pub | 198 | end_convert(&mut self) |
-| `end_extract` | projects/meter/src/performance/boundary.rs | function | pub | 186 | end_extract(&mut self) |
-| `end_materialize` | projects/meter/src/performance/boundary.rs | function | pub | 222 | end_materialize(&mut self) |
-| `end_network` | projects/meter/src/performance/boundary.rs | function | pub | 210 | end_network(&mut self) |
-| `finish` | projects/meter/src/performance/boundary.rs | function | pub | 244 | finish(self) -> BoundaryTiming |
-| `format` | projects/meter/src/performance/boundary.rs | function | pub | 117 | format(&self) -> String |
-| `gil_held_percent` | projects/meter/src/performance/boundary.rs | function | pub | 99 | gil_held_percent(&self) -> f64 |
-| `gil_held_us` | projects/meter/src/performance/boundary.rs | function | pub | 89 | gil_held_us(&self) -> u64 |
-| `gil_release_count` | projects/meter/src/performance/boundary.rs | function | pub | 366 | gil_release_count(&self) -> u64 |
-| `gil_released_us` | projects/meter/src/performance/boundary.rs | function | pub | 94 | gil_released_us(&self) -> u64 |
-| `new` | projects/meter/src/performance/boundary.rs | function | pub | 162 | new(operation: impl Into<String>) -> Self |
-| `new` | projects/meter/src/performance/boundary.rs | function | pub | 281 | new() -> Self |
-| `operation_count` | projects/meter/src/performance/boundary.rs | function | pub | 356 | operation_count(&self) -> u64 |
-| `per_doc_us` | projects/meter/src/performance/boundary.rs | function | pub | 108 | per_doc_us(&self) -> f64 |
-| `record` | projects/meter/src/performance/boundary.rs | function | pub | 294 | record(&self, timing: &BoundaryTiming) |
-| `record_gil_release` | projects/meter/src/performance/boundary.rs | function | pub | 234 | record_gil_release(&mut self) |
-| `reset` | projects/meter/src/performance/boundary.rs | function | pub | 345 | reset(&self) |
-| `set_doc_count` | projects/meter/src/performance/boundary.rs | function | pub | 229 | set_doc_count(&mut self, count: usize) |
-| `set_parallel` | projects/meter/src/performance/boundary.rs | function | pub | 239 | set_parallel(&mut self, parallel: bool) |
-| `snapshot` | projects/meter/src/performance/boundary.rs | function | pub | 311 | snapshot(&self) -> HashMap<String, u64> |
-| `start_convert` | projects/meter/src/performance/boundary.rs | function | pub | 193 | start_convert(&mut self) |
-| `start_extract` | projects/meter/src/performance/boundary.rs | function | pub | 181 | start_extract(&mut self) |
-| `start_materialize` | projects/meter/src/performance/boundary.rs | function | pub | 217 | start_materialize(&mut self) |
-| `start_network` | projects/meter/src/performance/boundary.rs | function | pub | 205 | start_network(&mut self) |
+| `BoundaryMetrics` | apps/meter/src/performance/boundary.rs | struct | pub | 268 |  |
+| `BoundaryTiming` | apps/meter/src/performance/boundary.rs | struct | pub | 65 |  |
+| `BoundaryTracer` | apps/meter/src/performance/boundary.rs | struct | pub | 143 |  |
+| `avg_convert_us` | apps/meter/src/performance/boundary.rs | function | pub | 381 | avg_convert_us(&self) -> f64 |
+| `avg_extract_us` | apps/meter/src/performance/boundary.rs | function | pub | 371 | avg_extract_us(&self) -> f64 |
+| `avg_materialize_us` | apps/meter/src/performance/boundary.rs | function | pub | 401 | avg_materialize_us(&self) -> f64 |
+| `avg_network_us` | apps/meter/src/performance/boundary.rs | function | pub | 391 | avg_network_us(&self) -> f64 |
+| `doc_count` | apps/meter/src/performance/boundary.rs | function | pub | 361 | doc_count(&self) -> u64 |
+| `end_convert` | apps/meter/src/performance/boundary.rs | function | pub | 198 | end_convert(&mut self) |
+| `end_extract` | apps/meter/src/performance/boundary.rs | function | pub | 186 | end_extract(&mut self) |
+| `end_materialize` | apps/meter/src/performance/boundary.rs | function | pub | 222 | end_materialize(&mut self) |
+| `end_network` | apps/meter/src/performance/boundary.rs | function | pub | 210 | end_network(&mut self) |
+| `finish` | apps/meter/src/performance/boundary.rs | function | pub | 244 | finish(self) -> BoundaryTiming |
+| `format` | apps/meter/src/performance/boundary.rs | function | pub | 117 | format(&self) -> String |
+| `gil_held_percent` | apps/meter/src/performance/boundary.rs | function | pub | 99 | gil_held_percent(&self) -> f64 |
+| `gil_held_us` | apps/meter/src/performance/boundary.rs | function | pub | 89 | gil_held_us(&self) -> u64 |
+| `gil_release_count` | apps/meter/src/performance/boundary.rs | function | pub | 366 | gil_release_count(&self) -> u64 |
+| `gil_released_us` | apps/meter/src/performance/boundary.rs | function | pub | 94 | gil_released_us(&self) -> u64 |
+| `new` | apps/meter/src/performance/boundary.rs | function | pub | 162 | new(operation: impl Into<String>) -> Self |
+| `new` | apps/meter/src/performance/boundary.rs | function | pub | 281 | new() -> Self |
+| `operation_count` | apps/meter/src/performance/boundary.rs | function | pub | 356 | operation_count(&self) -> u64 |
+| `per_doc_us` | apps/meter/src/performance/boundary.rs | function | pub | 108 | per_doc_us(&self) -> f64 |
+| `record` | apps/meter/src/performance/boundary.rs | function | pub | 294 | record(&self, timing: &BoundaryTiming) |
+| `record_gil_release` | apps/meter/src/performance/boundary.rs | function | pub | 234 | record_gil_release(&mut self) |
+| `reset` | apps/meter/src/performance/boundary.rs | function | pub | 345 | reset(&self) |
+| `set_doc_count` | apps/meter/src/performance/boundary.rs | function | pub | 229 | set_doc_count(&mut self, count: usize) |
+| `set_parallel` | apps/meter/src/performance/boundary.rs | function | pub | 239 | set_parallel(&mut self, parallel: bool) |
+| `snapshot` | apps/meter/src/performance/boundary.rs | function | pub | 311 | snapshot(&self) -> HashMap<String, u64> |
+| `start_convert` | apps/meter/src/performance/boundary.rs | function | pub | 193 | start_convert(&mut self) |
+| `start_extract` | apps/meter/src/performance/boundary.rs | function | pub | 181 | start_extract(&mut self) |
+| `start_materialize` | apps/meter/src/performance/boundary.rs | function | pub | 217 | start_materialize(&mut self) |
+| `start_network` | apps/meter/src/performance/boundary.rs | function | pub | 205 | start_network(&mut self) |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -118,7 +118,7 @@ use std::time::Instant;
 /// Records detailed timing information for each phase of a binding operation,
 /// enabling identification of bottlenecks and GIL contention issues.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 pub struct BoundaryTiming {
     /// Operation name (e.g., "insert_many", "find")
     pub operation: String,
@@ -140,7 +140,7 @@ pub struct BoundaryTiming {
     pub parallel: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 impl BoundaryTiming {
     /// Get total GIL-held time in microseconds
     pub fn gil_held_us(&self) -> u64 {
@@ -196,7 +196,7 @@ impl BoundaryTiming {
 ///
 /// Tracks timing for each phase of a binding operation with minimal overhead.
 /// Uses `Instant` for high-resolution timing.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 pub struct BoundaryTracer {
     operation: String,
     start: Instant,
@@ -213,7 +213,7 @@ pub struct BoundaryTracer {
     parallel: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 impl BoundaryTracer {
     /// Create a new boundary tracer for the given operation
     pub fn new(operation: impl Into<String>) -> Self {
@@ -321,7 +321,7 @@ impl BoundaryTracer {
 ///
 /// Aggregates timing data across multiple operations using atomic operations
 /// for lock-free updates.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 pub struct BoundaryMetrics {
     total_operations: AtomicU64,
     total_extract_us: AtomicU64,
@@ -332,7 +332,7 @@ pub struct BoundaryMetrics {
     total_gil_releases: AtomicU64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 impl BoundaryMetrics {
     /// Create a new metrics collector
     pub fn new() -> Self {
@@ -465,7 +465,7 @@ impl BoundaryMetrics {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-performance-boundary-rs.md#source
 impl Default for BoundaryMetrics {
     fn default() -> Self {
         Self::new()
@@ -684,10 +684,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/performance/boundary.rs
+  - path: apps/meter/src/performance/boundary.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/performance/boundary.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/performance/boundary.rs` captured during meter full-codegen standardization.
 ```

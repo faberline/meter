@@ -10,21 +10,21 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/capture/fold.rs
+# Standardized apps/meter/src/capture/fold.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/fold.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/fold.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `Hotspot` | projects/meter/src/capture/fold.rs | struct | pub | 30 |  |
-| `aggregate` | projects/meter/src/capture/fold.rs | function | pub | 54 | aggregate(stacks: &[FoldedStack], effective_hz: f64) -> Vec<Hotspot> |
-| `fold_hotspots` | projects/meter/src/capture/fold.rs | function | pub | 129 | fold_hotspots(     stacks: &[FoldedStack],     effective_hz: f64,     fail_hot: Option<f64>, ) -> Vec<Finding> |
-| `to_flamegraph` | projects/meter/src/capture/fold.rs | function | pub | 249 | to_flamegraph(stacks: &[FoldedStack]) -> FlamegraphData |
+| `Hotspot` | apps/meter/src/capture/fold.rs | struct | pub | 30 |  |
+| `aggregate` | apps/meter/src/capture/fold.rs | function | pub | 54 | aggregate(stacks: &[FoldedStack], effective_hz: f64) -> Vec<Hotspot> |
+| `fold_hotspots` | apps/meter/src/capture/fold.rs | function | pub | 129 | fold_hotspots(     stacks: &[FoldedStack],     effective_hz: f64,     fail_hot: Option<f64>, ) -> Vec<Finding> |
+| `to_flamegraph` | apps/meter/src/capture/fold.rs | function | pub | 249 | to_flamegraph(stacks: &[FoldedStack]) -> FlamegraphData |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -55,7 +55,7 @@ use super::sampler::FoldedStack;
 /// Per-symbol aggregated hot-spot metrics (the raw numbers behind a `Hotspot`
 /// finding's evidence).
 #[derive(Debug, Clone, PartialEq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
 pub struct Hotspot {
     /// The symbol (function) name.
     pub symbol: String,
@@ -79,7 +79,7 @@ pub struct Hotspot {
 /// `effective_hz` maps samples -> ns (`ns = samples * 1e9 / hz`). Returns an
 /// empty vec for empty input. Ordering is deterministic: primary key `self_ns`
 /// desc, ties broken by `symbol` asc so equal-weight symbols rank stably.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
 pub fn aggregate(stacks: &[FoldedStack], effective_hz: f64) -> Vec<Hotspot> {
     let total_samples_overall: u64 = stacks.iter().map(|s| s.count).sum();
     if total_samples_overall == 0 {
@@ -154,7 +154,7 @@ pub fn aggregate(stacks: &[FoldedStack], effective_hz: f64) -> Vec<Hotspot> {
 /// This is the DEFAULT stdout of `meter profile`. The findings carry
 /// `evidence = {symbol, self_ns, total_ns, pct, samples, rank}` — the C1
 /// contract. `module_for` (optional) supplies a source symbol/location hint.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
 pub fn fold_hotspots(
     stacks: &[FoldedStack],
     effective_hz: f64,
@@ -274,7 +274,7 @@ fn hotspot_finding(h: &Hotspot, fail_hot: Option<f64>) -> Finding {
 ///
 /// Returns a [`FlamegraphData`] ready for
 /// [`generate_flamegraph_svg`](crate::performance::profiler::generate_flamegraph_svg).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-fold-rs.md#source
 pub fn to_flamegraph(stacks: &[FoldedStack]) -> FlamegraphData {
     let mut data = FlamegraphData::new();
     for stack in stacks {
@@ -487,10 +487,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/fold.rs
+  - path: apps/meter/src/capture/fold.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/fold.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/fold.rs` captured during meter full-codegen standardization.
 ```

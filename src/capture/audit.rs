@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
 // CODEGEN-BEGIN
 //! `meter audit` capture — run `cargo audit --json` against a target crate.
 //!
@@ -21,7 +21,7 @@ use crate::rust_runner::{AuditResult, RustRunner};
 /// `Err(msg)` means cargo-audit could not be spawned (absent) or its output was
 /// unparseable (e.g. the advisory DB could not be fetched) — the caller maps
 /// this to a tool error, never a clean result.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
 pub fn audit(target: impl AsRef<Path>) -> Result<AuditResult, String> {
     RustRunner::for_project(target.as_ref().to_path_buf()).run_audit()
 }

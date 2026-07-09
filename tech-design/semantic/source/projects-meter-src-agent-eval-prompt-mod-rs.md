@@ -10,20 +10,20 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/prompt/mod.rs
+# Standardized apps/meter/src/agent_eval/prompt/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/prompt/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/prompt/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `engine` | projects/meter/src/agent_eval/prompt/mod.rs | module | pub | 5 |  |
-| `registry` | projects/meter/src/agent_eval/prompt/mod.rs | module | pub | 6 |  |
-| `template` | projects/meter/src/agent_eval/prompt/mod.rs | module | pub | 7 |  |
+| `engine` | apps/meter/src/agent_eval/prompt/mod.rs | module | pub | 5 |  |
+| `registry` | apps/meter/src/agent_eval/prompt/mod.rs | module | pub | 6 |  |
+| `template` | apps/meter/src/agent_eval/prompt/mod.rs | module | pub | 7 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -44,10 +44,10 @@ pub use template::{FewShotExample, PromptContext, PromptSection, PromptTemplate,
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/prompt/mod.rs
+  - path: apps/meter/src/agent_eval/prompt/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/prompt/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/prompt/mod.rs` captured during meter full-codegen standardization.
 ```

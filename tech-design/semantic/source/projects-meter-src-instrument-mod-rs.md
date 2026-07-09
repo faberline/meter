@@ -9,24 +9,24 @@ capability_refs:
 fill_sections: [overview, source, changes]
 ---
 
-# Standardized projects/meter/src/instrument/mod.rs
+# Standardized apps/meter/src/instrument/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/instrument/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/instrument/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `InstrumentError` | projects/meter/src/instrument/mod.rs | enum | pub | 86 |  |
-| `ProbeKind` | projects/meter/src/instrument/mod.rs | enum | pub | 37 |  |
-| `ProbePoint` | projects/meter/src/instrument/mod.rs | struct | pub | 59 |  |
-| `discover_probe_points` | projects/meter/src/instrument/mod.rs | function | pub | 122 | discover_probe_points(path: impl AsRef<Path>) -> Result<Vec<ProbePoint>, InstrumentError> |
-| `discover_probe_points_in_source` | projects/meter/src/instrument/mod.rs | function | pub | 140 | discover_probe_points_in_source(     source: &str,     language: Language,     file_label: &str, ) -> Result<Vec<ProbePoint>, InstrumentError> |
-| `language_for_extension` | projects/meter/src/instrument/mod.rs | function | pub | 105 | language_for_extension(ext: &str) -> Option<Language> |
-| `line_span` | projects/meter/src/instrument/mod.rs | function | pub | 78 | line_span(&self) -> usize |
+| `InstrumentError` | apps/meter/src/instrument/mod.rs | enum | pub | 86 |  |
+| `ProbeKind` | apps/meter/src/instrument/mod.rs | enum | pub | 37 |  |
+| `ProbePoint` | apps/meter/src/instrument/mod.rs | struct | pub | 59 |  |
+| `discover_probe_points` | apps/meter/src/instrument/mod.rs | function | pub | 122 | discover_probe_points(path: impl AsRef<Path>) -> Result<Vec<ProbePoint>, InstrumentError> |
+| `discover_probe_points_in_source` | apps/meter/src/instrument/mod.rs | function | pub | 140 | discover_probe_points_in_source(     source: &str,     language: Language,     file_label: &str, ) -> Result<Vec<ProbePoint>, InstrumentError> |
+| `language_for_extension` | apps/meter/src/instrument/mod.rs | function | pub | 105 | language_for_extension(ext: &str) -> Option<Language> |
+| `line_span` | apps/meter/src/instrument/mod.rs | function | pub | 78 | line_span(&self) -> usize |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -224,11 +224,11 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/instrument/mod.rs
+  - path: apps/meter/src/instrument/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      rust-source-unit (td_ast) source for `projects/meter/src/instrument/mod.rs` captured during meter
+      rust-source-unit (td_ast) source for `apps/meter/src/instrument/mod.rs` captured during meter
       standardization.
 ```

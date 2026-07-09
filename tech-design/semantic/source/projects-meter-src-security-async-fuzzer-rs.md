@@ -10,30 +10,30 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/security/async_fuzzer.rs
+# Standardized apps/meter/src/security/async_fuzzer.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/security/async_fuzzer.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/security/async_fuzzer.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AsyncFuzzConfig` | projects/meter/src/security/async_fuzzer.rs | struct | pub | 19 |  |
-| `AsyncFuzzer` | projects/meter/src/security/async_fuzzer.rs | struct | pub | 94 |  |
-| `add_corpus` | projects/meter/src/security/async_fuzzer.rs | function | pub | 109 | add_corpus(&mut self, input: impl Into<String>) |
-| `fuzz_async` | projects/meter/src/security/async_fuzzer.rs | function | pub | 117 | fuzz_async(&mut self, target: F) -> FuzzResult |
-| `fuzz_parallel` | projects/meter/src/security/async_fuzzer.rs | function | pub | 180 | fuzz_parallel(&mut self, target: F) -> FuzzResult |
-| `new` | projects/meter/src/security/async_fuzzer.rs | function | pub | 37 | new() -> Self |
-| `new` | projects/meter/src/security/async_fuzzer.rs | function | pub | 102 | new(config: AsyncFuzzConfig) -> Self |
-| `with_concurrent_mutations` | projects/meter/src/security/async_fuzzer.rs | function | pub | 79 | with_concurrent_mutations(mut self, concurrency: usize) -> Self |
-| `with_corpus` | projects/meter/src/security/async_fuzzer.rs | function | pub | 49 | with_corpus(mut self, corpus: Vec<String>) -> Self |
-| `with_iterations` | projects/meter/src/security/async_fuzzer.rs | function | pub | 55 | with_iterations(mut self, iterations: u32) -> Self |
-| `with_mutation_rate` | projects/meter/src/security/async_fuzzer.rs | function | pub | 67 | with_mutation_rate(mut self, rate: f32) -> Self |
-| `with_seed` | projects/meter/src/security/async_fuzzer.rs | function | pub | 61 | with_seed(mut self, seed: u64) -> Self |
-| `with_timeout_ms` | projects/meter/src/security/async_fuzzer.rs | function | pub | 73 | with_timeout_ms(mut self, timeout: u64) -> Self |
+| `AsyncFuzzConfig` | apps/meter/src/security/async_fuzzer.rs | struct | pub | 19 |  |
+| `AsyncFuzzer` | apps/meter/src/security/async_fuzzer.rs | struct | pub | 94 |  |
+| `add_corpus` | apps/meter/src/security/async_fuzzer.rs | function | pub | 109 | add_corpus(&mut self, input: impl Into<String>) |
+| `fuzz_async` | apps/meter/src/security/async_fuzzer.rs | function | pub | 117 | fuzz_async(&mut self, target: F) -> FuzzResult |
+| `fuzz_parallel` | apps/meter/src/security/async_fuzzer.rs | function | pub | 180 | fuzz_parallel(&mut self, target: F) -> FuzzResult |
+| `new` | apps/meter/src/security/async_fuzzer.rs | function | pub | 37 | new() -> Self |
+| `new` | apps/meter/src/security/async_fuzzer.rs | function | pub | 102 | new(config: AsyncFuzzConfig) -> Self |
+| `with_concurrent_mutations` | apps/meter/src/security/async_fuzzer.rs | function | pub | 79 | with_concurrent_mutations(mut self, concurrency: usize) -> Self |
+| `with_corpus` | apps/meter/src/security/async_fuzzer.rs | function | pub | 49 | with_corpus(mut self, corpus: Vec<String>) -> Self |
+| `with_iterations` | apps/meter/src/security/async_fuzzer.rs | function | pub | 55 | with_iterations(mut self, iterations: u32) -> Self |
+| `with_mutation_rate` | apps/meter/src/security/async_fuzzer.rs | function | pub | 67 | with_mutation_rate(mut self, rate: f32) -> Self |
+| `with_seed` | apps/meter/src/security/async_fuzzer.rs | function | pub | 61 | with_seed(mut self, seed: u64) -> Self |
+| `with_timeout_ms` | apps/meter/src/security/async_fuzzer.rs | function | pub | 73 | with_timeout_ms(mut self, timeout: u64) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -53,7 +53,7 @@ use tokio::time::timeout;
 
 /// Configuration for async fuzzing operations
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 pub struct AsyncFuzzConfig {
     /// Initial corpus of seed inputs
     pub corpus: Vec<String>,
@@ -69,7 +69,7 @@ pub struct AsyncFuzzConfig {
     pub concurrent_mutations: usize,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl AsyncFuzzConfig {
     /// Create a new async fuzzing configuration
     pub fn new() -> Self {
@@ -120,7 +120,7 @@ impl AsyncFuzzConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl Default for AsyncFuzzConfig {
     fn default() -> Self {
         Self::new()
@@ -128,13 +128,13 @@ impl Default for AsyncFuzzConfig {
 }
 
 /// Async fuzzer for testing async target functions and network endpoints
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 pub struct AsyncFuzzer {
     config: AsyncFuzzConfig,
     rng: StdRng,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl AsyncFuzzer {
     /// Create a new async fuzzer with configuration
     pub fn new(config: AsyncFuzzConfig) -> Self {
@@ -533,10 +533,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/security/async_fuzzer.rs
+  - path: apps/meter/src/security/async_fuzzer.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/security/async_fuzzer.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/security/async_fuzzer.rs` captured during meter full-codegen standardization.
 ```

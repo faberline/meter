@@ -10,37 +10,37 @@ capability_refs:
     rationale: "The capture vitals implementation owns meter.toml parsing, wait4/rusage resource capture, measurement windows, and gate findings."
 ---
 
-# Standardized projects/meter/src/capture/vitals.rs
+# Standardized apps/meter/src/capture/vitals.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/vitals.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/vitals.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `CaptureOutcome` | projects/meter/src/capture/vitals.rs | struct | pub | 184 |  |
-| `GateConfig` | projects/meter/src/capture/vitals.rs | struct | pub | 93 |  |
-| `Level` | projects/meter/src/capture/vitals.rs | enum | pub | 47 |  |
-| `MeterConfig` | projects/meter/src/capture/vitals.rs | struct | pub | 105 |  |
-| `Vitals` | projects/meter/src/capture/vitals.rs | struct | pub | 156 |  |
-| `WindowOpts` | projects/meter/src/capture/vitals.rs | struct | pub | 169 |  |
-| `as_str` | projects/meter/src/capture/vitals.rs | function | pub | 77 | as_str(&self) -> &'static str |
-| `capture_window` | projects/meter/src/capture/vitals.rs | function | pub | 209 | capture_window(     target: &Target,     extra_args: &[String],     opts: &WindowOpts, ) -> Result<CaptureOutcome, SampleError> |
-| `load` | projects/meter/src/capture/vitals.rs | function | pub | 126 | load(dir: &Path) -> Result<Option<MeterConfig>, String> |
-| `parse` | projects/meter/src/capture/vitals.rs | function | pub | 63 | parse(s: &str) -> Result<Level, String> |
-| `resolve_level` | projects/meter/src/capture/vitals.rs | function | pub | 148 | resolve_level(cli: Option<Level>, config: Option<&MeterConfig>) -> Level |
-| `vitals_findings` | projects/meter/src/capture/vitals.rs | function | pub | 575 | vitals_findings(     vitals: &Vitals,     label: &str,     gate: &GateConfig,     escalate_command: &str, ) -> Vec<Finding> |
-| `write_collapsed` | projects/meter/src/capture/vitals.rs | function | pub | 548 | write_collapsed(stacks: &[FoldedStack], label: &str) -> std::io::Result<PathBuf> |
+| `CaptureOutcome` | apps/meter/src/capture/vitals.rs | struct | pub | 184 |  |
+| `GateConfig` | apps/meter/src/capture/vitals.rs | struct | pub | 93 |  |
+| `Level` | apps/meter/src/capture/vitals.rs | enum | pub | 47 |  |
+| `MeterConfig` | apps/meter/src/capture/vitals.rs | struct | pub | 105 |  |
+| `Vitals` | apps/meter/src/capture/vitals.rs | struct | pub | 156 |  |
+| `WindowOpts` | apps/meter/src/capture/vitals.rs | struct | pub | 169 |  |
+| `as_str` | apps/meter/src/capture/vitals.rs | function | pub | 77 | as_str(&self) -> &'static str |
+| `capture_window` | apps/meter/src/capture/vitals.rs | function | pub | 209 | capture_window(     target: &Target,     extra_args: &[String],     opts: &WindowOpts, ) -> Result<CaptureOutcome, SampleError> |
+| `load` | apps/meter/src/capture/vitals.rs | function | pub | 126 | load(dir: &Path) -> Result<Option<MeterConfig>, String> |
+| `parse` | apps/meter/src/capture/vitals.rs | function | pub | 63 | parse(s: &str) -> Result<Level, String> |
+| `resolve_level` | apps/meter/src/capture/vitals.rs | function | pub | 148 | resolve_level(cli: Option<Level>, config: Option<&MeterConfig>) -> Level |
+| `vitals_findings` | apps/meter/src/capture/vitals.rs | function | pub | 575 | vitals_findings(     vitals: &Vitals,     label: &str,     gate: &GateConfig,     escalate_command: &str, ) -> Vec<Finding> |
+| `write_collapsed` | apps/meter/src/capture/vitals.rs | function | pub | 548 | write_collapsed(stacks: &[FoldedStack], label: &str) -> std::io::Result<PathBuf> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
 ````rust
 //! L1 vitals capture + the `meter.toml` per-project measurement contract (WI #3).
 //!
-//! @spec projects/meter/tech-design/logic/single-knob-meter-toml-level-gate-l1-vitals-in-capture-until-exi.md
+//! @spec apps/meter/tech-design/logic/single-knob-meter-toml-level-gate-l1-vitals-in-capture-until-exi.md
 //!
 //! This module owns the four charter pieces of the single-knob contract:
 //!
@@ -81,7 +81,7 @@ use super::sampler::{
 /// everything below it. `Hooks` and `Deep` parse but are not yet implemented
 /// (L3/L4 instrumentation epic, WI #4).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub enum Level {
     /// No measurement at all.
     Off,
@@ -95,7 +95,7 @@ pub enum Level {
     Deep,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 impl Level {
     /// Parse a CLI/meter.toml level label.
     pub fn parse(s: &str) -> Result<Level, String> {
@@ -127,7 +127,7 @@ impl Level {
 /// gate. These are the only per-project facts not derivable from `level`.
 #[derive(Debug, Clone, Copy, Default, Deserialize, PartialEq, Eq)]
 #[serde(deny_unknown_fields)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub struct GateConfig {
     /// Peak RSS ceiling in MiB for the measured child; 0 = no gate.
     #[serde(default)]
@@ -139,7 +139,7 @@ pub struct GateConfig {
 
 /// The parsed `meter.toml` measurement contract.
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub struct MeterConfig {
     /// The declared resting-state level, if any.
     pub level: Option<Level>,
@@ -156,7 +156,7 @@ struct RawMeterToml {
     gate: Option<GateConfig>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 impl MeterConfig {
     /// Load `<dir>/meter.toml`. Absent file => `Ok(None)` (built-in defaults
     /// apply). A present-but-invalid file is a hard usage error, never
@@ -182,7 +182,7 @@ impl MeterConfig {
 }
 
 /// Resolve the effective level: CLI flag > meter.toml > built-in `vitals`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub fn resolve_level(cli: Option<Level>, config: Option<&MeterConfig>) -> Level {
     cli.or_else(|| config.and_then(|c| c.level))
         .unwrap_or(Level::Vitals)
@@ -190,7 +190,7 @@ pub fn resolve_level(cli: Option<Level>, config: Option<&MeterConfig>) -> Level 
 
 /// L1 process vitals for one reaped child, from `wait4(2)`'s `rusage`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub struct Vitals {
     /// user+sys CPU time in milliseconds.
     pub cpu_time_ms: u64,
@@ -203,7 +203,7 @@ pub struct Vitals {
 
 /// Options for one capture window.
 #[derive(Debug, Clone, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub struct WindowOpts {
     /// Effective level (only `Vitals`/`Sample` reach the window; `Off`/
     /// `Hooks`/`Deep` are handled by the caller before spawning anything).
@@ -218,7 +218,7 @@ pub struct WindowOpts {
 
 /// Everything one capture window produced.
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub struct CaptureOutcome {
     /// Folded stacks (only when the sampler was attached).
     pub sample: Option<SampleRun>,
@@ -243,7 +243,7 @@ const POLL_INTERVAL: Duration = Duration::from_millis(20);
 /// Run one capture window over `target`: spawn the child, optionally attach
 /// the platform stack sampler, bound the window (driver lifetime > duration
 /// cap > child exit), reap via `wait4`, and return stacks + vitals.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub fn capture_window(
     target: &Target,
     extra_args: &[String],
@@ -419,7 +419,7 @@ fn attach_sampler(pid: u32, opts: &WindowOpts) -> Result<AttachedSampler, Sample
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 impl AttachedSampler {
     /// Wait for the sampler process and fold its report into stacks.
     fn finish(mut self) -> Result<SampleRun, SampleError> {
@@ -582,7 +582,7 @@ fn safe_slug(label: &str) -> String {
 /// Write the folded stacks as a collapsed artifact under `.meter/` (relative
 /// to the cwd, like the persisted report) and return its path. One line per
 /// stack: `frame;frame;leaf count`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub fn write_collapsed(stacks: &[FoldedStack], label: &str) -> std::io::Result<PathBuf> {
     write_collapsed_in(Path::new("."), stacks, label)
 }
@@ -609,7 +609,7 @@ fn write_collapsed_in(
 /// carrying the vitals evidence, plus one High finding per breached `[gate]`
 /// ceiling. `escalate_command` is the literal next command suggested when a
 /// gate breach needs root-causing (the `--level sample` escalation funnel).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-vitals-rs.md#source
 pub fn vitals_findings(
     vitals: &Vitals,
     label: &str,
@@ -907,7 +907,7 @@ mod tests {
 ```yaml
 coverage_kind: semantic
 changes:
-  - path: "projects/meter/src/capture/vitals.rs"
+  - path: "apps/meter/src/capture/vitals.rs"
     action: modify
     section: rust-source-unit
     description: "Regenerate the capture vitals implementation from a TD-owned rust source unit."

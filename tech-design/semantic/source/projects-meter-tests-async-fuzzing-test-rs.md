@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/tests/async_fuzzing_test.rs
+# Standardized apps/meter/tests/async_fuzzing_test.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/tests/async_fuzzing_test.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/tests/async_fuzzing_test.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -247,10 +247,10 @@ async fn test_empty_corpus_handling() {
 
 ```yaml
 changes:
-  - path: projects/meter/tests/async_fuzzing_test.rs
+  - path: apps/meter/tests/async_fuzzing_test.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/tests/async_fuzzing_test.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/tests/async_fuzzing_test.rs` captured during meter full-codegen standardization.
 ```

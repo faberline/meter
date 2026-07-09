@@ -10,55 +10,55 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/runner.rs
+# Standardized apps/meter/src/runner.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/runner.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/runner.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `Language` | projects/meter/src/runner.rs | enum | pub | 64 |  |
-| `ProfileMetrics` | projects/meter/src/runner.rs | struct | pub | 187 |  |
-| `RunnerConfig` | projects/meter/src/runner.rs | struct | pub | 298 |  |
-| `TestMeta` | projects/meter/src/runner.rs | struct | pub | 88 |  |
-| `TestResult` | projects/meter/src/runner.rs | struct | pub | 201 |  |
-| `TestRunner` | projects/meter/src/runner.rs | struct | pub | 333 |  |
-| `TestStatus` | projects/meter/src/runner.rs | enum | pub | 38 |  |
-| `TestSummary` | projects/meter/src/runner.rs | struct | pub | 432 |  |
-| `TestType` | projects/meter/src/runner.rs | enum | pub | 14 |  |
-| `all_passed` | projects/meter/src/runner.rs | function | pub | 450 | all_passed(&self) -> bool |
-| `config` | projects/meter/src/runner.rs | function | pub | 356 | config(&self) -> &RunnerConfig |
-| `default_runner` | projects/meter/src/runner.rs | function | pub | 351 | default_runner() -> Self |
-| `error` | projects/meter/src/runner.rs | function | pub | 260 | error(meta: TestMeta, duration_ms: u64, error: impl Into<String>) -> Self |
-| `failed` | projects/meter/src/runner.rs | function | pub | 234 | failed(meta: TestMeta, duration_ms: u64, error: impl Into<String>) -> Self |
-| `has_tag` | projects/meter/src/runner.rs | function | pub | 179 | has_tag(&self, tag: &str) -> bool |
-| `is_failed` | projects/meter/src/runner.rs | function | pub | 290 | is_failed(&self) -> bool |
-| `is_passed` | projects/meter/src/runner.rs | function | pub | 285 | is_passed(&self) -> bool |
-| `is_skipped` | projects/meter/src/runner.rs | function | pub | 174 | is_skipped(&self) -> bool |
-| `language` | projects/meter/src/runner.rs | function | pub | 150 | language(mut self, language: Language) -> Self |
-| `new` | projects/meter/src/runner.rs | function | pub | 112 | new(name: impl Into<String>) -> Self |
-| `new` | projects/meter/src/runner.rs | function | pub | 342 | new(config: RunnerConfig) -> Self |
-| `pass_rate` | projects/meter/src/runner.rs | function | pub | 455 | pass_rate(&self) -> f64 |
-| `passed` | projects/meter/src/runner.rs | function | pub | 221 | passed(meta: TestMeta, duration_ms: u64) -> Self |
-| `record` | projects/meter/src/runner.rs | function | pub | 367 | record(&mut self, result: TestResult) |
-| `results` | projects/meter/src/runner.rs | function | pub | 372 | results(&self) -> &[TestResult] |
-| `run_tests_parallel` | projects/meter/src/runner.rs | function | pub | 477 | run_tests_parallel(results: Vec<TestResult>, config: RunnerConfig) -> Vec<TestResult> |
-| `should_run` | projects/meter/src/runner.rs | function | pub | 402 | should_run(&self, meta: &TestMeta) -> bool |
-| `skip` | projects/meter/src/runner.rs | function | pub | 168 | skip(mut self, reason: impl Into<String>) -> Self |
-| `skipped` | projects/meter/src/runner.rs | function | pub | 247 | skipped(meta: TestMeta, reason: impl Into<String>) -> Self |
-| `start` | projects/meter/src/runner.rs | function | pub | 361 | start(&mut self) |
-| `summary` | projects/meter/src/runner.rs | function | pub | 384 | summary(&self) -> TestSummary |
-| `total_duration` | projects/meter/src/runner.rs | function | pub | 377 | total_duration(&self) -> Duration |
-| `with_language` | projects/meter/src/runner.rs | function | pub | 128 | with_language(name: impl Into<String>, language: Language) -> Self |
-| `with_profile_metrics` | projects/meter/src/runner.rs | function | pub | 279 | with_profile_metrics(mut self, metrics: ProfileMetrics) -> Self |
-| `with_stack_trace` | projects/meter/src/runner.rs | function | pub | 273 | with_stack_trace(mut self, trace: impl Into<String>) -> Self |
-| `with_tags` | projects/meter/src/runner.rs | function | pub | 162 | with_tags(mut self, tags: Vec<String>) -> Self |
-| `with_timeout` | projects/meter/src/runner.rs | function | pub | 156 | with_timeout(mut self, timeout: f64) -> Self |
-| `with_type` | projects/meter/src/runner.rs | function | pub | 144 | with_type(mut self, test_type: TestType) -> Self |
+| `Language` | apps/meter/src/runner.rs | enum | pub | 64 |  |
+| `ProfileMetrics` | apps/meter/src/runner.rs | struct | pub | 187 |  |
+| `RunnerConfig` | apps/meter/src/runner.rs | struct | pub | 298 |  |
+| `TestMeta` | apps/meter/src/runner.rs | struct | pub | 88 |  |
+| `TestResult` | apps/meter/src/runner.rs | struct | pub | 201 |  |
+| `TestRunner` | apps/meter/src/runner.rs | struct | pub | 333 |  |
+| `TestStatus` | apps/meter/src/runner.rs | enum | pub | 38 |  |
+| `TestSummary` | apps/meter/src/runner.rs | struct | pub | 432 |  |
+| `TestType` | apps/meter/src/runner.rs | enum | pub | 14 |  |
+| `all_passed` | apps/meter/src/runner.rs | function | pub | 450 | all_passed(&self) -> bool |
+| `config` | apps/meter/src/runner.rs | function | pub | 356 | config(&self) -> &RunnerConfig |
+| `default_runner` | apps/meter/src/runner.rs | function | pub | 351 | default_runner() -> Self |
+| `error` | apps/meter/src/runner.rs | function | pub | 260 | error(meta: TestMeta, duration_ms: u64, error: impl Into<String>) -> Self |
+| `failed` | apps/meter/src/runner.rs | function | pub | 234 | failed(meta: TestMeta, duration_ms: u64, error: impl Into<String>) -> Self |
+| `has_tag` | apps/meter/src/runner.rs | function | pub | 179 | has_tag(&self, tag: &str) -> bool |
+| `is_failed` | apps/meter/src/runner.rs | function | pub | 290 | is_failed(&self) -> bool |
+| `is_passed` | apps/meter/src/runner.rs | function | pub | 285 | is_passed(&self) -> bool |
+| `is_skipped` | apps/meter/src/runner.rs | function | pub | 174 | is_skipped(&self) -> bool |
+| `language` | apps/meter/src/runner.rs | function | pub | 150 | language(mut self, language: Language) -> Self |
+| `new` | apps/meter/src/runner.rs | function | pub | 112 | new(name: impl Into<String>) -> Self |
+| `new` | apps/meter/src/runner.rs | function | pub | 342 | new(config: RunnerConfig) -> Self |
+| `pass_rate` | apps/meter/src/runner.rs | function | pub | 455 | pass_rate(&self) -> f64 |
+| `passed` | apps/meter/src/runner.rs | function | pub | 221 | passed(meta: TestMeta, duration_ms: u64) -> Self |
+| `record` | apps/meter/src/runner.rs | function | pub | 367 | record(&mut self, result: TestResult) |
+| `results` | apps/meter/src/runner.rs | function | pub | 372 | results(&self) -> &[TestResult] |
+| `run_tests_parallel` | apps/meter/src/runner.rs | function | pub | 477 | run_tests_parallel(results: Vec<TestResult>, config: RunnerConfig) -> Vec<TestResult> |
+| `should_run` | apps/meter/src/runner.rs | function | pub | 402 | should_run(&self, meta: &TestMeta) -> bool |
+| `skip` | apps/meter/src/runner.rs | function | pub | 168 | skip(mut self, reason: impl Into<String>) -> Self |
+| `skipped` | apps/meter/src/runner.rs | function | pub | 247 | skipped(meta: TestMeta, reason: impl Into<String>) -> Self |
+| `start` | apps/meter/src/runner.rs | function | pub | 361 | start(&mut self) |
+| `summary` | apps/meter/src/runner.rs | function | pub | 384 | summary(&self) -> TestSummary |
+| `total_duration` | apps/meter/src/runner.rs | function | pub | 377 | total_duration(&self) -> Duration |
+| `with_language` | apps/meter/src/runner.rs | function | pub | 128 | with_language(name: impl Into<String>, language: Language) -> Self |
+| `with_profile_metrics` | apps/meter/src/runner.rs | function | pub | 279 | with_profile_metrics(mut self, metrics: ProfileMetrics) -> Self |
+| `with_stack_trace` | apps/meter/src/runner.rs | function | pub | 273 | with_stack_trace(mut self, trace: impl Into<String>) -> Self |
+| `with_tags` | apps/meter/src/runner.rs | function | pub | 162 | with_tags(mut self, tags: Vec<String>) -> Self |
+| `with_timeout` | apps/meter/src/runner.rs | function | pub | 156 | with_timeout(mut self, timeout: f64) -> Self |
+| `with_type` | apps/meter/src/runner.rs | function | pub | 144 | with_type(mut self, test_type: TestType) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -73,7 +73,7 @@ use tokio::task::JoinHandle;
 
 /// Test type categorization
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub enum TestType {
     /// Standard unit test
     #[default]
@@ -84,7 +84,7 @@ pub enum TestType {
     Security,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl std::fmt::Display for TestType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -97,7 +97,7 @@ impl std::fmt::Display for TestType {
 
 /// Test execution status
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub enum TestStatus {
     /// Test passed
     Passed,
@@ -109,7 +109,7 @@ pub enum TestStatus {
     Error,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl std::fmt::Display for TestStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -123,7 +123,7 @@ impl std::fmt::Display for TestStatus {
 
 /// Programming language for multi-language test support
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub enum Language {
     /// Python (default)
     #[default]
@@ -134,7 +134,7 @@ pub enum Language {
     TypeScript,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl std::fmt::Display for Language {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -147,7 +147,7 @@ impl std::fmt::Display for Language {
 
 /// Metadata for a test function
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct TestMeta {
     /// Test function name
     pub name: String,
@@ -169,7 +169,7 @@ pub struct TestMeta {
     pub line_number: Option<u32>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl TestMeta {
     /// Create new test metadata
     pub fn new(name: impl Into<String>) -> Self {
@@ -246,7 +246,7 @@ impl TestMeta {
 
 /// Profile metrics for performance tests
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct ProfileMetrics {
     /// Number of iterations run
     pub iterations: u32,
@@ -260,7 +260,7 @@ pub struct ProfileMetrics {
 
 /// Test result after execution
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct TestResult {
     /// Test metadata
     pub meta: TestMeta,
@@ -278,7 +278,7 @@ pub struct TestResult {
     pub started_at: String,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl TestResult {
     /// Create a passed test result
     pub fn passed(meta: TestMeta, duration_ms: u64) -> Self {
@@ -357,7 +357,7 @@ impl TestResult {
 
 /// Test runner configuration
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct RunnerConfig {
     /// Filter by test type
     pub test_type: Option<TestType>,
@@ -375,7 +375,7 @@ pub struct RunnerConfig {
     pub max_workers: usize,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl Default for RunnerConfig {
     fn default() -> Self {
         Self {
@@ -392,14 +392,14 @@ impl Default for RunnerConfig {
 
 /// Test runner - orchestrates test discovery and execution
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct TestRunner {
     config: RunnerConfig,
     results: Vec<TestResult>,
     start_time: Option<Instant>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl TestRunner {
     /// Create a new test runner
     pub fn new(config: RunnerConfig) -> Self {
@@ -491,7 +491,7 @@ impl TestRunner {
 
 /// Summary of test results
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub struct TestSummary {
     /// Total tests
     pub total: usize,
@@ -507,7 +507,7 @@ pub struct TestSummary {
     pub total_duration_ms: u64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 impl TestSummary {
     /// Check if all tests passed
     pub fn all_passed(&self) -> bool {
@@ -536,7 +536,7 @@ impl TestSummary {
 ///
 /// This function spawns concurrent tasks to process test results with a semaphore
 /// limiting max concurrency.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-runner-rs.md#source
 pub async fn run_tests_parallel(results: Vec<TestResult>, config: RunnerConfig) -> Vec<TestResult> {
     if !config.parallel || results.is_empty() {
         // Sequential execution
@@ -716,10 +716,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/runner.rs
+  - path: apps/meter/src/runner.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/runner.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/runner.rs` captured during meter full-codegen standardization.
 ```

@@ -10,33 +10,33 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/security/fuzzer.rs
+# Standardized apps/meter/src/security/fuzzer.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/security/fuzzer.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/security/fuzzer.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `FuzzConfig` | projects/meter/src/security/fuzzer.rs | struct | pub | 15 |  |
-| `FuzzCrash` | projects/meter/src/security/fuzzer.rs | struct | pub | 121 |  |
-| `FuzzResult` | projects/meter/src/security/fuzzer.rs | struct | pub | 133 |  |
-| `Fuzzer` | projects/meter/src/security/fuzzer.rs | struct | pub | 144 |  |
-| `MutationStrategy` | projects/meter/src/security/fuzzer.rs | enum | pub | 88 |  |
-| `add_corpus` | projects/meter/src/security/fuzzer.rs | function | pub | 162 | add_corpus(&mut self, input: &str) |
-| `all` | projects/meter/src/security/fuzzer.rs | function | pub | 106 | all() -> &'static [MutationStrategy] |
-| `fuzz` | projects/meter/src/security/fuzzer.rs | function | pub | 170 | fuzz(&self, target: F) -> FuzzResult |
-| `mutate` | projects/meter/src/security/fuzzer.rs | function | pub | 227 | mutate(&self, input: &str, strategy: MutationStrategy) -> String |
-| `new` | projects/meter/src/security/fuzzer.rs | function | pub | 50 | new() -> Self |
-| `new` | projects/meter/src/security/fuzzer.rs | function | pub | 152 | new(config: FuzzConfig) -> Self |
-| `with_corpus` | projects/meter/src/security/fuzzer.rs | function | pub | 55 | with_corpus(mut self, corpus: Vec<String>) -> Self |
-| `with_iterations` | projects/meter/src/security/fuzzer.rs | function | pub | 61 | with_iterations(mut self, iterations: u32) -> Self |
-| `with_mutation_rate` | projects/meter/src/security/fuzzer.rs | function | pub | 73 | with_mutation_rate(mut self, rate: f32) -> Self |
-| `with_seed` | projects/meter/src/security/fuzzer.rs | function | pub | 67 | with_seed(mut self, seed: u64) -> Self |
-| `with_timeout_ms` | projects/meter/src/security/fuzzer.rs | function | pub | 79 | with_timeout_ms(mut self, timeout_ms: u64) -> Self |
+| `FuzzConfig` | apps/meter/src/security/fuzzer.rs | struct | pub | 15 |  |
+| `FuzzCrash` | apps/meter/src/security/fuzzer.rs | struct | pub | 121 |  |
+| `FuzzResult` | apps/meter/src/security/fuzzer.rs | struct | pub | 133 |  |
+| `Fuzzer` | apps/meter/src/security/fuzzer.rs | struct | pub | 144 |  |
+| `MutationStrategy` | apps/meter/src/security/fuzzer.rs | enum | pub | 88 |  |
+| `add_corpus` | apps/meter/src/security/fuzzer.rs | function | pub | 162 | add_corpus(&mut self, input: &str) |
+| `all` | apps/meter/src/security/fuzzer.rs | function | pub | 106 | all() -> &'static [MutationStrategy] |
+| `fuzz` | apps/meter/src/security/fuzzer.rs | function | pub | 170 | fuzz(&self, target: F) -> FuzzResult |
+| `mutate` | apps/meter/src/security/fuzzer.rs | function | pub | 227 | mutate(&self, input: &str, strategy: MutationStrategy) -> String |
+| `new` | apps/meter/src/security/fuzzer.rs | function | pub | 50 | new() -> Self |
+| `new` | apps/meter/src/security/fuzzer.rs | function | pub | 152 | new(config: FuzzConfig) -> Self |
+| `with_corpus` | apps/meter/src/security/fuzzer.rs | function | pub | 55 | with_corpus(mut self, corpus: Vec<String>) -> Self |
+| `with_iterations` | apps/meter/src/security/fuzzer.rs | function | pub | 61 | with_iterations(mut self, iterations: u32) -> Self |
+| `with_mutation_rate` | apps/meter/src/security/fuzzer.rs | function | pub | 73 | with_mutation_rate(mut self, rate: f32) -> Self |
+| `with_seed` | apps/meter/src/security/fuzzer.rs | function | pub | 67 | with_seed(mut self, seed: u64) -> Self |
+| `with_timeout_ms` | apps/meter/src/security/fuzzer.rs | function | pub | 79 | with_timeout_ms(mut self, timeout_ms: u64) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -52,7 +52,7 @@ use std::time::{Duration, Instant};
 
 /// Configuration for fuzzing
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzConfig {
     /// Initial corpus of inputs to mutate
     pub corpus: Vec<String>,
@@ -66,7 +66,7 @@ pub struct FuzzConfig {
     pub timeout_ms: Option<u64>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl Default for FuzzConfig {
     fn default() -> Self {
         Self {
@@ -85,7 +85,7 @@ impl Default for FuzzConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl FuzzConfig {
     /// Create a new fuzzing configuration
     pub fn new() -> Self {
@@ -125,7 +125,7 @@ impl FuzzConfig {
 
 /// Mutation strategies for fuzzing
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub enum MutationStrategy {
     /// Flip random bits in bytes
     BitFlip,
@@ -141,7 +141,7 @@ pub enum MutationStrategy {
     Combine,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl MutationStrategy {
     /// Get all mutation strategies
     pub fn all() -> &'static [MutationStrategy] {
@@ -158,7 +158,7 @@ impl MutationStrategy {
 
 /// A crash discovered during fuzzing
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzCrash {
     /// Input that caused the crash
     pub input: String,
@@ -170,7 +170,7 @@ pub struct FuzzCrash {
 
 /// Result of a fuzzing session
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct FuzzResult {
     /// Total iterations performed
     pub iterations: u32,
@@ -181,13 +181,13 @@ pub struct FuzzResult {
 }
 
 /// Mutation-based fuzzer
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 pub struct Fuzzer {
     config: FuzzConfig,
     rng: StdRng,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-fuzzer-rs.md#source
 impl Fuzzer {
     /// Create a new fuzzer with configuration
     pub fn new(config: FuzzConfig) -> Self {
@@ -478,10 +478,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/security/fuzzer.rs
+  - path: apps/meter/src/security/fuzzer.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/security/fuzzer.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/security/fuzzer.rs` captured during meter full-codegen standardization.
 ```

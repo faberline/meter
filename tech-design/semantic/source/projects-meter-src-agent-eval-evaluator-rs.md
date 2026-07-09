@@ -10,28 +10,28 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/evaluator.rs
+# Standardized apps/meter/src/agent_eval/evaluator.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/evaluator.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/evaluator.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AgentEvalSuiteResult` | projects/meter/src/agent_eval/evaluator.rs | struct | pub | 452 |  |
-| `AgentEvaluator` | projects/meter/src/agent_eval/evaluator.rs | struct | pub | 19 |  |
-| `AgentResponseData` | projects/meter/src/agent_eval/evaluator.rs | struct | pub | 423 |  |
-| `TokenUsage` | projects/meter/src/agent_eval/evaluator.rs | struct | pub | 443 |  |
-| `cost_calculator` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 415 | cost_calculator(&self) -> &CostCalculator |
-| `evaluate_suite` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 263 | evaluate_suite(         &self,         responses: Vec<AgentResponseData>,     ) -> Result<AgentEvalSuiteResult, String> |
-| `evaluate_test_case` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 62 | evaluate_test_case(         &self,         test_case: &AgentTestCase,         agent_response: &AgentResponseData,     ) -> AgentEvalResult |
-| `new` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 28 | new(test_cases: Vec<AgentTestCase>) -> Self |
-| `test_cases` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 410 | test_cases(&self) -> &[AgentTestCase] |
-| `with_llm_judge` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 49 | with_llm_judge(mut self, judge: LLMJudge) -> Self |
-| `with_pricing_registry` | projects/meter/src/agent_eval/evaluator.rs | function | pub | 37 | with_pricing_registry(         test_cases: Vec<AgentTestCase>,         registry: PricingRegistry,     ) -> Self |
+| `AgentEvalSuiteResult` | apps/meter/src/agent_eval/evaluator.rs | struct | pub | 452 |  |
+| `AgentEvaluator` | apps/meter/src/agent_eval/evaluator.rs | struct | pub | 19 |  |
+| `AgentResponseData` | apps/meter/src/agent_eval/evaluator.rs | struct | pub | 423 |  |
+| `TokenUsage` | apps/meter/src/agent_eval/evaluator.rs | struct | pub | 443 |  |
+| `cost_calculator` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 415 | cost_calculator(&self) -> &CostCalculator |
+| `evaluate_suite` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 263 | evaluate_suite(         &self,         responses: Vec<AgentResponseData>,     ) -> Result<AgentEvalSuiteResult, String> |
+| `evaluate_test_case` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 62 | evaluate_test_case(         &self,         test_case: &AgentTestCase,         agent_response: &AgentResponseData,     ) -> AgentEvalResult |
+| `new` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 28 | new(test_cases: Vec<AgentTestCase>) -> Self |
+| `test_cases` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 410 | test_cases(&self) -> &[AgentTestCase] |
+| `with_llm_judge` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 49 | with_llm_judge(mut self, judge: LLMJudge) -> Self |
+| `with_pricing_registry` | apps/meter/src/agent_eval/evaluator.rs | function | pub | 37 | with_pricing_registry(         test_cases: Vec<AgentTestCase>,         registry: PricingRegistry,     ) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -51,14 +51,14 @@ use std::collections::{HashMap, HashSet};
 use std::time::Instant;
 
 /// Agent evaluator for running test cases
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentEvaluator {
     test_cases: Vec<AgentTestCase>,
     cost_calculator: CostCalculator,
     llm_judge: Option<LLMJudge>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 impl AgentEvaluator {
     /// Create a new agent evaluator
     pub fn new(test_cases: Vec<AgentTestCase>) -> Self {
@@ -455,7 +455,7 @@ impl AgentEvaluator {
 
 /// Agent response data structure
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentResponseData {
     /// Response content/text
     pub content: String,
@@ -475,7 +475,7 @@ pub struct AgentResponseData {
 
 /// Token usage (simplified version)
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct TokenUsage {
     pub prompt_tokens: u32,
     pub completion_tokens: u32,
@@ -484,7 +484,7 @@ pub struct TokenUsage {
 
 /// Suite evaluation result containing all test results and aggregated metrics
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-evaluator-rs.md#source
 pub struct AgentEvalSuiteResult {
     pub results: Vec<AgentEvalResult>,
     pub metrics: AgentEvalMetrics,
@@ -706,10 +706,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/evaluator.rs
+  - path: apps/meter/src/agent_eval/evaluator.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/evaluator.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/evaluator.rs` captured during meter full-codegen standardization.
 ```

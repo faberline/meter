@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
 // CODEGEN-BEGIN
 //! `meter test` delegate — run the real test runner and FORWARD its exit code.
 //!
@@ -20,7 +20,7 @@ use crate::report::finding::Finding;
 use crate::report::producer::generic_test_failure;
 
 /// Outcome of a delegated test run.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
 pub struct DelegateOutcome {
     /// The recorded child invocation (argv, timing, forwarded exit).
     pub record: RunnerRecord,
@@ -38,7 +38,7 @@ pub struct DelegateOutcome {
 /// Stderr is inherited (live output); stdout is captured for parsing. Returns a
 /// [`DelegateOutcome`] whose `record.delegated == true` and whose
 /// `record.exit_code == Some(child_exit_code)`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-delegate-rs.md#source
 pub fn delegate_test(
     passthrough: &[String],
     nextest_present: bool,

@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
 // CODEGEN-BEGIN
 //! Offline self-describers for `meter spec`.
 //!
@@ -16,7 +16,7 @@ use super::finding::{Kind, Severity};
 ///
 /// Deterministic by construction: built from object literals in a fixed order,
 /// so repeated `--compact` emissions are byte-identical.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
 pub fn json_schema() -> Value {
     json!({
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -147,7 +147,7 @@ pub fn json_schema() -> Value {
 }
 
 /// A discovery catalog: closed severity/kind sets and per-kind evidence shapes.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-schema-rs.md#source
 pub fn catalog() -> Value {
     json!({
         "schema_version": SCHEMA_VERSION,

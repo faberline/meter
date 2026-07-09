@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 // CODEGEN-BEGIN
 //! LLM-as-judge quality evaluation system
 
@@ -11,7 +11,7 @@ use std::path::Path;
 
 /// LLM-as-judge configuration
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudgeConfig {
     /// Model to use for judging (e.g., "gpt-4o-mini", "claude-3-haiku")
     pub model: String,
@@ -35,7 +35,7 @@ pub struct LLMJudgeConfig {
     pub template_version: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl Default for LLMJudgeConfig {
     fn default() -> Self {
         Self {
@@ -54,7 +54,7 @@ impl Default for LLMJudgeConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl LLMJudgeConfig {
     /// Create a new LLM judge configuration
     pub fn new(model: impl Into<String>, provider: impl Into<String>) -> Self {
@@ -103,7 +103,7 @@ impl LLMJudgeConfig {
 
 /// LLM judge response structure (for JSON parsing)
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudgeResponse {
     /// Individual criterion scores (0.0-1.0)
     pub scores: HashMap<String, f64>,
@@ -114,13 +114,13 @@ pub struct LLMJudgeResponse {
 }
 
 /// LLM-as-judge evaluator
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 pub struct LLMJudge {
     config: LLMJudgeConfig,
     registry: PromptRegistry,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-llm-judge-rs.md#source
 impl LLMJudge {
     /// Create a new LLM judge with the given configuration
     ///

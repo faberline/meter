@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-examples-profile-target-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-examples-profile-target-rs.md#source
 // CODEGEN-BEGIN
 //! A tiny CPU-bound profiling target for the `meter profile` LIVE gate.
 //!

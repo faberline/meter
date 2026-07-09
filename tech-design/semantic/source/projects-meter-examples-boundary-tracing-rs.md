@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/examples/boundary_tracing.rs
+# Standardized apps/meter/examples/boundary_tracing.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/examples/boundary_tracing.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/examples/boundary_tracing.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -195,10 +195,10 @@ fn concurrent_tracing_example() {
 
 ```yaml
 changes:
-  - path: projects/meter/examples/boundary_tracing.rs
+  - path: apps/meter/examples/boundary_tracing.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/examples/boundary_tracing.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/examples/boundary_tracing.rs` captured during meter full-codegen standardization.
 ```

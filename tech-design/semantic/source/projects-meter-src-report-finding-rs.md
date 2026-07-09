@@ -10,30 +10,30 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/finding.rs
+# Standardized apps/meter/src/report/finding.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/finding.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/finding.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `Finding` | projects/meter/src/report/finding.rs | struct | pub | 20 |  |
-| `Invoke` | projects/meter/src/report/finding.rs | struct | pub | 49 |  |
-| `Kind` | projects/meter/src/report/finding.rs | enum | pub | 133 |  |
-| `Location` | projects/meter/src/report/finding.rs | struct | pub | 71 |  |
-| `Severity` | projects/meter/src/report/finding.rs | enum | pub | 84 |  |
-| `all` | projects/meter/src/report/finding.rs | function | pub | 117 | all() -> [Severity; 5] |
-| `all` | projects/meter/src/report/finding.rs | function | pub | 191 | all() -> [Kind; 5] |
-| `as_str` | projects/meter/src/report/finding.rs | function | pub | 106 | as_str(&self) -> &'static str |
-| `as_str` | projects/meter/src/report/finding.rs | function | pub | 159 | as_str(&self) -> &'static str |
-| `command` | projects/meter/src/report/finding.rs | function | pub | 60 | command(command: impl Into<String>) -> Self |
-| `finding_id` | projects/meter/src/report/finding.rs | function | pub | 205 | finding_id(kind: Kind, slug: impl AsRef<str>) -> String |
-| `id_prefix` | projects/meter/src/report/finding.rs | function | pub | 174 | id_prefix(&self) -> &'static str |
-| `rank` | projects/meter/src/report/finding.rs | function | pub | 95 | rank(&self) -> u8 |
+| `Finding` | apps/meter/src/report/finding.rs | struct | pub | 20 |  |
+| `Invoke` | apps/meter/src/report/finding.rs | struct | pub | 49 |  |
+| `Kind` | apps/meter/src/report/finding.rs | enum | pub | 133 |  |
+| `Location` | apps/meter/src/report/finding.rs | struct | pub | 71 |  |
+| `Severity` | apps/meter/src/report/finding.rs | enum | pub | 84 |  |
+| `all` | apps/meter/src/report/finding.rs | function | pub | 117 | all() -> [Severity; 5] |
+| `all` | apps/meter/src/report/finding.rs | function | pub | 191 | all() -> [Kind; 5] |
+| `as_str` | apps/meter/src/report/finding.rs | function | pub | 106 | as_str(&self) -> &'static str |
+| `as_str` | apps/meter/src/report/finding.rs | function | pub | 159 | as_str(&self) -> &'static str |
+| `command` | apps/meter/src/report/finding.rs | function | pub | 60 | command(command: impl Into<String>) -> Self |
+| `finding_id` | apps/meter/src/report/finding.rs | function | pub | 205 | finding_id(kind: Kind, slug: impl AsRef<str>) -> String |
+| `id_prefix` | apps/meter/src/report/finding.rs | function | pub | 174 | id_prefix(&self) -> &'static str |
+| `rank` | apps/meter/src/report/finding.rs | function | pub | 95 | rank(&self) -> u8 |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -54,7 +54,7 @@ use serde::{Deserialize, Serialize};
 
 /// A single machine-actionable issue surfaced by a `meter` verb.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Finding {
     /// STABLE/DETERMINISTIC `"{kind}:{slug}"` identifier. Examples:
     /// `"rust_vuln:RUSTSEC-2021-0001"`, `"hotspot:mb_release"`,
@@ -83,7 +83,7 @@ pub struct Finding {
 
 /// A literally-runnable next step the agent can execute verbatim.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Invoke {
     /// The command to run (e.g. `"cargo test -p meter mod::name"`).
     pub command: String,
@@ -92,7 +92,7 @@ pub struct Invoke {
     pub args: serde_json::Value,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Invoke {
     /// Construct a command-only invoke with a null args payload.
     pub fn command(command: impl Into<String>) -> Self {
@@ -105,7 +105,7 @@ impl Invoke {
 
 /// Optional source location for a finding.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub struct Location {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub file: Option<String>,
@@ -118,7 +118,7 @@ pub struct Location {
 /// Severity bucket. Sorted critical -> info when ordering findings.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub enum Severity {
     Critical,
     High,
@@ -127,7 +127,7 @@ pub enum Severity {
     Info,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Severity {
     /// Descending rank: higher number = more severe (for sort-desc).
     pub fn rank(&self) -> u8 {
@@ -167,7 +167,7 @@ impl Severity {
 /// `evidence` JSON shape it carries.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub enum Kind {
     /// `meter profile` capture — `{symbol,self_ns,total_ns,pct,samples,rank}` (C1 contract).
     Hotspot,
@@ -191,7 +191,7 @@ pub enum Kind {
     Vital,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 impl Kind {
     /// Lowercase snake_case label, matching the serde representation.
     pub fn as_str(&self) -> &'static str {
@@ -239,7 +239,7 @@ impl Kind {
 
 /// Build a deterministic finding id as `"{prefix}:{slug}"`. The slug is taken
 /// verbatim (callers are responsible for stable slugs).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-finding-rs.md#source
 pub fn finding_id(kind: Kind, slug: impl AsRef<str>) -> String {
     format!("{}:{}", kind.id_prefix(), slug.as_ref())
 }
@@ -308,10 +308,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/finding.rs
+  - path: apps/meter/src/report/finding.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/finding.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/finding.rs` captured during meter full-codegen standardization.
 ```

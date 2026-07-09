@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 // CODEGEN-BEGIN
 //! Golden dataset management for agent evaluation test cases
 
@@ -11,7 +11,7 @@ use std::path::{Path, PathBuf};
 
 /// Metadata for a golden dataset
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetMetadata {
     /// Dataset name
     pub name: String,
@@ -40,7 +40,7 @@ pub struct DatasetMetadata {
 
 /// A golden dataset containing test cases
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetSnapshot {
     /// Metadata
     pub metadata: DatasetMetadata,
@@ -49,7 +49,7 @@ pub struct DatasetSnapshot {
     pub test_cases: Vec<AgentTestCase>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl DatasetSnapshot {
     /// Create a new dataset snapshot
     pub fn new(name: impl Into<String>, test_cases: Vec<AgentTestCase>) -> Self {
@@ -104,13 +104,13 @@ impl DatasetSnapshot {
 }
 
 /// Golden dataset manager for storing and loading test case datasets
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct GoldenDataset {
     /// Root directory for datasets
     root_dir: PathBuf,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl GoldenDataset {
     /// Create a new golden dataset manager
     ///
@@ -280,10 +280,10 @@ impl GoldenDataset {
 }
 
 /// Git integration for dataset versioning
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetGitIntegration;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl DatasetGitIntegration {
     /// Get current git commit hash
     ///

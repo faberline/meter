@@ -10,19 +10,19 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/performance/mod.rs
+# Standardized apps/meter/src/performance/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/performance/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/performance/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `boundary` | projects/meter/src/performance/mod.rs | module | pub | 47 |  |
-| `profiler` | projects/meter/src/performance/mod.rs | module | pub | 48 |  |
+| `boundary` | apps/meter/src/performance/mod.rs | module | pub | 47 |  |
+| `profiler` | apps/meter/src/performance/mod.rs | module | pub | 48 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -88,10 +88,10 @@ pub use profiler::{
 
 ```yaml
 changes:
-  - path: projects/meter/src/performance/mod.rs
+  - path: apps/meter/src/performance/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/performance/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/performance/mod.rs` captured during meter full-codegen standardization.
 ```

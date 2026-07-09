@@ -10,30 +10,30 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/builder.rs
+# Standardized apps/meter/src/report/builder.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/builder.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/builder.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `ReportBuilder` | projects/meter/src/report/builder.rs | struct | pub | 20 |  |
-| `add_criterion` | projects/meter/src/report/builder.rs | function | pub | 92 | add_criterion(&mut self, criterion: impl Into<String>) -> &mut Self |
-| `add_finding` | projects/meter/src/report/builder.rs | function | pub | 68 | add_finding(&mut self, finding: Finding) -> &mut Self |
-| `add_findings` | projects/meter/src/report/builder.rs | function | pub | 74 | add_findings(&mut self, findings: impl IntoIterator<Item = Finding>) -> &mut Self |
-| `add_missing` | projects/meter/src/report/builder.rs | function | pub | 101 | add_missing(&mut self, missing: impl Into<String>) -> &mut Self |
-| `finalize` | projects/meter/src/report/builder.rs | function | pub | 254 | finalize(mut self) -> MeterReport |
-| `forward_exit` | projects/meter/src/report/builder.rs | function | pub | 116 | forward_exit(&mut self, code: i32) -> &mut Self |
-| `informational_findings_are_clean` | projects/meter/src/report/builder.rs | function | pub | 122 | informational_findings_are_clean(&mut self) -> &mut Self |
-| `new` | projects/meter/src/report/builder.rs | function | pub | 51 | new(verb: impl Into<String>, target: impl Into<String>) -> Self |
-| `requires_hitl` | projects/meter/src/report/builder.rs | function | pub | 128 | requires_hitl(&mut self, value: bool) -> &mut Self |
-| `tool_error` | projects/meter/src/report/builder.rs | function | pub | 109 | tool_error(&mut self, code: i32, message: impl Into<String>) -> &mut Self |
-| `with_environment` | projects/meter/src/report/builder.rs | function | pub | 86 | with_environment(&mut self, env: EnvBlock) -> &mut Self |
-| `with_last_run` | projects/meter/src/report/builder.rs | function | pub | 80 | with_last_run(&mut self, record: RunnerRecord) -> &mut Self |
+| `ReportBuilder` | apps/meter/src/report/builder.rs | struct | pub | 20 |  |
+| `add_criterion` | apps/meter/src/report/builder.rs | function | pub | 92 | add_criterion(&mut self, criterion: impl Into<String>) -> &mut Self |
+| `add_finding` | apps/meter/src/report/builder.rs | function | pub | 68 | add_finding(&mut self, finding: Finding) -> &mut Self |
+| `add_findings` | apps/meter/src/report/builder.rs | function | pub | 74 | add_findings(&mut self, findings: impl IntoIterator<Item = Finding>) -> &mut Self |
+| `add_missing` | apps/meter/src/report/builder.rs | function | pub | 101 | add_missing(&mut self, missing: impl Into<String>) -> &mut Self |
+| `finalize` | apps/meter/src/report/builder.rs | function | pub | 254 | finalize(mut self) -> MeterReport |
+| `forward_exit` | apps/meter/src/report/builder.rs | function | pub | 116 | forward_exit(&mut self, code: i32) -> &mut Self |
+| `informational_findings_are_clean` | apps/meter/src/report/builder.rs | function | pub | 122 | informational_findings_are_clean(&mut self) -> &mut Self |
+| `new` | apps/meter/src/report/builder.rs | function | pub | 51 | new(verb: impl Into<String>, target: impl Into<String>) -> Self |
+| `requires_hitl` | apps/meter/src/report/builder.rs | function | pub | 128 | requires_hitl(&mut self, value: bool) -> &mut Self |
+| `tool_error` | apps/meter/src/report/builder.rs | function | pub | 109 | tool_error(&mut self, code: i32, message: impl Into<String>) -> &mut Self |
+| `with_environment` | apps/meter/src/report/builder.rs | function | pub | 86 | with_environment(&mut self, env: EnvBlock) -> &mut Self |
+| `with_last_run` | apps/meter/src/report/builder.rs | function | pub | 80 | with_last_run(&mut self, record: RunnerRecord) -> &mut Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -54,7 +54,7 @@ const DEFAULT_SAMPLE_N: usize = 20;
 
 /// Incrementally assemble a [`MeterReport`]; `finalize()` derives all
 /// status-dependent fields.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
 pub struct ReportBuilder {
     verb: String,
     target: String,
@@ -83,7 +83,7 @@ pub struct ReportBuilder {
     requires_hitl: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-builder-rs.md#source
 impl ReportBuilder {
     /// Start a builder for `verb` against `target`.
     pub fn new(verb: impl Into<String>, target: impl Into<String>) -> Self {
@@ -742,10 +742,10 @@ mod run_fold_tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/builder.rs
+  - path: apps/meter/src/report/builder.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/builder.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/builder.rs` captured during meter full-codegen standardization.
 ```

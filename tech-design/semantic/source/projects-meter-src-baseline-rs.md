@@ -10,47 +10,47 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/baseline.rs
+# Standardized apps/meter/src/baseline.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/baseline.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/baseline.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `BaselineContent` | projects/meter/src/baseline.rs | enum | pub | 99 |  |
-| `BaselineMetadata` | projects/meter/src/baseline.rs | struct | pub | 66 |  |
-| `BaselineSnapshot` | projects/meter/src/baseline.rs | struct | pub | 109 |  |
-| `FileBaselineStore` | projects/meter/src/baseline.rs | struct | pub | 311 |  |
-| `GitMetadata` | projects/meter/src/baseline.rs | struct | pub | 85 |  |
-| `Improvement` | projects/meter/src/baseline.rs | struct | pub | 268 |  |
-| `PercentileType` | projects/meter/src/baseline.rs | enum | pub | 22 |  |
-| `Regression` | projects/meter/src/baseline.rs | struct | pub | 248 |  |
-| `RegressionDetector` | projects/meter/src/baseline.rs | struct | pub | 518 |  |
-| `RegressionReport` | projects/meter/src/baseline.rs | struct | pub | 296 |  |
-| `RegressionSeverity` | projects/meter/src/baseline.rs | enum | pub | 236 |  |
-| `RegressionSummary` | projects/meter/src/baseline.rs | struct | pub | 282 |  |
-| `RegressionThresholds` | projects/meter/src/baseline.rs | struct | pub | 198 |  |
-| `agent_eval` | projects/meter/src/baseline.rs | function | pub | 153 | agent_eval(&self) -> Option<&[AgentEvalResult]> |
-| `benchmarks` | projects/meter/src/baseline.rs | function | pub | 145 | benchmarks(&self) -> Option<&[BenchmarkResult]> |
-| `default_store` | projects/meter/src/baseline.rs | function | pub | 325 | default_store() -> Self |
-| `detect_regressions` | projects/meter/src/baseline.rs | function | pub | 531 | detect_regressions(         baseline: &BaselineSnapshot,         current: &[BenchmarkResult],         thresholds: &RegressionThresholds,     ) -> RegressionReport |
-| `extract_value` | projects/meter/src/baseline.rs | function | pub | 34 | extract_value(&self, stats: &BenchmarkStats) -> f64 |
-| `from_agent_eval` | projects/meter/src/baseline.rs | function | pub | 132 | from_agent_eval(results: Vec<AgentEvalResult>, env: &BenchmarkEnvironment) -> Self |
-| `from_benchmarks` | projects/meter/src/baseline.rs | function | pub | 119 | from_benchmarks(benchmarks: Vec<BenchmarkResult>, env: &BenchmarkEnvironment) -> Self |
-| `from_binary` | projects/meter/src/baseline.rs | function | pub | 183 | from_binary(_bytes: &[u8]) -> Result<Self, String> |
-| `list_baselines` | projects/meter/src/baseline.rs | function | pub | 445 | list_baselines(&self, name: &str) -> io::Result<Vec<BaselineMetadata>> |
-| `load_baseline` | projects/meter/src/baseline.rs | function | pub | 409 | load_baseline(&self, name: &str, id: &str) -> io::Result<BaselineSnapshot> |
-| `name` | projects/meter/src/baseline.rs | function | pub | 46 | name(&self) -> &'static str |
-| `new` | projects/meter/src/baseline.rs | function | pub | 318 | new(base_dir: impl AsRef<Path>) -> Self |
-| `save_agent_eval_baseline` | projects/meter/src/baseline.rs | function | pub | 357 | save_agent_eval_baseline(         &self,         name: &str,         results: &[AgentEvalResult],         env: &BenchmarkEnvironment,     ) -> io::Result<String> |
-| `save_baseline` | projects/meter/src/baseline.rs | function | pub | 338 | save_baseline(         &self,         name: &str,         results: &[BenchmarkResult],         env: &BenchmarkEnvironment,     ) -> io::Result<String> |
-| `size_comparison` | projects/meter/src/baseline.rs | function | pub | 188 | size_comparison(&self) -> (usize, usize) |
-| `to_binary` | projects/meter/src/baseline.rs | function | pub | 166 | to_binary(&self) -> Result<Vec<u8>, String> |
-| `with_percentile` | projects/meter/src/baseline.rs | function | pub | 227 | with_percentile(mut self, percentile: PercentileType) -> Self |
+| `BaselineContent` | apps/meter/src/baseline.rs | enum | pub | 99 |  |
+| `BaselineMetadata` | apps/meter/src/baseline.rs | struct | pub | 66 |  |
+| `BaselineSnapshot` | apps/meter/src/baseline.rs | struct | pub | 109 |  |
+| `FileBaselineStore` | apps/meter/src/baseline.rs | struct | pub | 311 |  |
+| `GitMetadata` | apps/meter/src/baseline.rs | struct | pub | 85 |  |
+| `Improvement` | apps/meter/src/baseline.rs | struct | pub | 268 |  |
+| `PercentileType` | apps/meter/src/baseline.rs | enum | pub | 22 |  |
+| `Regression` | apps/meter/src/baseline.rs | struct | pub | 248 |  |
+| `RegressionDetector` | apps/meter/src/baseline.rs | struct | pub | 518 |  |
+| `RegressionReport` | apps/meter/src/baseline.rs | struct | pub | 296 |  |
+| `RegressionSeverity` | apps/meter/src/baseline.rs | enum | pub | 236 |  |
+| `RegressionSummary` | apps/meter/src/baseline.rs | struct | pub | 282 |  |
+| `RegressionThresholds` | apps/meter/src/baseline.rs | struct | pub | 198 |  |
+| `agent_eval` | apps/meter/src/baseline.rs | function | pub | 153 | agent_eval(&self) -> Option<&[AgentEvalResult]> |
+| `benchmarks` | apps/meter/src/baseline.rs | function | pub | 145 | benchmarks(&self) -> Option<&[BenchmarkResult]> |
+| `default_store` | apps/meter/src/baseline.rs | function | pub | 325 | default_store() -> Self |
+| `detect_regressions` | apps/meter/src/baseline.rs | function | pub | 531 | detect_regressions(         baseline: &BaselineSnapshot,         current: &[BenchmarkResult],         thresholds: &RegressionThresholds,     ) -> RegressionReport |
+| `extract_value` | apps/meter/src/baseline.rs | function | pub | 34 | extract_value(&self, stats: &BenchmarkStats) -> f64 |
+| `from_agent_eval` | apps/meter/src/baseline.rs | function | pub | 132 | from_agent_eval(results: Vec<AgentEvalResult>, env: &BenchmarkEnvironment) -> Self |
+| `from_benchmarks` | apps/meter/src/baseline.rs | function | pub | 119 | from_benchmarks(benchmarks: Vec<BenchmarkResult>, env: &BenchmarkEnvironment) -> Self |
+| `from_binary` | apps/meter/src/baseline.rs | function | pub | 183 | from_binary(_bytes: &[u8]) -> Result<Self, String> |
+| `list_baselines` | apps/meter/src/baseline.rs | function | pub | 445 | list_baselines(&self, name: &str) -> io::Result<Vec<BaselineMetadata>> |
+| `load_baseline` | apps/meter/src/baseline.rs | function | pub | 409 | load_baseline(&self, name: &str, id: &str) -> io::Result<BaselineSnapshot> |
+| `name` | apps/meter/src/baseline.rs | function | pub | 46 | name(&self) -> &'static str |
+| `new` | apps/meter/src/baseline.rs | function | pub | 318 | new(base_dir: impl AsRef<Path>) -> Self |
+| `save_agent_eval_baseline` | apps/meter/src/baseline.rs | function | pub | 357 | save_agent_eval_baseline(         &self,         name: &str,         results: &[AgentEvalResult],         env: &BenchmarkEnvironment,     ) -> io::Result<String> |
+| `save_baseline` | apps/meter/src/baseline.rs | function | pub | 338 | save_baseline(         &self,         name: &str,         results: &[BenchmarkResult],         env: &BenchmarkEnvironment,     ) -> io::Result<String> |
+| `size_comparison` | apps/meter/src/baseline.rs | function | pub | 188 | size_comparison(&self) -> (usize, usize) |
+| `to_binary` | apps/meter/src/baseline.rs | function | pub | 166 | to_binary(&self) -> Result<Vec<u8>, String> |
+| `with_percentile` | apps/meter/src/baseline.rs | function | pub | 227 | with_percentile(mut self, percentile: PercentileType) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -73,7 +73,7 @@ use std::path::{Path, PathBuf};
 
 /// Percentile to use for regression detection
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub enum PercentileType {
     Mean,
     P50,
@@ -83,7 +83,7 @@ pub enum PercentileType {
     P9999,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl PercentileType {
     /// Extract the specified percentile value from BenchmarkStats
     pub fn extract_value(&self, stats: &BenchmarkStats) -> f64 {
@@ -117,7 +117,7 @@ impl PercentileType {
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct BaselineMetadata {
     /// Baseline format version
     pub version: String,
@@ -136,7 +136,7 @@ pub struct BaselineMetadata {
     derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize)
 )]
 #[cfg_attr(feature = "rkyv", archive(check_bytes))]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct GitMetadata {
     /// Current commit SHA
     pub commit_sha: Option<String>,
@@ -150,7 +150,7 @@ pub struct GitMetadata {
 
 /// Content type for baseline snapshots
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub enum BaselineContent {
     /// Benchmark results (supports binary serialization)
     Benchmarks(Vec<BenchmarkResult>),
@@ -160,7 +160,7 @@ pub enum BaselineContent {
 
 /// A snapshot of benchmark results at a point in time
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct BaselineSnapshot {
     /// Metadata about this baseline
     pub metadata: BaselineMetadata,
@@ -168,7 +168,7 @@ pub struct BaselineSnapshot {
     pub content: BaselineContent,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl BaselineSnapshot {
     /// Create a new benchmark baseline snapshot
     pub fn from_benchmarks(benchmarks: Vec<BenchmarkResult>, env: &BenchmarkEnvironment) -> Self {
@@ -213,7 +213,7 @@ impl BaselineSnapshot {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl BaselineSnapshot {
     /// Serialize to binary format using rkyv (zero-copy)
     /// Only works for benchmark baselines
@@ -249,7 +249,7 @@ impl BaselineSnapshot {
 
 /// Thresholds for regression detection
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct RegressionThresholds {
     /// Warning threshold as percentage (e.g., 5.0 = 5%)
     pub warning_threshold_percent: f64,
@@ -263,7 +263,7 @@ pub struct RegressionThresholds {
     pub percentile_type: PercentileType,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl Default for RegressionThresholds {
     fn default() -> Self {
         Self {
@@ -276,7 +276,7 @@ impl Default for RegressionThresholds {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl RegressionThresholds {
     /// Set which percentile to use for regression detection
     pub fn with_percentile(mut self, percentile: PercentileType) -> Self {
@@ -287,7 +287,7 @@ impl RegressionThresholds {
 
 /// Severity of a detected regression
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub enum RegressionSeverity {
     /// 0-5% slower
     Minor,
@@ -299,7 +299,7 @@ pub enum RegressionSeverity {
 
 /// A detected performance regression
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct Regression {
     /// Name of the benchmark
     pub name: String,
@@ -319,7 +319,7 @@ pub struct Regression {
 
 /// A detected performance improvement
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct Improvement {
     /// Name of the benchmark
     pub name: String,
@@ -333,7 +333,7 @@ pub struct Improvement {
 
 /// Summary statistics for regression analysis
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct RegressionSummary {
     /// Total number of benchmarks compared
     pub total_benchmarks: usize,
@@ -347,7 +347,7 @@ pub struct RegressionSummary {
 
 /// Report containing all regression analysis results
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct RegressionReport {
     /// Baseline timestamp
     pub baseline_timestamp: String,
@@ -362,12 +362,12 @@ pub struct RegressionReport {
 }
 
 /// File-based baseline storage
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct FileBaselineStore {
     base_dir: PathBuf,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl FileBaselineStore {
     /// Create a new file-based baseline store
     pub fn new(base_dir: impl AsRef<Path>) -> Self {
@@ -569,10 +569,10 @@ impl FileBaselineStore {
 }
 
 /// Regression detection engine
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 pub struct RegressionDetector;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-baseline-rs.md#source
 impl RegressionDetector {
     /// Detect regressions by comparing current results against baseline
     ///
@@ -936,10 +936,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/baseline.rs
+  - path: apps/meter/src/baseline.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/baseline.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/baseline.rs` captured during meter full-codegen standardization.
 ```

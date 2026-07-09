@@ -10,36 +10,36 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/fixtures.rs
+# Standardized apps/meter/src/fixtures.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/fixtures.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/fixtures.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `FixtureMeta` | projects/meter/src/fixtures.rs | struct | pub | 85 |  |
-| `FixtureRegistry` | projects/meter/src/fixtures.rs | struct | pub | 136 |  |
-| `FixtureScope` | projects/meter/src/fixtures.rs | enum | pub | 22 |  |
-| `detect_circular_deps` | projects/meter/src/fixtures.rs | function | pub | 226 | detect_circular_deps(&self) -> Result<(), Vec<String>> |
-| `get_all_names` | projects/meter/src/fixtures.rs | function | pub | 161 | get_all_names(&self) -> Vec<String> |
-| `get_autouse_fixtures` | projects/meter/src/fixtures.rs | function | pub | 166 | get_autouse_fixtures(&self, scope: FixtureScope) -> Vec<&FixtureMeta> |
-| `get_dependencies` | projects/meter/src/fixtures.rs | function | pub | 174 | get_dependencies(&self, name: &str) -> Option<&[String]> |
-| `get_meta` | projects/meter/src/fixtures.rs | function | pub | 156 | get_meta(&self, name: &str) -> Option<&FixtureMeta> |
-| `has_fixture` | projects/meter/src/fixtures.rs | function | pub | 278 | has_fixture(&self, name: &str) -> bool |
-| `is_empty` | projects/meter/src/fixtures.rs | function | pub | 288 | is_empty(&self) -> bool |
-| `len` | projects/meter/src/fixtures.rs | function | pub | 283 | len(&self) -> usize |
-| `new` | projects/meter/src/fixtures.rs | function | pub | 101 | new(name: impl Into<String>, scope: FixtureScope, autouse: bool) -> Self |
-| `new` | projects/meter/src/fixtures.rs | function | pub | 144 | new() -> Self |
-| `register` | projects/meter/src/fixtures.rs | function | pub | 151 | register(&mut self, meta: FixtureMeta) |
-| `resolve_order` | projects/meter/src/fixtures.rs | function | pub | 181 | resolve_order(&self, fixture_names: &[String]) -> Result<Vec<String>, String> |
-| `should_cleanup_before` | projects/meter/src/fixtures.rs | function | pub | 63 | should_cleanup_before(&self, other: &FixtureScope) -> bool |
-| `with_dependencies` | projects/meter/src/fixtures.rs | function | pub | 124 | with_dependencies(mut self, deps: Vec<String>) -> Self |
-| `with_dependency` | projects/meter/src/fixtures.rs | function | pub | 112 | with_dependency(mut self, dep: impl Into<String>) -> Self |
-| `with_teardown` | projects/meter/src/fixtures.rs | function | pub | 118 | with_teardown(mut self, has_teardown: bool) -> Self |
+| `FixtureMeta` | apps/meter/src/fixtures.rs | struct | pub | 85 |  |
+| `FixtureRegistry` | apps/meter/src/fixtures.rs | struct | pub | 136 |  |
+| `FixtureScope` | apps/meter/src/fixtures.rs | enum | pub | 22 |  |
+| `detect_circular_deps` | apps/meter/src/fixtures.rs | function | pub | 226 | detect_circular_deps(&self) -> Result<(), Vec<String>> |
+| `get_all_names` | apps/meter/src/fixtures.rs | function | pub | 161 | get_all_names(&self) -> Vec<String> |
+| `get_autouse_fixtures` | apps/meter/src/fixtures.rs | function | pub | 166 | get_autouse_fixtures(&self, scope: FixtureScope) -> Vec<&FixtureMeta> |
+| `get_dependencies` | apps/meter/src/fixtures.rs | function | pub | 174 | get_dependencies(&self, name: &str) -> Option<&[String]> |
+| `get_meta` | apps/meter/src/fixtures.rs | function | pub | 156 | get_meta(&self, name: &str) -> Option<&FixtureMeta> |
+| `has_fixture` | apps/meter/src/fixtures.rs | function | pub | 278 | has_fixture(&self, name: &str) -> bool |
+| `is_empty` | apps/meter/src/fixtures.rs | function | pub | 288 | is_empty(&self) -> bool |
+| `len` | apps/meter/src/fixtures.rs | function | pub | 283 | len(&self) -> usize |
+| `new` | apps/meter/src/fixtures.rs | function | pub | 101 | new(name: impl Into<String>, scope: FixtureScope, autouse: bool) -> Self |
+| `new` | apps/meter/src/fixtures.rs | function | pub | 144 | new() -> Self |
+| `register` | apps/meter/src/fixtures.rs | function | pub | 151 | register(&mut self, meta: FixtureMeta) |
+| `resolve_order` | apps/meter/src/fixtures.rs | function | pub | 181 | resolve_order(&self, fixture_names: &[String]) -> Result<Vec<String>, String> |
+| `should_cleanup_before` | apps/meter/src/fixtures.rs | function | pub | 63 | should_cleanup_before(&self, other: &FixtureScope) -> bool |
+| `with_dependencies` | apps/meter/src/fixtures.rs | function | pub | 124 | with_dependencies(mut self, deps: Vec<String>) -> Self |
+| `with_dependency` | apps/meter/src/fixtures.rs | function | pub | 112 | with_dependency(mut self, dep: impl Into<String>) -> Self |
+| `with_teardown` | apps/meter/src/fixtures.rs | function | pub | 118 | with_teardown(mut self, has_teardown: bool) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -62,7 +62,7 @@ use std::str::FromStr;
 
 /// Fixture scope determines lifecycle and caching strategy
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 pub enum FixtureScope {
     /// Function scope - executed once per test function (default)
     Function,
@@ -74,7 +74,7 @@ pub enum FixtureScope {
     Session,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 impl std::fmt::Display for FixtureScope {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -86,7 +86,7 @@ impl std::fmt::Display for FixtureScope {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 impl FromStr for FixtureScope {
     type Err = String;
 
@@ -101,7 +101,7 @@ impl FromStr for FixtureScope {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 impl FixtureScope {
     /// Check if this scope should be cleaned up before another scope
     pub fn should_cleanup_before(&self, other: &FixtureScope) -> bool {
@@ -125,7 +125,7 @@ impl FixtureScope {
 /// This is a pure Rust representation. The actual fixture function is stored
 /// as a Python object in the  binding layer.
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 pub struct FixtureMeta {
     /// Fixture name (function name)
     pub name: String,
@@ -139,7 +139,7 @@ pub struct FixtureMeta {
     pub has_teardown: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 impl FixtureMeta {
     /// Create new fixture metadata
     pub fn new(name: impl Into<String>, scope: FixtureScope, autouse: bool) -> Self {
@@ -176,13 +176,13 @@ impl FixtureMeta {
 /// This is a pure Rust implementation. The  binding layer wraps this
 /// and handles Python-specific operations (calling functions, etc).
 #[derive(Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 pub struct FixtureRegistry {
     /// Registered fixtures by name
     fixtures: HashMap<String, FixtureMeta>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-fixtures-rs.md#source
 impl FixtureRegistry {
     /// Create a new fixture registry
     pub fn new() -> Self {
@@ -461,10 +461,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/fixtures.rs
+  - path: apps/meter/src/fixtures.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/fixtures.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/fixtures.rs` captured during meter full-codegen standardization.
 ```

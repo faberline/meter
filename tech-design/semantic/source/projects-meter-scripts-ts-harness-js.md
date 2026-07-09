@@ -10,30 +10,30 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/scripts/ts_harness.js
+# Standardized apps/meter/scripts/ts_harness.js
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/scripts/ts_harness.js` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/scripts/ts_harness.js` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `args` | projects/meter/scripts/ts_harness.js | constant | pub | 21 |  |
-| `collectV8Metrics` | projects/meter/scripts/ts_harness.js | constant | pub | 24 |  |
-| `findTestFiles` | projects/meter/scripts/ts_harness.js | function | pub | 42 | findTestFiles(pattern) |
-| `fs` | projects/meter/scripts/ts_harness.js | constant | pub | 15 |  |
-| `initialHeapStats` | projects/meter/scripts/ts_harness.js | constant | pub | 36 |  |
-| `main` | projects/meter/scripts/ts_harness.js | function | pub | 113 | main() |
-| `path` | projects/meter/scripts/ts_harness.js | constant | pub | 16 |  |
-| `projectPath` | projects/meter/scripts/ts_harness.js | constant | pub | 22 |  |
-| `results` | projects/meter/scripts/ts_harness.js | constant | pub | 27 |  |
-| `runTest` | projects/meter/scripts/ts_harness.js | function | pub | 74 | runTest(testFile) |
-| `testPattern` | projects/meter/scripts/ts_harness.js | constant | pub | 23 |  |
-| `v8` | projects/meter/scripts/ts_harness.js | constant | pub | 18 |  |
-| `{ glob }` | projects/meter/scripts/ts_harness.js | constant | pub | 17 |  |
+| `args` | apps/meter/scripts/ts_harness.js | constant | pub | 21 |  |
+| `collectV8Metrics` | apps/meter/scripts/ts_harness.js | constant | pub | 24 |  |
+| `findTestFiles` | apps/meter/scripts/ts_harness.js | function | pub | 42 | findTestFiles(pattern) |
+| `fs` | apps/meter/scripts/ts_harness.js | constant | pub | 15 |  |
+| `initialHeapStats` | apps/meter/scripts/ts_harness.js | constant | pub | 36 |  |
+| `main` | apps/meter/scripts/ts_harness.js | function | pub | 113 | main() |
+| `path` | apps/meter/scripts/ts_harness.js | constant | pub | 16 |  |
+| `projectPath` | apps/meter/scripts/ts_harness.js | constant | pub | 22 |  |
+| `results` | apps/meter/scripts/ts_harness.js | constant | pub | 27 |  |
+| `runTest` | apps/meter/scripts/ts_harness.js | function | pub | 74 | runTest(testFile) |
+| `testPattern` | apps/meter/scripts/ts_harness.js | constant | pub | 23 |  |
+| `v8` | apps/meter/scripts/ts_harness.js | constant | pub | 18 |  |
+| `{ glob }` | apps/meter/scripts/ts_harness.js | constant | pub | 17 |  |
 ## Source
 <!-- type: text-source-unit lang: javascript -->
 
@@ -196,10 +196,10 @@ main().catch(error => {
 
 ```yaml
 changes:
-  - path: projects/meter/scripts/ts_harness.js
+  - path: apps/meter/scripts/ts_harness.js
     action: modify
     section: text-source-unit
     impl_mode: codegen
     description: |
-      Lossless text-source-unit for `projects/meter/scripts/ts_harness.js` captured during meter full-codegen standardization.
+      Lossless text-source-unit for `apps/meter/scripts/ts_harness.js` captured during meter full-codegen standardization.
 ```

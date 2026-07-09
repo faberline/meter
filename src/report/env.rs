@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
 // CODEGEN-BEGIN
 //! [`EnvBlock::detect`] — side-effect-free environment detection surfaced in
 //! every report.
@@ -11,7 +11,7 @@ use std::process::Command;
 
 use super::envelope::EnvBlock;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-env-rs.md#source
 impl EnvBlock {
     /// Detect the current environment. Read-only: probes tool presence via
     /// `--version` invocations and compile-time `cfg!` for the sampler backend.

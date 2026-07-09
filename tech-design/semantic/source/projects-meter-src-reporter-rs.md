@@ -10,44 +10,44 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/reporter.rs
+# Standardized apps/meter/src/reporter.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/reporter.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/reporter.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AgentEvalReport` | projects/meter/src/reporter.rs | struct | pub | 197 |  |
-| `CoverageInfo` | projects/meter/src/reporter.rs | struct | pub | 97 |  |
-| `EnvironmentInfo` | projects/meter/src/reporter.rs | struct | pub | 67 |  |
-| `FileCoverage` | projects/meter/src/reporter.rs | struct | pub | 81 |  |
-| `ReportFormat` | projects/meter/src/reporter.rs | enum | pub | 13 |  |
-| `Reporter` | projects/meter/src/reporter.rs | struct | pub | 247 |  |
-| `TestReport` | projects/meter/src/reporter.rs | struct | pub | 46 |  |
-| `all_passed` | projects/meter/src/reporter.rs | function | pub | 239 | all_passed(&self) -> bool |
-| `console` | projects/meter/src/reporter.rs | function | pub | 284 | console() -> Self |
-| `failed_results` | projects/meter/src/reporter.rs | function | pub | 168 | failed_results(&self) -> Vec<&TestResult> |
-| `failed_results` | projects/meter/src/reporter.rs | function | pub | 234 | failed_results(&self) -> Vec<&AgentEvalResult> |
-| `from_summary` | projects/meter/src/reporter.rs | function | pub | 130 | from_summary(suite_name: impl Into<String>, summary: TestSummary) -> Self |
-| `generate` | projects/meter/src/reporter.rs | function | pub | 289 | generate(&self, report: &TestReport) -> String |
-| `generate_agent_eval` | projects/meter/src/reporter.rs | function | pub | 1163 | generate_agent_eval(&self, report: &AgentEvalReport) -> String |
-| `html` | projects/meter/src/reporter.rs | function | pub | 269 | html() -> Self |
-| `json` | projects/meter/src/reporter.rs | function | pub | 264 | json() -> Self |
-| `junit` | projects/meter/src/reporter.rs | function | pub | 274 | junit() -> Self |
-| `markdown` | projects/meter/src/reporter.rs | function | pub | 259 | markdown() -> Self |
-| `new` | projects/meter/src/reporter.rs | function | pub | 113 | new(suite_name: impl Into<String>, results: Vec<TestResult>) -> Self |
-| `new` | projects/meter/src/reporter.rs | function | pub | 213 | new(         suite_name: impl Into<String>,         results: Vec<AgentEvalResult>,         metrics: AgentEvalMetrics,     ) -> Self |
-| `new` | projects/meter/src/reporter.rs | function | pub | 254 | new(format: ReportFormat) -> Self |
-| `results_by_type` | projects/meter/src/reporter.rs | function | pub | 160 | results_by_type(&self, test_type: TestType) -> Vec<&TestResult> |
-| `set_coverage` | projects/meter/src/reporter.rs | function | pub | 155 | set_coverage(&mut self, coverage: CoverageInfo) |
-| `with_coverage` | projects/meter/src/reporter.rs | function | pub | 149 | with_coverage(mut self, coverage: CoverageInfo) -> Self |
-| `with_environment` | projects/meter/src/reporter.rs | function | pub | 143 | with_environment(mut self, env: EnvironmentInfo) -> Self |
-| `with_environment` | projects/meter/src/reporter.rs | function | pub | 228 | with_environment(mut self, env: EnvironmentInfo) -> Self |
-| `yaml` | projects/meter/src/reporter.rs | function | pub | 279 | yaml() -> Self |
+| `AgentEvalReport` | apps/meter/src/reporter.rs | struct | pub | 197 |  |
+| `CoverageInfo` | apps/meter/src/reporter.rs | struct | pub | 97 |  |
+| `EnvironmentInfo` | apps/meter/src/reporter.rs | struct | pub | 67 |  |
+| `FileCoverage` | apps/meter/src/reporter.rs | struct | pub | 81 |  |
+| `ReportFormat` | apps/meter/src/reporter.rs | enum | pub | 13 |  |
+| `Reporter` | apps/meter/src/reporter.rs | struct | pub | 247 |  |
+| `TestReport` | apps/meter/src/reporter.rs | struct | pub | 46 |  |
+| `all_passed` | apps/meter/src/reporter.rs | function | pub | 239 | all_passed(&self) -> bool |
+| `console` | apps/meter/src/reporter.rs | function | pub | 284 | console() -> Self |
+| `failed_results` | apps/meter/src/reporter.rs | function | pub | 168 | failed_results(&self) -> Vec<&TestResult> |
+| `failed_results` | apps/meter/src/reporter.rs | function | pub | 234 | failed_results(&self) -> Vec<&AgentEvalResult> |
+| `from_summary` | apps/meter/src/reporter.rs | function | pub | 130 | from_summary(suite_name: impl Into<String>, summary: TestSummary) -> Self |
+| `generate` | apps/meter/src/reporter.rs | function | pub | 289 | generate(&self, report: &TestReport) -> String |
+| `generate_agent_eval` | apps/meter/src/reporter.rs | function | pub | 1163 | generate_agent_eval(&self, report: &AgentEvalReport) -> String |
+| `html` | apps/meter/src/reporter.rs | function | pub | 269 | html() -> Self |
+| `json` | apps/meter/src/reporter.rs | function | pub | 264 | json() -> Self |
+| `junit` | apps/meter/src/reporter.rs | function | pub | 274 | junit() -> Self |
+| `markdown` | apps/meter/src/reporter.rs | function | pub | 259 | markdown() -> Self |
+| `new` | apps/meter/src/reporter.rs | function | pub | 113 | new(suite_name: impl Into<String>, results: Vec<TestResult>) -> Self |
+| `new` | apps/meter/src/reporter.rs | function | pub | 213 | new(         suite_name: impl Into<String>,         results: Vec<AgentEvalResult>,         metrics: AgentEvalMetrics,     ) -> Self |
+| `new` | apps/meter/src/reporter.rs | function | pub | 254 | new(format: ReportFormat) -> Self |
+| `results_by_type` | apps/meter/src/reporter.rs | function | pub | 160 | results_by_type(&self, test_type: TestType) -> Vec<&TestResult> |
+| `set_coverage` | apps/meter/src/reporter.rs | function | pub | 155 | set_coverage(&mut self, coverage: CoverageInfo) |
+| `with_coverage` | apps/meter/src/reporter.rs | function | pub | 149 | with_coverage(mut self, coverage: CoverageInfo) -> Self |
+| `with_environment` | apps/meter/src/reporter.rs | function | pub | 143 | with_environment(mut self, env: EnvironmentInfo) -> Self |
+| `with_environment` | apps/meter/src/reporter.rs | function | pub | 228 | with_environment(mut self, env: EnvironmentInfo) -> Self |
+| `yaml` | apps/meter/src/reporter.rs | function | pub | 279 | yaml() -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -61,7 +61,7 @@ use std::fmt::Write as FmtWrite;
 
 /// Report output format
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub enum ReportFormat {
     /// Markdown format (human-readable)
     #[default]
@@ -78,7 +78,7 @@ pub enum ReportFormat {
     Console,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 impl std::fmt::Display for ReportFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -94,7 +94,7 @@ impl std::fmt::Display for ReportFormat {
 
 /// Full test report with all results and metadata
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct TestReport {
     /// Suite name
     pub suite_name: String,
@@ -115,7 +115,7 @@ pub struct TestReport {
 
 /// Environment information
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct EnvironmentInfo {
     /// Python version
     pub python_version: Option<String>,
@@ -129,7 +129,7 @@ pub struct EnvironmentInfo {
 
 /// Coverage information for a single file
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct FileCoverage {
     /// File path (relative to project root)
     pub path: String,
@@ -145,7 +145,7 @@ pub struct FileCoverage {
 
 /// Overall coverage summary
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct CoverageInfo {
     /// Total statements across all files
     pub total_statements: usize,
@@ -159,7 +159,7 @@ pub struct CoverageInfo {
     pub uncovered_files: Vec<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 impl TestReport {
     /// Create a new test report
     pub fn new(suite_name: impl Into<String>, results: Vec<TestResult>) -> Self {
@@ -245,7 +245,7 @@ fn calculate_summary(results: &[TestResult]) -> TestSummary {
 
 /// Agent evaluation report with all results and metrics
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct AgentEvalReport {
     /// Suite name
     pub suite_name: String,
@@ -259,7 +259,7 @@ pub struct AgentEvalReport {
     pub environment: EnvironmentInfo,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 impl AgentEvalReport {
     /// Create a new agent evaluation report
     pub fn new(
@@ -295,12 +295,12 @@ impl AgentEvalReport {
 
 /// Test reporter - generates reports in various formats
 #[derive(Debug)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 pub struct Reporter {
     format: ReportFormat,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-reporter-rs.md#source
 impl Reporter {
     /// Create a new reporter with specified format
     pub fn new(format: ReportFormat) -> Self {
@@ -2148,10 +2148,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/reporter.rs
+  - path: apps/meter/src/reporter.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/reporter.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/reporter.rs` captured during meter full-codegen standardization.
 ```

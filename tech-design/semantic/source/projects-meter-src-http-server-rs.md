@@ -10,33 +10,33 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/http_server.rs
+# Standardized apps/meter/src/http_server.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/http_server.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/http_server.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `RouteConfig` | projects/meter/src/http_server.rs | struct | pub | 28 |  |
-| `TestServer` | projects/meter/src/http_server.rs | struct | pub | 141 |  |
-| `TestServerConfig` | projects/meter/src/http_server.rs | struct | pub | 60 |  |
-| `TestServerHandle` | projects/meter/src/http_server.rs | struct | pub | 88 |  |
-| `client` | projects/meter/src/http_server.rs | function | pub | 109 | client(&self) -> reqwest::Client |
-| `from_app` | projects/meter/src/http_server.rs | function | pub | 160 | from_app(config: TestServerConfig) -> Self |
-| `get` | projects/meter/src/http_server.rs | function | pub | 175 | get(mut self, path: &str, response: JsonValue) -> Self |
-| `new` | projects/meter/src/http_server.rs | function | pub | 151 | new() -> Self |
-| `port` | projects/meter/src/http_server.rs | function | pub | 169 | port(mut self, port: u16) -> Self |
-| `post` | projects/meter/src/http_server.rs | function | pub | 189 | post(mut self, path: &str, response: JsonValue) -> Self |
-| `post_echo` | projects/meter/src/http_server.rs | function | pub | 203 | post_echo(mut self, path: &str) -> Self |
-| `route` | projects/meter/src/http_server.rs | function | pub | 217 | route(mut self, path: &str, config: RouteConfig) -> Self |
-| `routes` | projects/meter/src/http_server.rs | function | pub | 223 | routes(mut self, routes: HashMap<String, JsonValue>) -> Self |
-| `start` | projects/meter/src/http_server.rs | function | pub | 239 | start(mut self) -> anyhow::Result<TestServerHandle> |
-| `stop` | projects/meter/src/http_server.rs | function | pub | 114 | stop(mut self) |
-| `url` | projects/meter/src/http_server.rs | function | pub | 104 | url(&self) -> &str |
+| `RouteConfig` | apps/meter/src/http_server.rs | struct | pub | 28 |  |
+| `TestServer` | apps/meter/src/http_server.rs | struct | pub | 141 |  |
+| `TestServerConfig` | apps/meter/src/http_server.rs | struct | pub | 60 |  |
+| `TestServerHandle` | apps/meter/src/http_server.rs | struct | pub | 88 |  |
+| `client` | apps/meter/src/http_server.rs | function | pub | 109 | client(&self) -> reqwest::Client |
+| `from_app` | apps/meter/src/http_server.rs | function | pub | 160 | from_app(config: TestServerConfig) -> Self |
+| `get` | apps/meter/src/http_server.rs | function | pub | 175 | get(mut self, path: &str, response: JsonValue) -> Self |
+| `new` | apps/meter/src/http_server.rs | function | pub | 151 | new() -> Self |
+| `port` | apps/meter/src/http_server.rs | function | pub | 169 | port(mut self, port: u16) -> Self |
+| `post` | apps/meter/src/http_server.rs | function | pub | 189 | post(mut self, path: &str, response: JsonValue) -> Self |
+| `post_echo` | apps/meter/src/http_server.rs | function | pub | 203 | post_echo(mut self, path: &str) -> Self |
+| `route` | apps/meter/src/http_server.rs | function | pub | 217 | route(mut self, path: &str, config: RouteConfig) -> Self |
+| `routes` | apps/meter/src/http_server.rs | function | pub | 223 | routes(mut self, routes: HashMap<String, JsonValue>) -> Self |
+| `start` | apps/meter/src/http_server.rs | function | pub | 239 | start(mut self) -> anyhow::Result<TestServerHandle> |
+| `stop` | apps/meter/src/http_server.rs | function | pub | 114 | stop(mut self) |
+| `url` | apps/meter/src/http_server.rs | function | pub | 104 | url(&self) -> &str |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -65,7 +65,7 @@ use tokio::sync::oneshot;
 
 /// Configuration for a test server route
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 pub struct RouteConfig {
     /// HTTP method (GET, POST, etc.)
     pub method: String,
@@ -77,7 +77,7 @@ pub struct RouteConfig {
     pub echo_body: bool,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl Default for RouteConfig {
     fn default() -> Self {
         Self {
@@ -97,7 +97,7 @@ struct ServerState {
 
 /// Configuration for a Python application test server
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 pub struct TestServerConfig {
     /// Python module to import (e.g., "tests.fixtures.test_app")
     pub app_module: String,
@@ -111,7 +111,7 @@ pub struct TestServerConfig {
     pub health_endpoint: Option<String>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl Default for TestServerConfig {
     fn default() -> Self {
         Self {
@@ -125,7 +125,7 @@ impl Default for TestServerConfig {
 }
 
 /// Handle for a running test server
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 pub struct TestServerHandle {
     /// Server address (e.g., "http://127.0.0.1:8765")
     pub url: String,
@@ -139,7 +139,7 @@ pub struct TestServerHandle {
     client: Option<reqwest::Client>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl TestServerHandle {
     /// Get the base URL for this server
     pub fn url(&self) -> &str {
@@ -165,7 +165,7 @@ impl TestServerHandle {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl Drop for TestServerHandle {
     fn drop(&mut self) {
         if let Some(tx) = self.shutdown_tx.take() {
@@ -178,7 +178,7 @@ impl Drop for TestServerHandle {
 }
 
 /// Test HTTP server for benchmarking
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 pub struct TestServer {
     routes: HashMap<String, RouteConfig>,
     port: Option<u16>,
@@ -186,7 +186,7 @@ pub struct TestServer {
     app_config: Option<TestServerConfig>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl TestServer {
     /// Create a new test server builder
     pub fn new() -> Self {
@@ -423,7 +423,7 @@ impl TestServer {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-http-server-rs.md#source
 impl Default for TestServer {
     fn default() -> Self {
         Self::new()
@@ -550,10 +550,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/http_server.rs
+  - path: apps/meter/src/http_server.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/http_server.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/http_server.rs` captured during meter full-codegen standardization.
 ```

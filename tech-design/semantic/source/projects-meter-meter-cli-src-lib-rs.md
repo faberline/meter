@@ -10,19 +10,19 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/meter-cli/src/lib.rs
+# Standardized apps/meter/meter-cli/src/lib.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/meter-cli/src/lib.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/meter-cli/src/lib.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `MeterCli` | projects/meter/meter-cli/src/lib.rs | struct | pub | 34 |  |
-| `dispatch` | projects/meter/meter-cli/src/lib.rs | module | pub | 24 |  |
+| `MeterCli` | apps/meter/meter-cli/src/lib.rs | struct | pub | 34 |  |
+| `dispatch` | apps/meter/meter-cli/src/lib.rs | module | pub | 24 |  |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -57,10 +57,10 @@ use clap::{ArgMatches, CommandFactory, FromArgMatches};
 use linkme::distributed_slice;
 
 /// The `meter` CLI module: name, clap command tree, and execute hook.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
 pub struct MeterCli;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-meter-cli-src-lib-rs.md#source
 impl CliModule for MeterCli {
     fn name(&self) -> &'static str {
         "meter"
@@ -124,10 +124,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/meter-cli/src/lib.rs
+  - path: apps/meter/meter-cli/src/lib.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/meter-cli/src/lib.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/meter-cli/src/lib.rs` captured during meter full-codegen standardization.
 ```

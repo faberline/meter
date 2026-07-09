@@ -10,29 +10,29 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/prompt/registry.rs
+# Standardized apps/meter/src/agent_eval/prompt/registry.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/prompt/registry.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/prompt/registry.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `PromptRegistry` | projects/meter/src/agent_eval/prompt/registry.rs | struct | pub | 13 |  |
-| `clear` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 120 | clear(&mut self) |
-| `count` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 115 | count(&self) -> usize |
-| `get` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 33 | get(&self, name: &str, version: &str) -> Option<&PromptTemplate> |
-| `get_latest` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 39 | get_latest(&self, name: &str) -> Option<&PromptTemplate> |
-| `list_templates` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 47 | list_templates(&self) -> Vec<String> |
-| `list_versions` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 55 | list_versions(&self, name: &str) -> Vec<String> |
-| `load_from_directory` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 79 | load_from_directory(&mut self, dir: impl AsRef<Path>) -> io::Result<Vec<String>> |
-| `load_from_file` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 67 | load_from_file(&mut self, path: impl AsRef<Path>) -> io::Result<String> |
-| `new` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 20 | new() -> Self |
-| `register` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 27 | register(&mut self, template: PromptTemplate) |
-| `save_to_file` | projects/meter/src/agent_eval/prompt/registry.rs | function | pub | 98 | save_to_file(         &self,         name: &str,         version: &str,         path: impl AsRef<Path>,     ) -> io::Result<()> |
+| `PromptRegistry` | apps/meter/src/agent_eval/prompt/registry.rs | struct | pub | 13 |  |
+| `clear` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 120 | clear(&mut self) |
+| `count` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 115 | count(&self) -> usize |
+| `get` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 33 | get(&self, name: &str, version: &str) -> Option<&PromptTemplate> |
+| `get_latest` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 39 | get_latest(&self, name: &str) -> Option<&PromptTemplate> |
+| `list_templates` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 47 | list_templates(&self) -> Vec<String> |
+| `list_versions` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 55 | list_versions(&self, name: &str) -> Vec<String> |
+| `load_from_directory` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 79 | load_from_directory(&mut self, dir: impl AsRef<Path>) -> io::Result<Vec<String>> |
+| `load_from_file` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 67 | load_from_file(&mut self, path: impl AsRef<Path>) -> io::Result<String> |
+| `new` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 20 | new() -> Self |
+| `register` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 27 | register(&mut self, template: PromptTemplate) |
+| `save_to_file` | apps/meter/src/agent_eval/prompt/registry.rs | function | pub | 98 | save_to_file(         &self,         name: &str,         version: &str,         path: impl AsRef<Path>,     ) -> io::Result<()> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -46,12 +46,12 @@ use std::path::Path;
 
 /// Registry for managing prompt templates
 #[derive(Debug, Default)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-registry-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-registry-rs.md#source
 pub struct PromptRegistry {
     templates: HashMap<String, PromptTemplate>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-registry-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-registry-rs.md#source
 impl PromptRegistry {
     /// Create a new empty registry
     pub fn new() -> Self {
@@ -252,10 +252,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/prompt/registry.rs
+  - path: apps/meter/src/agent_eval/prompt/registry.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/prompt/registry.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/prompt/registry.rs` captured during meter full-codegen standardization.
 ```

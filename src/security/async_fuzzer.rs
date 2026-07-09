@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 // CODEGEN-BEGIN
 //! Async fuzzing framework for security testing
 //!
@@ -15,7 +15,7 @@ use tokio::time::timeout;
 
 /// Configuration for async fuzzing operations
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 pub struct AsyncFuzzConfig {
     /// Initial corpus of seed inputs
     pub corpus: Vec<String>,
@@ -31,7 +31,7 @@ pub struct AsyncFuzzConfig {
     pub concurrent_mutations: usize,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl AsyncFuzzConfig {
     /// Create a new async fuzzing configuration
     pub fn new() -> Self {
@@ -82,7 +82,7 @@ impl AsyncFuzzConfig {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl Default for AsyncFuzzConfig {
     fn default() -> Self {
         Self::new()
@@ -90,13 +90,13 @@ impl Default for AsyncFuzzConfig {
 }
 
 /// Async fuzzer for testing async target functions and network endpoints
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 pub struct AsyncFuzzer {
     config: AsyncFuzzConfig,
     rng: StdRng,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-async-fuzzer-rs.md#source
 impl AsyncFuzzer {
     /// Create a new async fuzzer with configuration
     pub fn new(config: AsyncFuzzConfig) -> Self {

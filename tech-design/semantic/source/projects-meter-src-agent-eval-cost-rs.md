@@ -10,33 +10,33 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/cost.rs
+# Standardized apps/meter/src/agent_eval/cost.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/cost.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/cost.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `CostBreakdown` | projects/meter/src/agent_eval/cost.rs | struct | pub | 234 |  |
-| `CostCalculator` | projects/meter/src/agent_eval/cost.rs | struct | pub | 141 |  |
-| `ModelPricing` | projects/meter/src/agent_eval/cost.rs | struct | pub | 11 |  |
-| `PricingRegistry` | projects/meter/src/agent_eval/cost.rs | struct | pub | 46 |  |
-| `add` | projects/meter/src/agent_eval/cost.rs | function | pub | 115 | add(&mut self, pricing: ModelPricing) |
-| `calculate_cost` | projects/meter/src/agent_eval/cost.rs | function | pub | 175 | calculate_cost(         &self,         model: &str,         prompt_tokens: u32,         completion_tokens: u32,     ) -> Result<f64, String> |
-| `calculate_cost_breakdown` | projects/meter/src/agent_eval/cost.rs | function | pub | 194 | calculate_cost_breakdown(         &self,         model: &str,         prompt_tokens: u32,         completion_tokens: u32,     ) -> Result<CostBreakdown, String> |
-| `get` | projects/meter/src/agent_eval/cost.rs | function | pub | 120 | get(&self, model: &str) -> Option<&ModelPricing> |
-| `list_models` | projects/meter/src/agent_eval/cost.rs | function | pub | 125 | list_models(&self) -> Vec<String> |
-| `list_models_by_provider` | projects/meter/src/agent_eval/cost.rs | function | pub | 130 | list_models_by_provider(&self, provider: &str) -> Vec<String> |
-| `new` | projects/meter/src/agent_eval/cost.rs | function | pub | 28 | new(         model: impl Into<String>,         provider: impl Into<String>,         prompt_price: f64,         completion_price: f64,     ) -> Self |
-| `new` | projects/meter/src/agent_eval/cost.rs | function | pub | 60 | new() -> Self |
-| `new` | projects/meter/src/agent_eval/cost.rs | function | pub | 155 | new() -> Self |
-| `registry` | projects/meter/src/agent_eval/cost.rs | function | pub | 221 | registry(&self) -> &PricingRegistry |
-| `registry_mut` | projects/meter/src/agent_eval/cost.rs | function | pub | 226 | registry_mut(&mut self) -> &mut PricingRegistry |
-| `with_registry` | projects/meter/src/agent_eval/cost.rs | function | pub | 162 | with_registry(registry: PricingRegistry) -> Self |
+| `CostBreakdown` | apps/meter/src/agent_eval/cost.rs | struct | pub | 234 |  |
+| `CostCalculator` | apps/meter/src/agent_eval/cost.rs | struct | pub | 141 |  |
+| `ModelPricing` | apps/meter/src/agent_eval/cost.rs | struct | pub | 11 |  |
+| `PricingRegistry` | apps/meter/src/agent_eval/cost.rs | struct | pub | 46 |  |
+| `add` | apps/meter/src/agent_eval/cost.rs | function | pub | 115 | add(&mut self, pricing: ModelPricing) |
+| `calculate_cost` | apps/meter/src/agent_eval/cost.rs | function | pub | 175 | calculate_cost(         &self,         model: &str,         prompt_tokens: u32,         completion_tokens: u32,     ) -> Result<f64, String> |
+| `calculate_cost_breakdown` | apps/meter/src/agent_eval/cost.rs | function | pub | 194 | calculate_cost_breakdown(         &self,         model: &str,         prompt_tokens: u32,         completion_tokens: u32,     ) -> Result<CostBreakdown, String> |
+| `get` | apps/meter/src/agent_eval/cost.rs | function | pub | 120 | get(&self, model: &str) -> Option<&ModelPricing> |
+| `list_models` | apps/meter/src/agent_eval/cost.rs | function | pub | 125 | list_models(&self) -> Vec<String> |
+| `list_models_by_provider` | apps/meter/src/agent_eval/cost.rs | function | pub | 130 | list_models_by_provider(&self, provider: &str) -> Vec<String> |
+| `new` | apps/meter/src/agent_eval/cost.rs | function | pub | 28 | new(         model: impl Into<String>,         provider: impl Into<String>,         prompt_price: f64,         completion_price: f64,     ) -> Self |
+| `new` | apps/meter/src/agent_eval/cost.rs | function | pub | 60 | new() -> Self |
+| `new` | apps/meter/src/agent_eval/cost.rs | function | pub | 155 | new() -> Self |
+| `registry` | apps/meter/src/agent_eval/cost.rs | function | pub | 221 | registry(&self) -> &PricingRegistry |
+| `registry_mut` | apps/meter/src/agent_eval/cost.rs | function | pub | 226 | registry_mut(&mut self) -> &mut PricingRegistry |
+| `with_registry` | apps/meter/src/agent_eval/cost.rs | function | pub | 162 | with_registry(registry: PricingRegistry) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -48,7 +48,7 @@ use std::collections::HashMap;
 
 /// Model pricing information
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 pub struct ModelPricing {
     /// Model identifier
     pub model: String,
@@ -63,7 +63,7 @@ pub struct ModelPricing {
     pub completion_price_per_1m: f64,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 impl ModelPricing {
     /// Create a new model pricing entry
     pub fn new(
@@ -83,19 +83,19 @@ impl ModelPricing {
 
 /// Registry of model pricing information
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 pub struct PricingRegistry {
     prices: HashMap<String, ModelPricing>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 impl Default for PricingRegistry {
     fn default() -> Self {
         Self::new()
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 impl PricingRegistry {
     /// Create a new pricing registry with pre-populated common models
     pub fn new() -> Self {
@@ -178,19 +178,19 @@ impl PricingRegistry {
 }
 
 /// Cost calculator
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 pub struct CostCalculator {
     registry: PricingRegistry,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 impl Default for CostCalculator {
     fn default() -> Self {
         Self::new()
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 impl CostCalculator {
     /// Create a new cost calculator with default pricing registry
     pub fn new() -> Self {
@@ -271,7 +271,7 @@ impl CostCalculator {
 
 /// Detailed cost breakdown
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-cost-rs.md#source
 pub struct CostBreakdown {
     /// Model used
     pub model: String,
@@ -547,10 +547,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/cost.rs
+  - path: apps/meter/src/agent_eval/cost.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/cost.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/cost.rs` captured during meter full-codegen standardization.
 ```

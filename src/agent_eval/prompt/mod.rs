@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-mod-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-prompt-mod-rs.md#source
 // CODEGEN-BEGIN
 //! Prompt template system for agent evaluation
 

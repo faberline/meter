@@ -10,20 +10,20 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/src/capture/bench.rs
+# Standardized apps/meter/src/capture/bench.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/bench.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/bench.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `BenchOutcome` | projects/meter/src/capture/bench.rs | struct | pub | 27 |  |
-| `delegate_bench` | projects/meter/src/capture/bench.rs | function | pub | 45 | delegate_bench(target: impl AsRef<Path>) -> std::io::Result<BenchOutcome> |
-| `load_regression_report` | projects/meter/src/capture/bench.rs | function | pub | 102 | load_regression_report(path: impl AsRef<Path>) -> Result<RegressionReport, String> |
+| `BenchOutcome` | apps/meter/src/capture/bench.rs | struct | pub | 27 |  |
+| `delegate_bench` | apps/meter/src/capture/bench.rs | function | pub | 45 | delegate_bench(target: impl AsRef<Path>) -> std::io::Result<BenchOutcome> |
+| `load_regression_report` | apps/meter/src/capture/bench.rs | function | pub | 102 | load_regression_report(path: impl AsRef<Path>) -> Result<RegressionReport, String> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -51,7 +51,7 @@ use crate::baseline::RegressionReport;
 use crate::report::envelope::RunnerRecord;
 
 /// Outcome of a delegated `cargo bench` run.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
 pub struct BenchOutcome {
     /// The recorded child invocation (argv, timing, exit code).
     pub record: RunnerRecord,
@@ -69,7 +69,7 @@ pub struct BenchOutcome {
 /// == true`. A spawn failure (cargo missing / target unbuildable to the point of
 /// not launching) surfaces as `Err`, which the dispatch layer maps to a
 /// `ToolError(5)` report.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
 pub fn delegate_bench(target: impl AsRef<Path>) -> std::io::Result<BenchOutcome> {
     let target = target.as_ref();
     let argv: Vec<String> = vec![
@@ -126,7 +126,7 @@ fn manifest_path(target: &Path) -> String {
 /// The file is the JSON form produced by serializing a `RegressionReport` (the
 /// derives added in Wave 4). `Err(msg)` on a read or parse failure so the
 /// dispatch layer can surface a `ToolError` rather than a fake-clean report.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-bench-rs.md#source
 pub fn load_regression_report(path: impl AsRef<Path>) -> Result<RegressionReport, String> {
     let path = path.as_ref();
     let raw = std::fs::read_to_string(path)
@@ -206,10 +206,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/bench.rs
+  - path: apps/meter/src/capture/bench.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/bench.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/bench.rs` captured during meter full-codegen standardization.
 ```

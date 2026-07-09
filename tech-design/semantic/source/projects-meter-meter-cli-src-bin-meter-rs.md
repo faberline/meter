@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/meter-cli/src/bin/meter.rs
+# Standardized apps/meter/meter-cli/src/bin/meter.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/meter-cli/src/bin/meter.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/meter-cli/src/bin/meter.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -66,10 +66,10 @@ fn main() -> ExitCode {
 
 ```yaml
 changes:
-  - path: projects/meter/meter-cli/src/bin/meter.rs
+  - path: apps/meter/meter-cli/src/bin/meter.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/meter-cli/src/bin/meter.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/meter-cli/src/bin/meter.rs` captured during meter full-codegen standardization.
 ```

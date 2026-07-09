@@ -10,18 +10,18 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/capture/audit.rs
+# Standardized apps/meter/src/capture/audit.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/capture/audit.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/capture/audit.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `audit` | projects/meter/src/capture/audit.rs | function | pub | 25 | audit(target: impl AsRef<Path>) -> Result<AuditResult, String> |
+| `audit` | apps/meter/src/capture/audit.rs | function | pub | 25 | audit(target: impl AsRef<Path>) -> Result<AuditResult, String> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -47,7 +47,7 @@ use crate::rust_runner::{AuditResult, RustRunner};
 /// `Err(msg)` means cargo-audit could not be spawned (absent) or its output was
 /// unparseable (e.g. the advisory DB could not be fetched) — the caller maps
 /// this to a tool error, never a clean result.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-capture-audit-rs.md#source
 pub fn audit(target: impl AsRef<Path>) -> Result<AuditResult, String> {
     RustRunner::for_project(target.as_ref().to_path_buf()).run_audit()
 }
@@ -71,10 +71,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/capture/audit.rs
+  - path: apps/meter/src/capture/audit.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/capture/audit.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/capture/audit.rs` captured during meter full-codegen standardization.
 ```

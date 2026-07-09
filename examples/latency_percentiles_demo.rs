@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/meter/tech-design/semantic/source/projects-meter-examples-latency-percentiles-demo-rs.md#source
+// SPEC-MANAGED: apps/meter/tech-design/semantic/source/projects-meter-examples-latency-percentiles-demo-rs.md#source
 // CODEGEN-BEGIN
 use meter::baseline::{
     FileBaselineStore, PercentileType, RegressionDetector, RegressionThresholds,

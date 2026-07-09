@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/security/mod.rs
+# Standardized apps/meter/src/security/mod.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/security/mod.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/security/mod.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -76,10 +76,10 @@ pub use sql_injection::{InjectionResult, InjectionTest, SqlInjectionTester};
 
 ```yaml
 changes:
-  - path: projects/meter/src/security/mod.rs
+  - path: apps/meter/src/security/mod.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/security/mod.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/security/mod.rs` captured during meter full-codegen standardization.
 ```

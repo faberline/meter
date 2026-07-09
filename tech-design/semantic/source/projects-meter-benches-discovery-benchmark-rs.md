@@ -10,12 +10,12 @@ capability_refs:
     rationale: "Source template implements meter performance measurement and regression reporting surfaces."
 ---
 
-# Standardized projects/meter/benches/discovery_benchmark.rs
+# Standardized apps/meter/benches/discovery_benchmark.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/benches/discovery_benchmark.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/benches/discovery_benchmark.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
@@ -65,10 +65,10 @@ criterion_main!(benches);
 
 ```yaml
 changes:
-  - path: projects/meter/benches/discovery_benchmark.rs
+  - path: apps/meter/benches/discovery_benchmark.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/benches/discovery_benchmark.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/benches/discovery_benchmark.rs` captured during meter full-codegen standardization.
 ```

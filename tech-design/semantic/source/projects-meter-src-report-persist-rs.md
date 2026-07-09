@@ -10,23 +10,23 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/persist.rs
+# Standardized apps/meter/src/report/persist.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/persist.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/persist.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `LAST_REPORT_REL` | projects/meter/src/report/persist.rs | constant | pub | 15 |  |
-| `last_report_path` | projects/meter/src/report/persist.rs | function | pub | 19 | last_report_path(base: impl AsRef<Path>) -> PathBuf |
-| `read_last_report` | projects/meter/src/report/persist.rs | function | pub | 51 | read_last_report() -> Option<MeterReport> |
-| `read_last_report_in` | projects/meter/src/report/persist.rs | function | pub | 58 | read_last_report_in(base: impl AsRef<Path>) -> Option<MeterReport> |
-| `write_last_report` | projects/meter/src/report/persist.rs | function | pub | 28 | write_last_report(report: &MeterReport) -> std::io::Result<PathBuf> |
-| `write_last_report_in` | projects/meter/src/report/persist.rs | function | pub | 35 | write_last_report_in(     base: impl AsRef<Path>,     report: &MeterReport, ) -> std::io::Result<PathBuf> |
+| `LAST_REPORT_REL` | apps/meter/src/report/persist.rs | constant | pub | 15 |  |
+| `last_report_path` | apps/meter/src/report/persist.rs | function | pub | 19 | last_report_path(base: impl AsRef<Path>) -> PathBuf |
+| `read_last_report` | apps/meter/src/report/persist.rs | function | pub | 51 | read_last_report() -> Option<MeterReport> |
+| `read_last_report_in` | apps/meter/src/report/persist.rs | function | pub | 58 | read_last_report_in(base: impl AsRef<Path>) -> Option<MeterReport> |
+| `write_last_report` | apps/meter/src/report/persist.rs | function | pub | 28 | write_last_report(report: &MeterReport) -> std::io::Result<PathBuf> |
+| `write_last_report_in` | apps/meter/src/report/persist.rs | function | pub | 35 | write_last_report_in(     base: impl AsRef<Path>,     report: &MeterReport, ) -> std::io::Result<PathBuf> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -46,7 +46,7 @@ use super::envelope::MeterReport;
 pub const LAST_REPORT_REL: &str = ".meter/last-report.json";
 
 /// Resolve the absolute cache path under `base` (typically the cwd).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
 pub fn last_report_path(base: impl AsRef<Path>) -> PathBuf {
     base.as_ref().join(LAST_REPORT_REL)
 }
@@ -55,14 +55,14 @@ pub fn last_report_path(base: impl AsRef<Path>) -> PathBuf {
 ///
 /// Best-effort: a write failure is surfaced as `Err` but callers generally log
 /// it to stderr and continue — losing the cache never changes the verb's exit.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
 pub fn write_last_report(report: &MeterReport) -> std::io::Result<PathBuf> {
     let base = std::env::current_dir()?;
     write_last_report_in(&base, report)
 }
 
 /// Write `report` to `<base>/.meter/last-report.json`.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
 pub fn write_last_report_in(
     base: impl AsRef<Path>,
     report: &MeterReport,
@@ -78,14 +78,14 @@ pub fn write_last_report_in(
 }
 
 /// Read the persisted report from `<cwd>/.meter/last-report.json`, if present.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
 pub fn read_last_report() -> Option<MeterReport> {
     let base = std::env::current_dir().ok()?;
     read_last_report_in(&base)
 }
 
 /// Read the persisted report from `<base>/.meter/last-report.json`, if present.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-persist-rs.md#source
 pub fn read_last_report_in(base: impl AsRef<Path>) -> Option<MeterReport> {
     let path = last_report_path(&base);
     let data = std::fs::read_to_string(&path).ok()?;
@@ -141,10 +141,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/persist.rs
+  - path: apps/meter/src/report/persist.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/persist.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/persist.rs` captured during meter full-codegen standardization.
 ```

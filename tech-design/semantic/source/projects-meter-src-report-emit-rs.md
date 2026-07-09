@@ -10,20 +10,20 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/report/emit.rs
+# Standardized apps/meter/src/report/emit.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/report/emit.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/report/emit.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `diag` | projects/meter/src/report/emit.rs | function | pub | 50 | diag(msg: impl AsRef<str>) |
-| `emit` | projects/meter/src/report/emit.rs | function | pub | 18 | emit(report: &MeterReport, compact: bool) -> String |
-| `render` | projects/meter/src/report/emit.rs | function | pub | 32 | render(report: &MeterReport, compact: bool) -> String |
+| `diag` | apps/meter/src/report/emit.rs | function | pub | 50 | diag(msg: impl AsRef<str>) |
+| `emit` | apps/meter/src/report/emit.rs | function | pub | 18 | emit(report: &MeterReport, compact: bool) -> String |
+| `render` | apps/meter/src/report/emit.rs | function | pub | 32 | render(report: &MeterReport, compact: bool) -> String |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -42,7 +42,7 @@ use super::envelope::MeterReport;
 ///
 /// `compact == false` => `to_string_pretty`; `compact == true` => `to_string`.
 /// Returns the serialized string for callers that also want it in-hand.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
 pub fn emit(report: &MeterReport, compact: bool) -> String {
     let json = render(report, compact);
     // Exactly one stdout write of the report; trailing newline for line-based
@@ -56,7 +56,7 @@ pub fn emit(report: &MeterReport, compact: bool) -> String {
 }
 
 /// Render `report` to a JSON string without printing.
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
 pub fn render(report: &MeterReport, compact: bool) -> String {
     if compact {
         serde_json::to_string(report)
@@ -74,7 +74,7 @@ pub fn render(report: &MeterReport, compact: bool) -> String {
 }
 
 /// Print a diagnostic line to stderr (never stdout).
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-report-emit-rs.md#source
 pub fn diag(msg: impl AsRef<str>) {
     let _ = writeln!(std::io::stderr(), "{}", msg.as_ref());
 }
@@ -133,10 +133,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/report/emit.rs
+  - path: apps/meter/src/report/emit.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/report/emit.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/report/emit.rs` captured during meter full-codegen standardization.
 ```

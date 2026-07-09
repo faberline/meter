@@ -10,41 +10,41 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/dataset.rs
+# Standardized apps/meter/src/agent_eval/dataset.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/dataset.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/dataset.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `DatasetGitIntegration` | projects/meter/src/agent_eval/dataset.rs | struct | pub | 284 |  |
-| `DatasetMetadata` | projects/meter/src/agent_eval/dataset.rs | struct | pub | 15 |  |
-| `DatasetSnapshot` | projects/meter/src/agent_eval/dataset.rs | struct | pub | 44 |  |
-| `GoldenDataset` | projects/meter/src/agent_eval/dataset.rs | struct | pub | 108 |  |
-| `commit_dataset` | projects/meter/src/agent_eval/dataset.rs | function | pub | 338 | commit_dataset(file_path: &Path, commit_message: &str) -> io::Result<()> |
-| `delete` | projects/meter/src/agent_eval/dataset.rs | function | pub | 220 | delete(&self, name: &str) -> io::Result<()> |
-| `exists` | projects/meter/src/agent_eval/dataset.rs | function | pub | 212 | exists(&self, name: &str) -> bool |
-| `get_current_commit` | projects/meter/src/agent_eval/dataset.rs | function | pub | 292 | get_current_commit() -> Option<String> |
-| `is_empty` | projects/meter/src/agent_eval/dataset.rs | function | pub | 101 | is_empty(&self) -> bool |
-| `len` | projects/meter/src/agent_eval/dataset.rs | function | pub | 96 | len(&self) -> usize |
-| `list` | projects/meter/src/agent_eval/dataset.rs | function | pub | 229 | list(&self) -> io::Result<Vec<String>> |
-| `load` | projects/meter/src/agent_eval/dataset.rs | function | pub | 180 | load(&self, name: &str) -> io::Result<DatasetSnapshot> |
-| `load_test_cases` | projects/meter/src/agent_eval/dataset.rs | function | pub | 200 | load_test_cases(&self, name: &str) -> io::Result<Vec<AgentTestCase>> |
-| `new` | projects/meter/src/agent_eval/dataset.rs | function | pub | 55 | new(name: impl Into<String>, test_cases: Vec<AgentTestCase>) -> Self |
-| `new` | projects/meter/src/agent_eval/dataset.rs | function | pub | 119 | new(root_dir: impl AsRef<Path>) -> io::Result<Self> |
-| `root_dir` | projects/meter/src/agent_eval/dataset.rs | function | pub | 277 | root_dir(&self) -> &Path |
-| `save` | projects/meter/src/agent_eval/dataset.rs | function | pub | 138 | save(&self, name: &str, snapshot: &DatasetSnapshot) -> io::Result<PathBuf> |
-| `save_test_cases` | projects/meter/src/agent_eval/dataset.rs | function | pub | 164 | save_test_cases(         &self,         name: &str,         test_cases: Vec<AgentTestCase>,     ) -> io::Result<PathBuf> |
-| `save_with_git_tracking` | projects/meter/src/agent_eval/dataset.rs | function | pub | 317 | save_with_git_tracking(         dataset: &GoldenDataset,         name: &str,         test_cases: Vec<AgentTestCase>,     ) -> io::Result<PathBuf> |
-| `update` | projects/meter/src/agent_eval/dataset.rs | function | pub | 259 | update(&self, name: &str, test_cases: Vec<AgentTestCase>) -> io::Result<PathBuf> |
-| `with_description` | projects/meter/src/agent_eval/dataset.rs | function | pub | 72 | with_description(mut self, description: impl Into<String>) -> Self |
-| `with_git_commit` | projects/meter/src/agent_eval/dataset.rs | function | pub | 84 | with_git_commit(mut self, commit: impl Into<String>) -> Self |
-| `with_tags` | projects/meter/src/agent_eval/dataset.rs | function | pub | 90 | with_tags(mut self, tags: Vec<String>) -> Self |
-| `with_version` | projects/meter/src/agent_eval/dataset.rs | function | pub | 78 | with_version(mut self, version: impl Into<String>) -> Self |
+| `DatasetGitIntegration` | apps/meter/src/agent_eval/dataset.rs | struct | pub | 284 |  |
+| `DatasetMetadata` | apps/meter/src/agent_eval/dataset.rs | struct | pub | 15 |  |
+| `DatasetSnapshot` | apps/meter/src/agent_eval/dataset.rs | struct | pub | 44 |  |
+| `GoldenDataset` | apps/meter/src/agent_eval/dataset.rs | struct | pub | 108 |  |
+| `commit_dataset` | apps/meter/src/agent_eval/dataset.rs | function | pub | 338 | commit_dataset(file_path: &Path, commit_message: &str) -> io::Result<()> |
+| `delete` | apps/meter/src/agent_eval/dataset.rs | function | pub | 220 | delete(&self, name: &str) -> io::Result<()> |
+| `exists` | apps/meter/src/agent_eval/dataset.rs | function | pub | 212 | exists(&self, name: &str) -> bool |
+| `get_current_commit` | apps/meter/src/agent_eval/dataset.rs | function | pub | 292 | get_current_commit() -> Option<String> |
+| `is_empty` | apps/meter/src/agent_eval/dataset.rs | function | pub | 101 | is_empty(&self) -> bool |
+| `len` | apps/meter/src/agent_eval/dataset.rs | function | pub | 96 | len(&self) -> usize |
+| `list` | apps/meter/src/agent_eval/dataset.rs | function | pub | 229 | list(&self) -> io::Result<Vec<String>> |
+| `load` | apps/meter/src/agent_eval/dataset.rs | function | pub | 180 | load(&self, name: &str) -> io::Result<DatasetSnapshot> |
+| `load_test_cases` | apps/meter/src/agent_eval/dataset.rs | function | pub | 200 | load_test_cases(&self, name: &str) -> io::Result<Vec<AgentTestCase>> |
+| `new` | apps/meter/src/agent_eval/dataset.rs | function | pub | 55 | new(name: impl Into<String>, test_cases: Vec<AgentTestCase>) -> Self |
+| `new` | apps/meter/src/agent_eval/dataset.rs | function | pub | 119 | new(root_dir: impl AsRef<Path>) -> io::Result<Self> |
+| `root_dir` | apps/meter/src/agent_eval/dataset.rs | function | pub | 277 | root_dir(&self) -> &Path |
+| `save` | apps/meter/src/agent_eval/dataset.rs | function | pub | 138 | save(&self, name: &str, snapshot: &DatasetSnapshot) -> io::Result<PathBuf> |
+| `save_test_cases` | apps/meter/src/agent_eval/dataset.rs | function | pub | 164 | save_test_cases(         &self,         name: &str,         test_cases: Vec<AgentTestCase>,     ) -> io::Result<PathBuf> |
+| `save_with_git_tracking` | apps/meter/src/agent_eval/dataset.rs | function | pub | 317 | save_with_git_tracking(         dataset: &GoldenDataset,         name: &str,         test_cases: Vec<AgentTestCase>,     ) -> io::Result<PathBuf> |
+| `update` | apps/meter/src/agent_eval/dataset.rs | function | pub | 259 | update(&self, name: &str, test_cases: Vec<AgentTestCase>) -> io::Result<PathBuf> |
+| `with_description` | apps/meter/src/agent_eval/dataset.rs | function | pub | 72 | with_description(mut self, description: impl Into<String>) -> Self |
+| `with_git_commit` | apps/meter/src/agent_eval/dataset.rs | function | pub | 84 | with_git_commit(mut self, commit: impl Into<String>) -> Self |
+| `with_tags` | apps/meter/src/agent_eval/dataset.rs | function | pub | 90 | with_tags(mut self, tags: Vec<String>) -> Self |
+| `with_version` | apps/meter/src/agent_eval/dataset.rs | function | pub | 78 | with_version(mut self, version: impl Into<String>) -> Self |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -60,7 +60,7 @@ use std::path::{Path, PathBuf};
 
 /// Metadata for a golden dataset
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetMetadata {
     /// Dataset name
     pub name: String,
@@ -89,7 +89,7 @@ pub struct DatasetMetadata {
 
 /// A golden dataset containing test cases
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetSnapshot {
     /// Metadata
     pub metadata: DatasetMetadata,
@@ -98,7 +98,7 @@ pub struct DatasetSnapshot {
     pub test_cases: Vec<AgentTestCase>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl DatasetSnapshot {
     /// Create a new dataset snapshot
     pub fn new(name: impl Into<String>, test_cases: Vec<AgentTestCase>) -> Self {
@@ -153,13 +153,13 @@ impl DatasetSnapshot {
 }
 
 /// Golden dataset manager for storing and loading test case datasets
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct GoldenDataset {
     /// Root directory for datasets
     root_dir: PathBuf,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl GoldenDataset {
     /// Create a new golden dataset manager
     ///
@@ -329,10 +329,10 @@ impl GoldenDataset {
 }
 
 /// Git integration for dataset versioning
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 pub struct DatasetGitIntegration;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-dataset-rs.md#source
 impl DatasetGitIntegration {
     /// Get current git commit hash
     ///
@@ -625,10 +625,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/dataset.rs
+  - path: apps/meter/src/agent_eval/dataset.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/dataset.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/dataset.rs` captured during meter full-codegen standardization.
 ```

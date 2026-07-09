@@ -10,31 +10,31 @@ capability_refs:
     rationale: "Source template implements meter security, fuzzing, injection, or audit surfaces."
 ---
 
-# Standardized projects/meter/src/security/sql_injection.rs
+# Standardized apps/meter/src/security/sql_injection.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/security/sql_injection.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/security/sql_injection.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `InjectionResult` | projects/meter/src/security/sql_injection.rs | enum | pub | 12 |  |
-| `InjectionTest` | projects/meter/src/security/sql_injection.rs | struct | pub | 26 |  |
-| `SqlInjectionTester` | projects/meter/src/security/sql_injection.rs | struct | pub | 61 |  |
-| `failed_tests` | projects/meter/src/security/sql_injection.rs | function | pub | 182 | failed_tests(results: &[InjectionTest]) -> Vec<&InjectionTest> |
-| `new` | projects/meter/src/security/sql_injection.rs | function | pub | 40 | new(         name: impl Into<String>,         payload: impl Into<String>,         expected: InjectionResult,     ) -> Self |
-| `new` | projects/meter/src/security/sql_injection.rs | function | pub | 68 | new() -> Self |
-| `passed` | projects/meter/src/security/sql_injection.rs | function | pub | 54 | passed(&self) -> bool |
-| `summarize` | projects/meter/src/security/sql_injection.rs | function | pub | 165 | summarize(results: &[InjectionTest]) -> (usize, usize, usize) |
-| `test` | projects/meter/src/security/sql_injection.rs | function | pub | 79 | test(&self, validator: F, payloads: &[String]) -> Vec<InjectionTest> |
-| `test_all` | projects/meter/src/security/sql_injection.rs | function | pub | 153 | test_all(&self, validator: F) -> Vec<InjectionTest> |
-| `test_identifiers` | projects/meter/src/security/sql_injection.rs | function | pub | 111 | test_identifiers(&self, validator: F) -> Vec<InjectionTest> |
-| `test_overflow` | projects/meter/src/security/sql_injection.rs | function | pub | 144 | test_overflow(&self, validator: F) -> Vec<InjectionTest> |
-| `test_unicode` | projects/meter/src/security/sql_injection.rs | function | pub | 133 | test_unicode(&self, validator: F) -> Vec<InjectionTest> |
-| `test_values` | projects/meter/src/security/sql_injection.rs | function | pub | 122 | test_values(&self, validator: F) -> Vec<InjectionTest> |
+| `InjectionResult` | apps/meter/src/security/sql_injection.rs | enum | pub | 12 |  |
+| `InjectionTest` | apps/meter/src/security/sql_injection.rs | struct | pub | 26 |  |
+| `SqlInjectionTester` | apps/meter/src/security/sql_injection.rs | struct | pub | 61 |  |
+| `failed_tests` | apps/meter/src/security/sql_injection.rs | function | pub | 182 | failed_tests(results: &[InjectionTest]) -> Vec<&InjectionTest> |
+| `new` | apps/meter/src/security/sql_injection.rs | function | pub | 40 | new(         name: impl Into<String>,         payload: impl Into<String>,         expected: InjectionResult,     ) -> Self |
+| `new` | apps/meter/src/security/sql_injection.rs | function | pub | 68 | new() -> Self |
+| `passed` | apps/meter/src/security/sql_injection.rs | function | pub | 54 | passed(&self) -> bool |
+| `summarize` | apps/meter/src/security/sql_injection.rs | function | pub | 165 | summarize(results: &[InjectionTest]) -> (usize, usize, usize) |
+| `test` | apps/meter/src/security/sql_injection.rs | function | pub | 79 | test(&self, validator: F, payloads: &[String]) -> Vec<InjectionTest> |
+| `test_all` | apps/meter/src/security/sql_injection.rs | function | pub | 153 | test_all(&self, validator: F) -> Vec<InjectionTest> |
+| `test_identifiers` | apps/meter/src/security/sql_injection.rs | function | pub | 111 | test_identifiers(&self, validator: F) -> Vec<InjectionTest> |
+| `test_overflow` | apps/meter/src/security/sql_injection.rs | function | pub | 144 | test_overflow(&self, validator: F) -> Vec<InjectionTest> |
+| `test_unicode` | apps/meter/src/security/sql_injection.rs | function | pub | 133 | test_unicode(&self, validator: F) -> Vec<InjectionTest> |
+| `test_values` | apps/meter/src/security/sql_injection.rs | function | pub | 122 | test_values(&self, validator: F) -> Vec<InjectionTest> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -47,7 +47,7 @@ use super::payloads::PayloadDatabase;
 
 /// Result of an injection test
 #[derive(Debug, Clone, PartialEq, Eq)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub enum InjectionResult {
     /// Input was blocked (validator returned error)
     Blocked,
@@ -61,7 +61,7 @@ pub enum InjectionResult {
 
 /// A single injection test case
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub struct InjectionTest {
     /// Name/description of the test
     pub name: String,
@@ -73,7 +73,7 @@ pub struct InjectionTest {
     pub actual: Option<InjectionResult>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl InjectionTest {
     /// Create a new injection test
     pub fn new(
@@ -96,12 +96,12 @@ impl InjectionTest {
 }
 
 /// SQL injection tester
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 pub struct SqlInjectionTester {
     payload_db: PayloadDatabase,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl SqlInjectionTester {
     /// Create a new SQL injection tester
     pub fn new() -> Self {
@@ -232,7 +232,7 @@ impl SqlInjectionTester {
     }
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-security-sql-injection-rs.md#source
 impl Default for SqlInjectionTester {
     fn default() -> Self {
         Self::new()
@@ -491,10 +491,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/security/sql_injection.rs
+  - path: apps/meter/src/security/sql_injection.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/security/sql_injection.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/security/sql_injection.rs` captured during meter full-codegen standardization.
 ```

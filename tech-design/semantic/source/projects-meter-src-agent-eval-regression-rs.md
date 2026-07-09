@@ -10,25 +10,25 @@ capability_refs:
     rationale: "Source template implements meter agent-facing CLI, runner, or report surfaces."
 ---
 
-# Standardized projects/meter/src/agent_eval/regression.rs
+# Standardized apps/meter/src/agent_eval/regression.rs
 
 ## Overview
 <!-- type: overview lang: markdown -->
 
-Public API manifest for `projects/meter/src/agent_eval/regression.rs` generated from AST during Score force-regeneration standardization.
+Public API manifest for `apps/meter/src/agent_eval/regression.rs` generated from AST during Score force-regeneration standardization.
 
 ### Symbols
 
 | Name | Target | Kind | Visibility | Line | Signature |
 |------|--------|------|------------|------|-----------|
-| `AgentRegression` | projects/meter/src/agent_eval/regression.rs | struct | pub | 46 |  |
-| `AgentRegressionDetector` | projects/meter/src/agent_eval/regression.rs | struct | pub | 115 |  |
-| `AgentRegressionReport` | projects/meter/src/agent_eval/regression.rs | struct | pub | 69 |  |
-| `AgentRegressionSummary` | projects/meter/src/agent_eval/regression.rs | struct | pub | 102 |  |
-| `AgentRegressionThresholds` | projects/meter/src/agent_eval/regression.rs | struct | pub | 13 |  |
-| `detect_regressions` | projects/meter/src/agent_eval/regression.rs | function | pub | 120 | detect_regressions(         baseline: &BaselineSnapshot,         current: &[AgentEvalResult],         thresholds: &AgentRegressionThresholds,     ) -> AgentRegressionReport |
-| `has_regressions` | projects/meter/src/agent_eval/regression.rs | function | pub | 86 | has_regressions(&self) -> bool |
-| `severe_regressions` | projects/meter/src/agent_eval/regression.rs | function | pub | 91 | severe_regressions(&self) -> Vec<&AgentRegression> |
+| `AgentRegression` | apps/meter/src/agent_eval/regression.rs | struct | pub | 46 |  |
+| `AgentRegressionDetector` | apps/meter/src/agent_eval/regression.rs | struct | pub | 115 |  |
+| `AgentRegressionReport` | apps/meter/src/agent_eval/regression.rs | struct | pub | 69 |  |
+| `AgentRegressionSummary` | apps/meter/src/agent_eval/regression.rs | struct | pub | 102 |  |
+| `AgentRegressionThresholds` | apps/meter/src/agent_eval/regression.rs | struct | pub | 13 |  |
+| `detect_regressions` | apps/meter/src/agent_eval/regression.rs | function | pub | 120 | detect_regressions(         baseline: &BaselineSnapshot,         current: &[AgentEvalResult],         thresholds: &AgentRegressionThresholds,     ) -> AgentRegressionReport |
+| `has_regressions` | apps/meter/src/agent_eval/regression.rs | function | pub | 86 | has_regressions(&self) -> bool |
+| `severe_regressions` | apps/meter/src/agent_eval/regression.rs | function | pub | 91 | severe_regressions(&self) -> Vec<&AgentRegression> |
 ## Source
 <!-- type: rust-source-unit lang: rust -->
 
@@ -42,7 +42,7 @@ use serde::{Deserialize, Serialize};
 
 /// Thresholds for agent evaluation regression detection
 #[derive(Debug, Clone)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 pub struct AgentRegressionThresholds {
     /// Pass rate decrease threshold as percentage (e.g., 5.0 = 5%)
     pub pass_rate_threshold_percent: f64,
@@ -60,7 +60,7 @@ pub struct AgentRegressionThresholds {
     pub quality_score_threshold: Option<f64>,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 impl Default for AgentRegressionThresholds {
     fn default() -> Self {
         Self {
@@ -75,7 +75,7 @@ impl Default for AgentRegressionThresholds {
 
 /// A detected agent evaluation regression
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 pub struct AgentRegression {
     /// Metric name
     pub metric: String,
@@ -98,7 +98,7 @@ pub struct AgentRegression {
 
 /// Agent regression detection report
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 pub struct AgentRegressionReport {
     /// Baseline timestamp
     pub baseline_timestamp: String,
@@ -113,7 +113,7 @@ pub struct AgentRegressionReport {
     pub summary: AgentRegressionSummary,
 }
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 impl AgentRegressionReport {
     /// Check if any regressions were detected
     pub fn has_regressions(&self) -> bool {
@@ -131,7 +131,7 @@ impl AgentRegressionReport {
 
 /// Summary of regression analysis
 #[derive(Debug, Clone, Serialize, Deserialize)]
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 pub struct AgentRegressionSummary {
     /// Total test cases compared
     pub total_cases: usize,
@@ -144,10 +144,10 @@ pub struct AgentRegressionSummary {
 }
 
 /// Agent regression detector
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 pub struct AgentRegressionDetector;
 
-/// @spec projects/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
+/// @spec apps/meter/tech-design/semantic/source/projects-meter-src-agent-eval-regression-rs.md#source
 impl AgentRegressionDetector {
     /// Detect regressions by comparing current results against baseline
     pub fn detect_regressions(
@@ -508,10 +508,10 @@ mod tests {
 
 ```yaml
 changes:
-  - path: projects/meter/src/agent_eval/regression.rs
+  - path: apps/meter/src/agent_eval/regression.rs
     action: modify
     section: rust-source-unit
     impl_mode: codegen
     description: |
-      Source template for `projects/meter/src/agent_eval/regression.rs` captured during meter full-codegen standardization.
+      Source template for `apps/meter/src/agent_eval/regression.rs` captured during meter full-codegen standardization.
 ```

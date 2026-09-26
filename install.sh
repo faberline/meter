@@ -4,12 +4,12 @@
 # Releases and drops it on your PATH.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/chrischeng-c4/axiom/main/apps/meter/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/faberline/meter/main/install.sh | sh
 #
 # Env overrides:
 #   METER_VERSION   tag to install (default: latest meter@* release, e.g. meter@1.0)
 #   METER_INSTALL   install dir (default: $HOME/.local/bin)
-#   METER_REPO      gh repo (default: chrischeng-c4/axiom)
+#   METER_REPO      gh repo (default: faberline/meter)
 #   GH_TOKEN      GitHub token for private-repo fetch (also: GITHUB_TOKEN)
 #                 If unset and `gh` is logged in, `gh auth token` is used.
 #
@@ -20,7 +20,7 @@
 #   3  missing curl / tar
 set -eu
 
-REPO="${METER_REPO:-chrischeng-c4/axiom}"
+REPO="${METER_REPO:-faberline/meter}"
 INSTALL_DIR="${METER_INSTALL:-$HOME/.local/bin}"
 VERSION="${METER_VERSION:-latest}"
 TOKEN="${GH_TOKEN:-${GITHUB_TOKEN:-}}"

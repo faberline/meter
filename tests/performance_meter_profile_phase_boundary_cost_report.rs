@@ -6,7 +6,7 @@
 // @contract profile-phase-boundary-cost-report
 // @category performance
 // @required_for_production false
-// @command cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json
+// @command cargo run -p meter-cli --bin meter -- profile --phases tests/fixtures/profile_phase_breakdown.json
 // AW-EC-END
 
 // Contract: meter profile emits ranked boundary-cost findings from a serialized PhaseBreakdown
@@ -15,7 +15,7 @@
 #[ignore = "AW EC gate: run via `aw health --verify-ec` or `cargo test -- --ignored`"]
 fn meter_profile_phase_boundary_cost_report() {
     let command =
-        "cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json";
+        "cargo run -p meter-cli --bin meter -- profile --phases tests/fixtures/profile_phase_breakdown.json";
     let id = "meter-profile-phase-boundary-cost-report";
     let mut root = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     while !root.join(".aw").is_dir() {

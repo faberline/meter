@@ -123,7 +123,7 @@ time goes and catch benchmark regressions outside ordinary unit tests.
 - Gate:
   `cargo run -p meter-cli --bin meter -- measure --exec /bin/ls --compact`
 - Gate:
-  `cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json`
+  `cargo run -p meter-cli --bin meter -- profile --phases tests/fixtures/profile_phase_breakdown.json`
 - Gate: `cargo test -p meter --lib`
 - Gate: `cargo test -p meter --lib`
 
@@ -152,7 +152,7 @@ Known limits:
 
 | Work Root | Kind | WI | Gate / Evidence |
 |---|---|---:|---|
-| Profile phase boundary-cost report | epic | - | `cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json` |
+| Profile phase boundary-cost report | epic | - | `cargo run -p meter-cli --bin meter -- profile --phases tests/fixtures/profile_phase_breakdown.json` |
 | Embedded profiler API | epic | - | `cargo test -p meter --test performance_meter_embedded_profiler_api` |
 | Benchmark regression API | epic | - | `cargo test -p meter --test performance_meter_benchmark_regression_api` |
 | Capture vitals and measurement contract | change | #3 | `cargo test -p meter --test performance_meter_capture_vitals_and_measurement_contract` |
@@ -221,7 +221,7 @@ All public verbs ship through the `meter-cli` crate.
 cargo run -p meter-cli --bin meter -- llm guide
 cargo run -p meter-cli --bin meter -- run --target .
 cargo run -p meter-cli --bin meter -- measure --example profile_target --duration 3
-cargo run -p meter-cli --bin meter -- profile --phases apps/meter/tests/fixtures/profile_phase_breakdown.json
+cargo run -p meter-cli --bin meter -- profile --phases tests/fixtures/profile_phase_breakdown.json
 cargo run -p meter-cli --bin meter -- bench --target . --baseline baseline.json
 cargo run -p meter-cli --bin meter -- test -- -p meter --lib
 cargo run -p meter-cli --bin meter -- report
